@@ -1,3 +1,28 @@
-# .nanorc
+# .nanorc: nano 2.5.3
 
-include '/usr/share/nano/*.nanorc'
+include "/usr/share/nano/*.nanorc"
+
+## Use auto-indentation.
+set autoindent
+
+## Back up files to the current filename plus a tilde.
+set backup
+
+## The directory to put unique backup files in.
+set backupdir "/tmp/nano"
+
+## Constantly display the cursor position in the statusbar.  Note that
+## this overrides "quickblank".
+set constantshow
+
+## Don't wrap text at all.
+set nowrap
+
+## Use smooth scrolling as the default.
+set smooth
+
+## Use this tab size instead of the default; it must be greater than 0.
+set tabsize 4
+
+## Convert typed tabs to spaces.
+set tabstospaces
