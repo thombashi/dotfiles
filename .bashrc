@@ -3,7 +3,7 @@
 alias ls='ls --color=always'
 alias grep='grep --with-filename --line-number --color=always'
 
-export PS1='[\w]\\$ '
+export PS1='[\w]\$ '
 
 export LESS='-R'
 
