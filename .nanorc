@@ -2,9 +2,6 @@
 
 include "/usr/share/nano/*.nanorc"
 
-## Use auto-indentation.
-set autoindent
-
 ## Back up files to the current filename plus a tilde.
 set backup
 
