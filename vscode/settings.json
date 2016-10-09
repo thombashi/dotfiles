@@ -2,6 +2,9 @@
 
 // Editor
 
+    // Controls the font family.
+    "editor.fontFamily": "'MyricaM M', Consolas, 'Courier New', monospace",
+
     // Controls if lines should wrap. The lines will wrap at min(editor.wrappingColumn, viewportWidthInColumns).
     "editor.wordWrap": true,
 
