@@ -11,7 +11,10 @@ alias pyver='python --version'
 
 # command aliases: Python - pyenv
 alias pyenvsys='pyenv local system'
-alias pyenv3='pyenv local 3.5.2'
+alias pyenv2='pyenv local 2.7.13'
+alias pyenv35='pyenv local 3.5.2'
+alias pyenv36='pyenv local 3.6.0'
+alias pyenv3='pyenv local 3.6.0'
 
 # command aliases: Python - pytest
 alias pst='python setup.py test'
