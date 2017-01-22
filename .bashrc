@@ -4,7 +4,7 @@
 # command aliases: Linux
 alias ls='ls --color=always'
 alias grep='grep --with-filename --line-number --color=always'
-
+alias date='date --iso-8601=seconds'
 
 # command aliases: Python
 alias pyver='python --version'
