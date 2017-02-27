@@ -40,6 +40,38 @@
     "files.autoSave": "afterDelay",
 
     // Controls the delay in ms after which a dirty file is saved automatically. Only applies when "files.autoSave" is set to "afterDelay"
-    "files.autoSaveDelay": 60000
+    "files.autoSaveDelay": 60000,
 
+// cpp
+
+    // Coding style, currently supports: Visual Studio, LLVM, Google, Chromium, Mozilla, WebKit. Use "file" to load the style from a .clang-format file in the current or parent directory. Use "{key: value, ...}" to set specific parameters, e.g.: "{ BasedOnStyle: LLVM, IndentWidth: 8 }"
+    "C_Cpp.clang_format_style": "Visual Studio",
+
+    // Name of the predefined style used as a fallback in case clang-format is invoked with style "file" but the .clang-format file is not found. Possible values are Visual Studio, LLVM, Google, Chromium, Mozilla, WebKit, or none.
+    "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
+
+    // If set, overrides the include sorting behavior determined by the SortIncludes parameter.
+    "C_Cpp.clang_format_sortIncludes": true,
+
+    // Enable clang-format on save.
+    "C_Cpp.clang_format_formatOnSave": true,
+
+// Python Configuration
+
+    // Whether to lint Python files using pep8
+    "python.linting.pep8Enabled": true,
+
+    // Whether to lint Python files using flake8
+    "python.linting.flake8Enabled": true,
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.linting.pylintArgs": ["--errors-only"],
+
+    // Format the document upon saving.
+    "python.formatting.formatOnSave": true,
+
+// javascript autolinting
+
+    // Set default linters to be used when no configuration file can be found in the current workspace.
+    "jsAutolint.defaultLinters": ["tslint", "jshint"]
 }
