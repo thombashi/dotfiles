@@ -31,5 +31,11 @@ export PS1='[\w]\$ '
 export LESS='-NMR'
 
 
-# Environment variables: Fedora
-export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s'
+# Environment variables: distribution dependent
+if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
+    export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
+elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
+    export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s'
+else
+    unset LESSOPEN
+fi
