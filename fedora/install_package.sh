@@ -1,4 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
-yum -y install cmake git
-yum -y install source-highlight
+packages=(
+    "cmake"
+    "git"
+    "ShellCheck"
+    "source-highlight"
+)
+
+for package in "${packages[@]}"; do
+    dnf -y install ${package}
+done
