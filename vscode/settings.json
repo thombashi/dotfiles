@@ -1,5 +1,4 @@
 {
-
 // Editor
 
     // Controls the font family.
@@ -12,7 +11,7 @@
     "editor.fontLigatures": true,
 
     // Controls if lines should wrap. The lines will wrap at min(editor.wrappingColumn, viewportWidthInColumns).
-    "editor.wordWrap": true,
+    "editor.wordWrap": "on",
 
     // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
     "editor.tabCompletion": true,
@@ -22,6 +21,9 @@
 
     // Controls whether the editor should render indent guides
     "editor.renderIndentGuides": true,
+
+    // Controls if the minimap is shown
+    "editor.minimap.enabled": true,
 
 // Terminal
 
@@ -70,5 +72,8 @@
 // javascript autolinting
 
     // Set default linters to be used when no configuration file can be found in the current workspace.
-    "jsAutolint.defaultLinters": ["tslint", "jshint"]
+    "jsAutolint.defaultLinters": [
+        "tslint",
+        "jshint"
+    ],
 }
