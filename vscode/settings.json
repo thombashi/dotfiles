@@ -25,10 +25,12 @@
     // Controls if the minimap is shown
     "editor.minimap.enabled": true,
 
+
 // Terminal
 
   // Controls the font size in pixels of the terminal.
-  "terminal.integrated.fontSize": 11,
+  "terminal.integrated.fontSize": 12,
+
 
 // Files
 
@@ -44,10 +46,8 @@
     // Controls the delay in ms after which a dirty file is saved automatically. Only applies when "files.autoSave" is set to "afterDelay"
     "files.autoSaveDelay": 60000,
 
-// cpp
 
-    // Coding style, currently supports: Visual Studio, LLVM, Google, Chromium, Mozilla, WebKit. Use "file" to load the style from a .clang-format file in the current or parent directory. Use "{key: value, ...}" to set specific parameters, e.g.: "{ BasedOnStyle: LLVM, IndentWidth: 8 }"
-    "C_Cpp.clang_format_style": "Visual Studio",
+// cpp
 
     // Name of the predefined style used as a fallback in case clang-format is invoked with style "file" but the .clang-format file is not found. Possible values are Visual Studio, LLVM, Google, Chromium, Mozilla, WebKit, or none.
     "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
@@ -58,7 +58,11 @@
     // Enable clang-format on save.
     "C_Cpp.clang_format_formatOnSave": true,
 
+
 // Python Configuration
+
+    // Whether to lint Python files when modified.
+    "python.linting.lintOnTextChange": false,
 
     // Whether to lint Python files using pylama.
     "python.linting.pylamaEnabled": true,
@@ -68,6 +72,7 @@
 
     // Format the document upon saving.
     "python.formatting.formatOnSave": true,
+
 
 // javascript autolinting
 
