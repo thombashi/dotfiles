@@ -65,3 +65,19 @@ elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
 else
     unset LESSOPEN
 fi
+
+
+# functions
+psgrep() {
+    local psaux=`ps aux`
+    local process_name=$1
+
+    echo -e "${psaux}" | head -1
+    echo -e "${psaux}" | /usr/bin/grep ${process_name}
+}
+
+pssort() {
+    local sort_key=$1
+
+    ps aux --sort -${sort_key}
+}
