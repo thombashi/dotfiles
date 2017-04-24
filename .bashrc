@@ -1,5 +1,8 @@
 # .bashrc
 
+# disabled ctrl+s key map
+stty stop undef
+stty start undef
 
 # command aliases: Linux
 alias ls='ls --color=always'
