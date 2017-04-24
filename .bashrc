@@ -1,8 +1,9 @@
 # .bashrc
 
-# disabled ctrl+s key map
+# disabled terminal lock (Ctrl+S) key map
 stty stop undef
 stty start undef
+
 
 # command aliases: Linux
 alias ls='ls --color=always'
@@ -19,7 +20,7 @@ alias pyenv35='pyenv local 3.5.3'
 alias pyenv36='pyenv local 3.6.1'
 alias pyenv3='pyenv local 3.6.1'
 
-# command aliases: Python - pytest
+# command aliases: Python - pytest-runner
 alias pst='python setup.py test'
 alias pstv='python setup.py test --addopts -v'
 alias pstvv='python setup.py test --addopts -vv'
