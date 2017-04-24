@@ -53,7 +53,7 @@ export LESS="-R --ignore-case --LONG-PROMPT --HILITE-UNREAD"
 #   more detailed information can be found at man bash
 export HISTSIZE=10000  # increase the limit of history size
 export HISTFILESIZE=10000  # increase the limit of ~/.bash_history size
-export HISTIGNORE="history:ls:pwd:which *"  # does not save uninformative commands as a history
+export HISTIGNORE="date:history:ls:pwd:which *"  # does not save uninformative commands as a history
 export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # history display format
 export HISTCONTROL=ignoredups  # lines matching the previous history entry to not be saved
 
