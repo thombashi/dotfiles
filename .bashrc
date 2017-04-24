@@ -29,13 +29,20 @@ alias pstrxv='python setup.py test --addopts "--runxfail -v"'
 alias pstrxvv='python setup.py test --addopts "--runxfail -vv"'
 
 
-# Environment variables
+# environment variables
+export LC_ALL=C.UTF-8
 export PS1='[\w]\$ '
+export LESS="-R --ignore-case --LONG-PROMPT --HILITE-UNREAD"
 
-export LESS='-NMR'
+# environment variables: history
+#   more detailed information can be found at man bash
+export HISTSIZE=10000  # increase the limit of history size
+export HISTFILESIZE=10000  # increase the limit of ~/.bash_history size
+export HISTIGNORE="history:ls:ls *:pwd:which *"  # does not save uninformative commands as a history
+export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # history display format
+export HISTCONTROL=ignoredups  # lines matching the previous history entry to not be saved
 
-
-# Environment variables: distribution dependent
+# environment variables: distribution dependent
 if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
     export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
 elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
