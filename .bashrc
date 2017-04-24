@@ -6,9 +6,24 @@ stty start undef
 
 
 # command aliases: Linux
-alias ls='ls --color=always'
-alias grep='grep --with-filename --line-number --color=always'
+alias ..="cd .."
+alias ...="cd ../.."
+
 alias date='date --iso-8601=seconds'
+alias df='df -h'
+alias less='less --tabs=4'
+
+grepflag='--with-filename --line-number --color=always'
+alias egrep='egrep ${grepflag}'
+alias fgrep='fgrep ${grepflag}'
+alias grep='grep ${grepflag}'
+
+lsflag='--color=always --group-directories-first'
+alias ls='ls ${lsflag}'
+alias ll='ls -l ${lsflag}'
+alias lla='ls -la ${lsflag}'
+alias llart='ls -lart ${lsflag}'
+
 
 # command aliases: Python
 alias pyver='python --version'
