@@ -17,18 +17,18 @@ alias echopath='echo $PATH | tr -s ":" "\n"'
 alias less='less --tabs=4'
 
 grep_options='--with-filename --line-number --color=always'
-alias egrep='egrep '`echo ${grep_options}`
-alias fgrep='fgrep '`echo ${grep_options}`
-alias grep='grep '`echo ${grep_options}`
+alias egrep='egrep '$(echo ${grep_options})
+alias fgrep='fgrep '$(echo ${grep_options})
+alias grep='grep '$(echo ${grep_options})
 unset grep_options
 
 ls_options='--color=always --group-directories-first --time-style=long-iso --file-type --human-readable --hide-control-chars'
-alias ls='ls '`echo ${ls_options}`
-alias la='ls -A '`echo ${ls_options}`
-alias ll='ls -l '`echo ${ls_options}`
-alias lla='ls -lA '`echo ${ls_options}`
-alias llrt='ls -lrt '`echo ${ls_options}`
-alias llart='ls -lArt '`echo ${ls_options}`
+alias ls='ls '$(echo ${ls_options})
+alias la='ls -A '$(echo ${ls_options})
+alias ll='ls -l '$(echo ${ls_options})
+alias lla='ls -lA '$(echo ${ls_options})
+alias lrt='ls -lrt '$(echo ${ls_options})
+alias lrta='ls -lArt '$(echo ${ls_options})
 unset ls_options
 
 # command aliases: Python
