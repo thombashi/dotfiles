@@ -91,11 +91,11 @@ finddir() {
 }
 
 psgrep() {
-    local psaux=`ps aux`
     local process_name=$1
+    local psaux=`ps aux`
 
     echo -e "${psaux}" | head -1
-    echo -e "${psaux}" | /usr/bin/grep ${process_name}
+    echo -e "${psaux}" | $(which grep) ${process_name}
 }
 
 pssort() {
