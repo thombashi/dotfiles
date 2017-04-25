@@ -1,15 +1,22 @@
-# .nanorc: nano 2.5.3
+# thombashi/dotfiles/.nanorc: nano 2.5.3
 
 
 ## Back up files to the current filename plus a tilde.
 set backup
 
 ## The directory to put unique backup files in.
-set backupdir "/tmp/nano"
+set backupdir "/tmp/nano"  # need to create the directory to backup files
 
 ## Constantly display the cursor position in the statusbar.  Note that
 ## this overrides "quickblank".
-set constantshow
+#set constantshow
+set const
+
+## Enable ~/.nano_history for saving and reading search/replace strings.
+set historylog
+
+## Use the blank line below the titlebar as extra editing space.
+set morespace
 
 ## Don't wrap text at all.
 set nowrap
