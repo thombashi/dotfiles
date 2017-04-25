@@ -83,24 +83,24 @@ fi
 
 # functions
 findfile() {
-    find $1 -type f
+    find "$1" -type f
 }
 
 finddir() {
-    find $1 -type d
+    find "$1" -type d
 }
 
 psgrep() {
     local process_name=$1
-    local psaux=`ps aux`
-    
+    local psaux=$(ps aux)
+
     if [ "${process_name}" = "" ]; then
         echo "Usage: psgrep PROCESS_NAME"
         return
     fi
     
     echo -e "${psaux}" | head -1
-    echo -e "${psaux}" | $(which grep) ${process_name}
+    echo -e "${psaux}" | $(which grep) "${process_name}"
 }
 
 pssort() {
@@ -108,10 +108,10 @@ pssort() {
 
     ps aux --sort "${sort_key}" > /dev/null 2>&1
     if [ "$?" -eq 0 ]; then
-        local stdout=`ps aux --sort "${sort_key}"`
+        local stdout=$(ps aux --sort "${sort_key}")
         echo -e "${stdout}"
     else
-        local header=`echo -e "$(ps aux)" | head -1`
-        echo "invalid sort key. valid sort keys are:" ${header,,}  # to lowercase
+        local header=$(echo -e "$(ps aux)" | head -1)
+        echo "invalid sort key. valid sort keys are:" ${header,,}
     fi
 }
