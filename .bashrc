@@ -53,7 +53,7 @@ alias pstrxvv='python setup.py test --addopts "--runxfail -vv"'
 # environment variables
 export LC_ALL=C.UTF-8
 export PS1='[\w]\$ '
-export LESS="-R --ignore-case --LONG-PROMPT --HILITE-UNREAD"
+export LESS='-R --ignore-case --LONG-PROMPT --HILITE-UNREAD'
 
 # environment variables: history
 #   more detailed information can be found at man bash
@@ -63,7 +63,7 @@ export HISTSIZE=8192
 export HISTFILESIZE=${HISTSIZE}
 
 ## does not save uninformative commands as a history
-export HISTIGNORE='date:exit:history:ls:la:ll:lla:llrt:llart:pwd:which *'
+export HISTIGNORE='date:exit:history:ls:la:ll:lla:lrt:lrta:pwd:which *'
 
 ## history display format
 export HISTTIMEFORMAT='[%Y-%m-%dT%T] '
