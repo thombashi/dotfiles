@@ -93,7 +93,12 @@ finddir() {
 psgrep() {
     local process_name=$1
     local psaux=`ps aux`
-
+    
+    if [ "${process_name}" = "" ]; then
+        echo "Usage: psgrep PROCESS_NAME"
+        return
+    fi
+    
     echo -e "${psaux}" | head -1
     echo -e "${psaux}" | $(which grep) ${process_name}
 }
