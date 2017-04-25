@@ -1,4 +1,5 @@
-# .bashrc
+# thombashi/dotfiles/.bashrc
+
 
 # disabled terminal lock (Ctrl+S) key map
 stty stop undef
