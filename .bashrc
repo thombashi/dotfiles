@@ -9,21 +9,26 @@ stty start undef
 alias ..="cd .."
 alias ...="cd ../.."
 
+alias chmx='chmod +x'
 alias date='date --iso-8601=seconds'
 alias df='df -h'
+alias echopath='echo $PATH | tr -s ":" "\n"'
 alias less='less --tabs=4'
 
-grepflag='--with-filename --line-number --color=always'
-alias egrep='egrep ${grepflag}'
-alias fgrep='fgrep ${grepflag}'
-alias grep='grep ${grepflag}'
+grep_options='--with-filename --line-number --color=always'
+alias egrep='egrep '`echo ${grep_options}`
+alias fgrep='fgrep '`echo ${grep_options}`
+alias grep='grep '`echo ${grep_options}`
+unset grep_options
 
-lsflag='--color=always --group-directories-first'
-alias ls='ls ${lsflag}'
-alias ll='ls -l ${lsflag}'
-alias lla='ls -la ${lsflag}'
-alias llart='ls -lart ${lsflag}'
-
+ls_options='--color=always --group-directories-first --time-style=long-iso --file-type --human-readable --hide-control-chars'
+alias ls='ls '`echo ${ls_options}`
+alias la='ls -A '`echo ${ls_options}`
+alias ll='ls -l '`echo ${ls_options}`
+alias lla='ls -lA '`echo ${ls_options}`
+alias llrt='ls -lrt '`echo ${ls_options}`
+alias llart='ls -lArt '`echo ${ls_options}`
+unset ls_options
 
 # command aliases: Python
 alias pyver='python --version'
@@ -33,7 +38,7 @@ alias pyenvsys='pyenv local system'
 alias pyenv2='pyenv local 2.7.13'
 alias pyenv35='pyenv local 3.5.3'
 alias pyenv36='pyenv local 3.6.1'
-alias pyenv3='pyenv local 3.6.1'
+alias pyenv3=pyenv36
 
 # command aliases: Python - pytest-runner
 alias pst='python setup.py test'
