@@ -82,6 +82,14 @@ fi
 
 
 # functions
+findfile() {
+    find $1 -type f
+}
+
+finddir() {
+    find $1 -type d
+}
+
 psgrep() {
     local psaux=`ps aux`
     local process_name=$1
