@@ -57,11 +57,19 @@ export LESS="-R --ignore-case --LONG-PROMPT --HILITE-UNREAD"
 
 # environment variables: history
 #   more detailed information can be found at man bash
-export HISTSIZE=10000  # increase the limit of history size
-export HISTFILESIZE=10000  # increase the limit of ~/.bash_history size
-export HISTIGNORE="date:history:ls:pwd:which *"  # does not save uninformative commands as a history
-export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # history display format
-export HISTCONTROL=ignoredups  # lines matching the previous history entry to not be saved
+
+## increase the size limit of history and ~/.bash_history
+export HISTSIZE=8192
+export HISTFILESIZE=${HISTSIZE}
+
+## does not save uninformative commands as a history
+export HISTIGNORE='date:exit:history:ls:la:ll:lla:llrt:llart:pwd:which *'
+
+## history display format
+export HISTTIMEFORMAT='[%Y-%m-%dT%T] '
+
+## lines matching the previous history entry to not be saved
+export HISTCONTROL=ignoredups
 
 # environment variables: distribution dependent
 if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
