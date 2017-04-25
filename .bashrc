@@ -101,5 +101,12 @@ psgrep() {
 pssort() {
     local sort_key=$1
 
-    ps aux --sort -${sort_key}
+    ps aux --sort "${sort_key}" > /dev/null 2>&1
+    if [ "$?" -eq 0 ]; then
+        local stdout=`ps aux --sort "${sort_key}"`
+        echo -e "${stdout}"
+    else
+        local header=`echo -e "$(ps aux)" | head -1`
+        echo "invalid sort key. valid sort keys are:" ${header,,}  # to lowercase
+    fi
 }
