@@ -1,7 +1,7 @@
 # thombashi/dotfiles/.bashrc
 
 
-# disabled terminal lock (Ctrl+S) key map
+# disabled terminal lock(Ctrl+S)/unlock(CTrl+Q) key map
 stty stop undef
 stty start undef
 
@@ -9,12 +9,12 @@ stty start undef
 # command aliases: Linux
 alias ..="cd .."
 alias ...="cd ../.."
+alias +x='chmod +x'
 
-alias chmx='chmod +x'
-alias date='date --iso-8601=seconds'
+alias date='date --rfc-3339=seconds'
 alias df='df -h'
-alias echopath='echo $PATH | tr -s ":" "\n"'
 alias less='less --tabs=4'
+alias mkdir='mkdir -pv'
 
 grep_options='--with-filename --line-number --color=always'
 alias egrep='egrep '$(echo ${grep_options})
@@ -28,20 +28,23 @@ alias la='ls -A '$(echo ${ls_options})
 alias ll='ls -l '$(echo ${ls_options})
 alias lla='ls -lA '$(echo ${ls_options})
 alias lrt='ls -lrt '$(echo ${ls_options})
-alias lrta='ls -lArt '$(echo ${ls_options})
+alias lrta='ls -lrtA '$(echo ${ls_options})
 unset ls_options
 
-# command aliases: Python
+alias echopath='echo $PATH | tr -s ":" "\n"'
+
+# language aliases: Python
+alias py='python'
 alias pyver='python --version'
 
-# command aliases: Python - pyenv
+## language aliases: Python - pyenv
 alias pyenvsys='pyenv local system'
 alias pyenv2='pyenv local 2.7.13'
 alias pyenv35='pyenv local 3.5.3'
 alias pyenv36='pyenv local 3.6.1'
 alias pyenv3=pyenv36
 
-# command aliases: Python - pytest-runner
+## language aliases: Python - pytest-runner
 alias pst='python setup.py test'
 alias pstv='python setup.py test --addopts -v'
 alias pstvv='python setup.py test --addopts -vv'
