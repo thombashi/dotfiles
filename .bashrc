@@ -85,6 +85,42 @@ fi
 
 
 # functions
+
+<< __date2epoch_docstring__
+Convert datetime to an epoch time.
+
+example: a datetime to an epoch time
+    $ date2epoch "2017-01-01 00:00:00+0900"
+    1483196400
+
+example: show current epoc time
+    $ date2epoch
+    1493254466
+__date2epoch_docstring__
+date2epoch() {
+    if [ "$1" != "" ]; then
+        $(which date) +%s -d "$1"
+    else
+        $(which date) +%s
+    fi
+}
+
+<< __epoch2date_docstring__
+Convert an epoch time to a datetime
+
+example:
+    $ epoch2date 1483196400
+    2017-01-01 00:00:00+09:00
+__epoch2date_docstring__
+epoch2date() {
+    if [ "$1" = "" ]; then
+        echo "Usage: ${FUNCNAME[0]} EPOCH_TIME"
+        return 1
+    fi
+
+    $(which date) -d @"$1" --rfc-3339=seconds
+}
+
 findfile() {
     find "$1" -type f
 }
@@ -116,5 +152,38 @@ pssort() {
     else
         local header=$(echo -e "$(ps aux)" | head -1)
         echo "invalid sort key. valid sort keys are:" ${header,,}
+    fi
+}
+
+extract() {
+    if [ -f "$1" ]; then
+        echo "'$1' is not a valid file to extract"
+        return 1
+    fi
+
+    case "$1" in
+        *.tar.bz2)  tar -jxvf "$1"   ;;
+        *.tar.gz)   tar -zxvf "$1"   ;;
+        *.bz2)      bunzip2 "$1"     ;;
+        *.gz)       gunzip "$1"      ;;
+        *.tar)      tar -xvf "$1"    ;;
+        *.tbz2)     tar -jxvf "$1"   ;;
+        *.tgz)      tar -zxvf "$1"   ;;
+        *.zip)      unzip "$1"       ;;
+        *.ZIP)      unzip "$1"       ;;
+        *) echo "'$1' cannot be extracted via extract()"; return 2 ;;
+    esac
+}
+
+httpserver() {
+    local port=$1
+
+    # get Python major version number
+    local pymajorver=$(python -c "from __future__ import print_function; import sys; print(sys.version_info[0])")
+
+    if [ "$pymajorver" = "2" ]; then
+        python -m SimpleHTTPServer ${port}
+    elif [ "$pymajorver" = "3" ]; then
+        python -m http.server ${port}
     fi
 }
