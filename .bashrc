@@ -122,24 +122,24 @@ epoch2date() {
 }
 
 findfile() {
-    find "$1" -type f
+    $(which find) $1 -type f
 }
 
 finddir() {
-    find "$1" -type d
+    $(which find) $1 -type d
 }
 
 psgrep() {
-    local process_name=$1
+    local pattern=$1
     local psaux=$(ps aux)
 
-    if [ "${process_name}" = "" ]; then
-        echo "Usage: psgrep PROCESS_NAME"
-        return
+    if [ "${pattern}" = "" ]; then
+        echo "Usage: ${FUNCNAME[0]} PATTERN"
+        return 1
     fi
-    
+
     echo -e "${psaux}" | head -1
-    echo -e "${psaux}" | $(which grep) "${process_name}"
+    echo -e "${psaux}" | $(which egrep) "${pattern}"
 }
 
 pssort() {
