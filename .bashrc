@@ -53,13 +53,13 @@ alias pstrxv='python setup.py test --addopts "--runxfail -v"'
 alias pstrxvv='python setup.py test --addopts "--runxfail -vv"'
 
 
-# environment variables
+# environment variables: general
 export LC_ALL=C.UTF-8
-export PS1='[\w]\$ '
 export LESS='-R --ignore-case --LONG-PROMPT --HILITE-UNREAD'
+export PS1='[\w]\$ '
 
 # environment variables: history
-#   more detailed information can be found at man bash
+#   more detailed information for each parameter can be found at man bash
 
 ## increase the size limit of history and ~/.bash_history
 export HISTSIZE=8192
