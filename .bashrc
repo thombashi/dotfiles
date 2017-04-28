@@ -15,6 +15,7 @@ alias date='date --rfc-3339=seconds'
 alias df='df -h'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
+alias whichbin='/usr/bin/which --skip-alias'
 
 grep_options='--with-filename --line-number --color=always'
 alias egrep='egrep '$(echo ${grep_options})
@@ -38,11 +39,13 @@ alias py='python'
 alias pyver='python --version'
 
 ## language aliases: Python - pyenv
-alias pyenvsys='pyenv local system'
-alias pyenv2='pyenv local 2.7.13'
-alias pyenv35='pyenv local 3.5.3'
-alias pyenv36='pyenv local 3.6.1'
-alias pyenv3=pyenv36
+if [ -e ~/.pyenv ]; then
+    alias pyenvsys='pyenv local system'
+    alias pyenv2='pyenv local 2.7.13'
+    alias pyenv35='pyenv local 3.5.3'
+    alias pyenv36='pyenv local 3.6.1'
+    alias pyenv3=pyenv36
+fi
 
 ## language aliases: Python - pytest-runner
 alias pst='python setup.py test'
