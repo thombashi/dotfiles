@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
 
-cp -af .bashrc ~/.bashrc
-cp -af .nanorc ~/.nanorc
+dotfiles=(
+    .bash_profile
+    .bashrc
+    .nanorc
+    .functions
+)
+
+for dotfile in "${dotfiles[@]}"; do
+    cp -af ${dotfile} ~/${dotfile}
+done
+
+unset dotfile
+unset dotfiles
