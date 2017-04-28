@@ -198,3 +198,15 @@ httpserver() {
         python -m http.server ${port}
     fi
 }
+
+whichpkg() {
+    local command="$1"
+
+    if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
+        dpkg -S "$(whichbin ${command})"
+    elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
+        rpm -qf "$(whichbin ${command})"
+    else
+        echo 
+    fi
+}
