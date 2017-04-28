@@ -66,7 +66,7 @@ export HISTSIZE=8192
 export HISTFILESIZE=${HISTSIZE}
 
 ## does not save uninformative commands as a history
-export HISTIGNORE='date:exit:history:ls:la:ll:lla:lrt:lrta:pwd:which *'
+export HISTIGNORE='date:exit:history:ls:la:ll:lla:lrt:lrta:pyver:pwd:which *'
 
 ## history display format
 export HISTTIMEFORMAT='[%Y-%m-%dT%T] '
@@ -81,6 +81,14 @@ elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
     export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s'
 else
     unset LESSOPEN
+fi
+
+# environment variables: Python
+if [ -e ~/.pyenv ]; then
+    echo "pyenv"
+    export PATH="~/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 
