@@ -88,11 +88,15 @@ fi
 
 # environment variables: Python
 if [ -e ~/.pyenv ]; then
-    echo "pyenv"
     export PATH="~/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+
+
+# share history across multiple consoles
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+shopt -u histappend
 
 
 # functions
