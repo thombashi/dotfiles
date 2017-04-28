@@ -1,12 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 packages=(
-    "cmake"
-    "git"
-    "ShellCheck"
-    "source-highlight"
+    cmake
+    curl
+    gcc
+    gcc-c++
+    git
+    wget
+    ShellCheck
+    source-highlight
 )
 
 for package in "${packages[@]}"; do
-    dnf -y install ${package}
+    dnf -y install "${package}"
 done

@@ -1,13 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 packages=(
-    "cmake"
-    "git"
-    "resolvconf"
-    "shellcheck"
-    "source-highlight"
+    cmake
+    curl
+    g++
+    gcc
+    git
+    wget
+    resolvconf
+    shellcheck
+    source-highlight
 )
 
+aptitude update
+
 for package in "${packages[@]}"; do
-    aptitude -y install ${package}
+    echo "installing ${package}"
+    aptitude -y install "${package}"
 done
