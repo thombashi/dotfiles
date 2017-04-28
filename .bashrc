@@ -40,6 +40,11 @@ alias echopath='echo $PATH | tr -s ":" "\n"'
 alias py='python'
 alias pyver='python --version'
 
+## language aliases: Python - pip
+if type pip > /dev/null 2>&1; then
+    alias pip-local-upgrade='pip install . --upgrade --no-index'
+fi
+
 ## language aliases: Python - pyenv
 if [ -e ~/.pyenv ]; then
     alias pyenvsys='pyenv local system'
