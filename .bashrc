@@ -110,9 +110,9 @@ example: show current epoc time
 __date2epoch_docstring__
 date2epoch() {
     if [ "$1" != "" ]; then
-        $(which date) +%s -d "$1"
+        $(whichbin date) +%s -d "$1"
     else
-        $(which date) +%s
+        $(whichbin date) +%s
     fi
 }
 
@@ -129,15 +129,15 @@ epoch2date() {
         return 1
     fi
 
-    $(which date) -d @"$1" --rfc-3339=seconds
+    $(whichbin date) -d @"$1" --rfc-3339=seconds
 }
 
 findfile() {
-    $(which find) $1 -type f
+    $(whichbin find) $1 -type f
 }
 
 finddir() {
-    $(which find) $1 -type d
+    $(whichbin find) $1 -type d
 }
 
 psgrep() {
@@ -150,7 +150,7 @@ psgrep() {
     fi
 
     echo -e "${psaux}" | head -1
-    echo -e "${psaux}" | $(which egrep) "${pattern}"
+    echo -e "${psaux}" | $(whichbin egrep) "${pattern}"
 }
 
 pssort() {
