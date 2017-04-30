@@ -12,6 +12,7 @@ shopt -s nocaseglob
 # command aliases: Linux
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
 alias +x='chmod +x'
 
 alias date='date --rfc-3339=seconds'
