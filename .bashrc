@@ -43,8 +43,8 @@ alias pyver='python --version'
 
 ## language aliases: Python - pip
 if type pip > /dev/null 2>&1; then
-    alias pip-local-upgrade='pip install . --upgrade --no-index'
-    alias pip-upgrade='pip install . --upgrade'
+    alias pip-local-upgrade='pip install --upgrade --no-index .'
+    alias pip-upgrade='pip install --upgrade --no-cache-dir'
 fi
 
 ## language aliases: Python - pyenv
