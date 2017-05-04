@@ -64,6 +64,10 @@ alias pstrx='python setup.py test --addopts --runxfail'
 alias pstrxv='python setup.py test --addopts "--runxfail -v"'
 alias pstrxvv='python setup.py test --addopts "--runxfail -vv"'
 
+## language aliases: Python - pytest-watch
+if type ptw > /dev/null 2>&1; then
+    alias ptw='ptw --onpass "echo passed" --onfail "echo failed"'
+fi
 
 # environment variables: general
 export LC_ALL=C.UTF-8
