@@ -107,6 +107,9 @@ if [ -e ~/.pyenv ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
+## won’t try to write .pyc or .pyo files on the import of source modules.
+export PYTHONDONTWRITEBYTECODE=1
+
 
 # share history across multiple consoles
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
