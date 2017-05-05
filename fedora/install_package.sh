@@ -6,9 +6,10 @@ packages=(
     gcc
     gcc-c++
     git
-    wget
+    python-devel
     ShellCheck
     source-highlight
+    wget
 )
 
 for package in "${packages[@]}"; do

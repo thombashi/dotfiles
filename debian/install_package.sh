@@ -6,10 +6,11 @@ packages=(
     g++
     gcc
     git
-    wget
+    python-dev
     resolvconf
     shellcheck
     source-highlight
+    wget
 )
 
 aptitude update
