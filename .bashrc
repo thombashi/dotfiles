@@ -15,6 +15,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias +x='chmod +x'
 
+alias abspath='readlink -f'
 alias date='date --rfc-3339=seconds'
 alias df='df -h'
 alias less='less --tabs=4'
