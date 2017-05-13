@@ -6,6 +6,8 @@ packages=(
     gcc
     gcc-c++
     git
+    jq
+    nmap
     python-devel
     ShellCheck
     source-highlight

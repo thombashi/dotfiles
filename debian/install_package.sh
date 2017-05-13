@@ -6,6 +6,8 @@ packages=(
     g++
     gcc
     git
+    jq
+    nmap
     python-dev
     resolvconf
     shellcheck
