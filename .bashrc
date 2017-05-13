@@ -70,6 +70,7 @@ if type ptw > /dev/null 2>&1; then
     alias ptw='ptw --onpass "echo passed" --onfail "echo failed"'
 fi
 
+
 # environment variables: general
 export LC_ALL=C.UTF-8
 export LESS='-R --ignore-case --LONG-PROMPT --HILITE-UNREAD'
@@ -92,13 +93,27 @@ export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # e.g. [2017-01-01T01:23:45] xxx
 export HISTCONTROL=ignoredups
 
 # environment variables: distribution dependent
+## export for less command
+setup_lessopen() {
+    local src_hilite_lesspipe_path=$1
+
+    if [ -e "${src_hilite_lesspipe_path}" ]; then
+        export LESSOPEN='| '$(echo ${src_hilite_lesspipe_path})' %s'
+    else
+        # source-highlight package not installed
+        unset LESSOPEN
+    fi
+}
+
 if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-    export LESSOPEN='| /usr/share/source-highlight/src-hilite-lesspipe.sh %s'
+    setup_lessopen '/usr/share/source-highlight/src-hilite-lesspipe.sh'
 elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
-    export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s'
+    setup_lessopen '/usr/bin/src-hilite-lesspipe.sh'
 else
     unset LESSOPEN
 fi
+
+unset setup_lessopen
 
 # environment variables: Python
 if [ -e ~/.pyenv ]; then
