@@ -4,7 +4,7 @@ dotfiles=(
     .bash_profile
     .bashrc
     .nanorc
-    .functions
+    .functions.sh
 )
 
 for dotfile in "${dotfiles[@]}"; do

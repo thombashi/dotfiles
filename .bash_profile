@@ -2,7 +2,7 @@
 
 dotfiles=(
     .bashrc
-    .functions
+    .functions.sh
 )
 
 for dotfile in "${dotfiles[@]}"; do

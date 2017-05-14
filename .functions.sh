@@ -50,6 +50,10 @@ findfile() {
     $(whichbin find) $1 -type f
 }
 
+findfilegrep() {
+    $(whichbin find) $1 -type f | $(whichbin egrep) $2
+}
+
 finddir() {
     $(whichbin find) $1 -type d
 }
