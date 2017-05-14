@@ -8,8 +8,11 @@ dotfiles=(
 )
 
 for dotfile in "${dotfiles[@]}"; do
-    cp -af ${dotfile} ~/${dotfile}
-done
+    dst_path=~/${dotfile}
 
-unset dotfile
-unset dotfiles
+    if [ -e ${dst_path} ]; then
+        /bin/cp -afv ${dst_path} ${dst_path}.bkp
+    fi
+
+    /bin/cp -afv ${dotfile} ${dst_path}
+done
