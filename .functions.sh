@@ -6,7 +6,7 @@ whichbin() {
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
         /usr/bin/which --skip-alias $1
     else
-        echo "unknown distribution"
+        echo "unknown distribution" 1>&2
         return 1
     fi
 }
@@ -39,7 +39,7 @@ example:
 __epoch2date_docstring__
 epoch2date() {
     if [ "$1" = "" ]; then
-        echo "Usage: ${FUNCNAME[0]} EPOCH_TIME"
+        echo "Usage: ${FUNCNAME[0]} EPOCH_TIME" 1>&2
         return 1
     fi
 
@@ -63,7 +63,7 @@ psgrep() {
     local psaux=$(ps aux)
 
     if [ "${pattern}" = "" ]; then
-        echo "Usage: ${FUNCNAME[0]} PATTERN"
+        echo "Usage: ${FUNCNAME[0]} PATTERN" 1>&2
         return 1
     fi
 
@@ -80,13 +80,14 @@ pssort() {
         echo -e "${stdout}"
     else
         local header=$(echo -e "$(ps aux)" | head -1)
-        echo "invalid sort key. valid sort keys are:" ${header,,}
+        echo "invalid sort key. valid sort keys are:" ${header,,} 1>&2
+        return 1
     fi
 }
 
 extract() {
     if [ -f "$1" ]; then
-        echo "'$1' is not a valid file to extract"
+        echo "'$1' is not a valid file to extract" 1>&2
         return 1
     fi
 
@@ -100,7 +101,7 @@ extract() {
         *.tgz)      tar -zxvf "$1"   ;;
         *.zip)      unzip "$1"       ;;
         *.ZIP)      unzip "$1"       ;;
-        *) echo "'$1' cannot be extracted via extract()"; return 2 ;;
+        *) echo "'$1' cannot be extracted via extract()" 1>&2; return 2 ;;
     esac
 }
 
@@ -121,7 +122,7 @@ whichpkg() {
     local command="$1"
     
     if [ "${command}" = "" ]; then
-        echo "Usage: ${FUNCNAME[0]} COMMAND"
+        echo "Usage: ${FUNCNAME[0]} COMMAND" 1>&2
         return 1
     fi
 
@@ -130,7 +131,7 @@ whichpkg() {
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
         rpm -qf "$(whichbin ${command})"
     else
-        echo "unknown distribution"
+        echo "unknown distribution" 1>&2
         return 1
     fi
 }
