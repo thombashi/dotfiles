@@ -86,7 +86,7 @@ pssort() {
 }
 
 extract() {
-    if [ -f "$1" ]; then
+    if [ ! -f "$1" ]; then
         echo "'$1' is not a valid file to extract" 1>&2
         return 1
     fi
