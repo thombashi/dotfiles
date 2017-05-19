@@ -3,16 +3,18 @@
 dotfiles=(
     .bash_profile
     .bashrc
+    .functions
     .nanorc
-    .functions.sh
 )
+
 
 for dotfile in "${dotfiles[@]}"; do
     dst_path=~/${dotfile}
 
+    # backup existing dotfiles
     if [ -e ${dst_path} ]; then
-        /bin/cp -afv ${dst_path} ${dst_path}.bkp
+        \cp -afv ${dst_path} ${dst_path}.bkp
     fi
 
-    /bin/cp -afv ${dotfile} ${dst_path}
+    \cp -afv ${dotfile} ${dst_path}
 done
