@@ -1,12 +1,16 @@
 # thombashi/dotfiles/.bashrc
 
-# disabled terminal lock(Ctrl+S)/unlock(CTrl+Q) key map
+# disabled terminal lock(Ctrl+S)/unlock(Ctrl+Q) key map
 stty stop undef
 stty start undef
 
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
+
+
+# Prevent logout from the terminal by 'Ctrl+D'
+set -o ignoreeof
 
 
 # command aliases: Linux
@@ -89,8 +93,10 @@ export HISTIGNORE='date:exit:history:ls:la:ll:lla:lrt:lrta:pyver:pwd:which *'
 ## datetime display format for history: ISO 8601 format
 export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # e.g. [2017-01-01T01:23:45] xxx
 
-## lines matching the previous history entry to not be saved
-export HISTCONTROL=ignoredups
+## ignore histories for both:
+##   (1) commands matching the immediately before history entry
+##   (2) commands that starting with space(s)
+export HISTCONTROL=ignoreboth
 
 # environment variables: distribution dependent
 ## export for less command
