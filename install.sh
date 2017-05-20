@@ -19,7 +19,6 @@ for dotfile in "${dotfiles[@]}"; do
     fi
 
     # backup existing dotfiles
-    #if [ -e ${dst_path} ] && [ ${dotfile} -nt ${dst_path} ] ; then
     if [ -e ${dst_path} ] ; then
         cmp -s ${dotfile} ${dst_path}
         if [ "$?" != "0" ] ; then
