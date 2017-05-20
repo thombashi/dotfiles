@@ -7,16 +7,14 @@ dotfiles=(
     .inputrc
     .nanorc
 )
+bkp_dir=~/.dotfiles_bkp
 
+
+\mkdir -p ${bkp_dir}
 
 for dotfile in "${dotfiles[@]}"; do
     dst_path=~/${dotfile}
-    bkp_dir=~/.dotfiles_bkp
     bkp_path=${bkp_dir}/${dotfile}
-
-    if [ ! -e ${bkp_dir} ] ; then
-        \mkdir ${bkp_dir}
-    fi
 
     # backup existing dotfiles
     if [ -e ${dst_path} ] ; then
