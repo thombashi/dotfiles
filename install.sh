@@ -4,6 +4,7 @@ dotfiles=(
     .bash_profile
     .bashrc
     .functions
+    .inputrc
     .nanorc
 )
 
