@@ -3,7 +3,7 @@
 dotfiles=(
     .bash_profile
     .bashrc
-    .functions
+    .functions.sh
     .inputrc
     .nanorc
 )
@@ -11,10 +11,20 @@ dotfiles=(
 
 for dotfile in "${dotfiles[@]}"; do
     dst_path=~/${dotfile}
+    bkp_dir=~/.dotfiles_bkp
+    bkp_path=${bkp_dir}/${dotfile}
+
+    if [ ! -e ${bkp_dir} ] ; then
+        \mkdir ${bkp_dir}
+    fi
 
     # backup existing dotfiles
-    if [ -e ${dst_path} ]; then
-        \cp -afv ${dst_path} ${dst_path}.bkp
+    #if [ -e ${dst_path} ] && [ ${dotfile} -nt ${dst_path} ] ; then
+    if [ -e ${dst_path} ] ; then
+        cmp -s ${dotfile} ${dst_path}
+        if [ "$?" != "0" ] ; then
+            \cp -afv ${dst_path} ${bkp_path}
+        fi
     fi
 
     \cp -afv ${dotfile} ${dst_path}
