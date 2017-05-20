@@ -1,10 +1,8 @@
-# thombashi/dotfiles/.functions
-
 whichbin() {
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-        /usr/bin/which $1
+        \which $1
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
-        /usr/bin/which --skip-alias $1
+        \which --skip-alias $1
     else
         echo "unknown distribution" 1>&2
         return 1
@@ -24,9 +22,9 @@ example: show current epoc time
 __date2epoch_docstring__
 date2epoch() {
     if [ "$1" != "" ]; then
-        $(whichbin date) +%s -d "$1"
+        \date +%s -d "$1"
     else
-        $(whichbin date) +%s
+        \date +%s
     fi
 }
 
@@ -43,65 +41,73 @@ epoch2date() {
         return 1
     fi
 
-    $(whichbin date) -d @"$1" --rfc-3339=seconds
+    \date -d @"$1" --rfc-3339=seconds
 }
 
 findfile() {
-    $(whichbin find) $1 -type f
+    dir_path=$1
+    name_pattern=$2
+
+    if [ "${name_pattern}" = "" ]; then
+        \find ${dir_path} -type f
+    else
+        \find ${dir_path} -type f -name ${name_pattern}
+    fi
 }
 
 findfilegrep() {
-    $(whichbin find) $1 -type f | $(whichbin egrep) $2
+    \find $1 -type f | \egrep $2
 }
 
 finddir() {
-    $(whichbin find) $1 -type d
+    \find $1 -type d
 }
 
 psgrep() {
     local pattern=$1
-    local psaux=$(ps aux)
+    local psaux=$(\ps aux)
 
     if [ "${pattern}" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} PATTERN" 1>&2
         return 1
     fi
 
-    echo -e "${psaux}" | head -1
-    echo -e "${psaux}" | $(whichbin egrep) "${pattern}"
+    echo -e "${psaux}" | \head -1
+    echo -e "${psaux}" | \egrep "${pattern}"
 }
 
 pssort() {
     local sort_key=$1
 
-    ps aux --sort "${sort_key}" > /dev/null 2>&1
+    \ps aux --sort "${sort_key}" > /dev/null 2>&1
     if [ "$?" -eq 0 ]; then
-        local stdout=$(ps aux --sort "${sort_key}")
+        local stdout=$(\ps aux --sort "${sort_key}")
         echo -e "${stdout}"
     else
-        local header=$(echo -e "$(ps aux)" | head -1)
+        local header=$(echo -e "$(\ps aux)" | \head -1)
         echo "invalid sort key. valid sort keys are:" ${header,,} 1>&2
         return 1
     fi
 }
 
 extract() {
-    if [ ! -f "$1" ]; then
-        echo "'$1' is not a valid file to extract" 1>&2
+    archive_file=$1
+    if [ ! -f "${archive_file}" ]; then
+        echo "'${archive_file}' is not a valid file to extract" 1>&2
         return 1
     fi
 
-    case "$1" in
-        *.tar.bz2)  tar -jxvf "$1"   ;;
-        *.tar.gz)   tar -zxvf "$1"   ;;
-        *.bz2)      bunzip2 "$1"     ;;
-        *.gz)       gunzip "$1"      ;;
-        *.tar)      tar -xvf "$1"    ;;
-        *.tbz2)     tar -jxvf "$1"   ;;
-        *.tgz)      tar -zxvf "$1"   ;;
-        *.zip)      unzip "$1"       ;;
-        *.ZIP)      unzip "$1"       ;;
-        *) echo "'$1' cannot be extracted via extract()" 1>&2; return 2 ;;
+    case "${archive_file}" in
+        *.tar.bz2) \tar -jxvf "${archive_file}"   ;;
+        *.tar.gz)  \tar -zxvf "${archive_file}"   ;;
+        *.bz2)     \bunzip2 "${archive_file}"     ;;
+        *.gz)      \gunzip "${archive_file}"      ;;
+        *.tar)     \tar -xvf "${archive_file}"    ;;
+        *.tbz2)    \tar -jxvf "${archive_file}"   ;;
+        *.tgz)     \tar -zxvf "${archive_file}"   ;;
+        *.zip)     \unzip "${archive_file}"       ;;
+        *.ZIP)     \unzip "${archive_file}"       ;;
+        *) echo "'${archive_file}' cannot be extracted via extract()" 1>&2; return 2 ;;
     esac
 }
 
