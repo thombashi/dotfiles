@@ -80,6 +80,10 @@ export LC_ALL=C.UTF-8
 export LESS='-R --ignore-case --LONG-PROMPT --HILITE-UNREAD'
 export PS1='[\w]\$ '
 
+## setup LS_COLORS
+eval $(dircolors)
+
+
 # environment variables: history
 #   more detailed information for each parameter can be found at man bash
 
@@ -99,6 +103,7 @@ export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # e.g. [2017-01-01T01:23:45] xxx
 export HISTCONTROL=ignoreboth
 
 # environment variables: distribution dependent
+
 ## export for less command
 setup_lessopen() {
     local src_hilite_lesspipe_path=$1
@@ -133,5 +138,10 @@ export PYTHONDONTWRITEBYTECODE=1
 
 
 # share history across multiple consoles
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+HISTORY_PROMPT_COMMAND="history -a; history -c; history -r"
+if ! echo "${PROMPT_COMMAND}" | \fgrep "${HISTORY_PROMPT_COMMAND}" > /dev/null 2>&1 ; then
+    export PROMPT_COMMAND=$(echo ${HISTORY_PROMPT_COMMAND})"; $PROMPT_COMMAND"
+fi
+unset HISTORY_PROMPT_COMMAND
+
 shopt -u histappend

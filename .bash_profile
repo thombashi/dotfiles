@@ -17,7 +17,7 @@ unset dotfiles
 
 # loading extra dot files
 if [ -e ${extra_dotfiles_dir} ] ; then
-    for extra_dotfile in `find ${extra_dotfiles_dir} -type f`; do
+    for extra_dotfile in $(find ${extra_dotfiles_dir} -type f); do
         source ${extra_dotfile}
     done
 fi
