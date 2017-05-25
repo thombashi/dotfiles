@@ -1,4 +1,4 @@
-whichbin() {
+function whichbin() {
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
         \which $1
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
@@ -20,7 +20,7 @@ example: show current epoc time
     $ date2epoch
     1493254466
 __date2epoch_docstring__
-date2epoch() {
+function date2epoch() {
     if [ "$1" != "" ]; then
         \date +%s -d "$1"
     else
@@ -35,7 +35,7 @@ example:
     $ epoch2date 1483196400
     2017-01-01 00:00:00+09:00
 __epoch2date_docstring__
-epoch2date() {
+function epoch2date() {
     if [ "$1" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} EPOCH_TIME" 1>&2
         return 1
@@ -44,26 +44,41 @@ epoch2date() {
     \date -d @"$1" --rfc-3339=seconds
 }
 
-findfile() {
-    dir_path=$1
-    name_pattern=$2
+# find files
+function ff() {
+    local path=$1
+    local name_pattern=$2
 
     if [ "${name_pattern}" = "" ]; then
-        \find ${dir_path} -type f
+        \find ${path} -type f
     else
-        \find ${dir_path} -type f -name ${name_pattern}
+        \find ${path} -type f -name ${name_pattern}
     fi
 }
 
-findfilegrep() {
+# find directories
+function fd() {
+    local path=$1
+    local name_pattern=$2
+
+    if [ "${name_pattern}" = "" ]; then
+        \find ${path} -type d
+    else
+        \find ${path} -type d -name ${name_pattern}
+    fi
+}
+
+# find files and grep filename
+function ffg() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: ${FUNCNAME[0]} ROOT_DIR PATTERN" 1>&2
+        return 1
+    fi
+
     \find $1 -type f | \egrep $2
 }
 
-finddir() {
-    \find $1 -type d
-}
-
-psgrep() {
+function psgrep() {
     local pattern=$1
     local psaux=$(\ps aux)
 
@@ -76,7 +91,7 @@ psgrep() {
     echo -e "${psaux}" | \egrep "${pattern}"
 }
 
-pssort() {
+function pssort() {
     local sort_key=$1
 
     \ps aux --sort "${sort_key}" > /dev/null 2>&1
@@ -90,8 +105,9 @@ pssort() {
     fi
 }
 
-extract() {
-    archive_file=$1
+function extract() {
+    local archive_file=$1
+
     if [ ! -f "${archive_file}" ]; then
         echo "'${archive_file}' is not a valid file to extract" 1>&2
         return 1
@@ -111,7 +127,7 @@ extract() {
     esac
 }
 
-httpserver() {
+function httpserver() {
     local port=$1
 
     # get Python major version number
@@ -124,7 +140,7 @@ httpserver() {
     fi
 }
 
-whichpkg() {
+function whichpkg() {
     local command="$1"
     
     if [ "${command}" = "" ]; then
@@ -140,4 +156,12 @@ whichpkg() {
         echo "unknown distribution" 1>&2
         return 1
     fi
+}
+
+function pd() {
+    \pushd "$(\find . -maxdepth 2 -type d | \peco)"
+}
+
+function ffgp() {
+    less $(ffg . $1 | peco)
 }
