@@ -5,7 +5,7 @@
 set backup
 
 ## The directory to put unique backup files in.
-set backupdir "/tmp/nano"  # need to create the directory to backup files
+set backupdir "~/.nano_bkp"
 
 ## Constantly display the cursor position in the statusbar.  Note that
 ## this overrides "quickblank".
