@@ -4,7 +4,7 @@ function whichbin() {
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
         \which --skip-alias $1
     else
-        echo "unknown distribution" 1>&2
+        echo "${FUNCNAME[0]}: unknown distribution" 1>&2
         return 1
     fi
 }
@@ -158,10 +158,26 @@ function whichpkg() {
     fi
 }
 
-function pd() {
-    \pushd "$(\find . -maxdepth 2 -type d | \peco)"
+# select a directory and change current directory to the directory 
+function cdp() {
+    if ! type peco > /dev/null 2>&1; then
+        echo "${FUNCNAME[0]}: peco not installed"
+        return 1
+    fi
+
+    dst_dir=$(\find $1 -maxdepth 2 -type d | \peco)
+    if [ "$dst_dir" = "" ]; then
+        return 1
+    fi
+
+    \pushd ${dst_dir}
 }
 
 function ffgp() {
+    if ! type peco > /dev/null 2>&1; then
+        echo "${FUNCNAME[0]}: peco not installed"
+        return 1
+    fi
+
     less $(ffg . $1 | peco)
 }
