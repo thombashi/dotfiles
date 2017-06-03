@@ -5,6 +5,7 @@ packages=(
     curl
     gcc
     gcc-c++
+    gdb
     git
     jq
     nmap
