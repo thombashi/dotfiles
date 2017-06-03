@@ -21,7 +21,7 @@ alias +x='chmod +x'
 
 alias abspath='readlink -f'
 alias date='date --rfc-3339=seconds'
-alias df='df -h'
+alias df='df -h --portability'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
 
@@ -32,12 +32,12 @@ alias grep='grep '$(echo ${grep_options})
 unset grep_options
 
 ls_options='--color=always --group-directories-first --time-style=long-iso --file-type --human-readable --hide-control-chars'
-alias ls='ls '$(echo ${ls_options})
-alias la='ls -A '$(echo ${ls_options})
-alias ll='ls -l '$(echo ${ls_options})
-alias lla='ls -lA '$(echo ${ls_options})
-alias lrt='ls -lrt '$(echo ${ls_options})
-alias lrta='ls -lrtA '$(echo ${ls_options})
+alias ls='\ls '$(echo ${ls_options})
+alias la='\ls -A '$(echo ${ls_options})
+alias ll='\ls -l '$(echo ${ls_options})
+alias lla='\ls -lA '$(echo ${ls_options})
+alias lrt='\ls -lrt '$(echo ${ls_options})
+alias lrta='\ls -lrtA '$(echo ${ls_options})
 unset ls_options
 
 alias echopath='echo $PATH | tr -s ":" "\n"'
@@ -77,7 +77,7 @@ fi
 
 # environment variables: general
 export LC_ALL=C.UTF-8
-export LESS='-R --ignore-case --LONG-PROMPT --HILITE-UNREAD'
+export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
 export PS1='[\w]\$ '
 
 ## setup LS_COLORS
@@ -103,6 +103,9 @@ export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # e.g. [2017-01-01T01:23:45] xxx
 export HISTCONTROL=ignoreboth
 
 # environment variables: distribution dependent
+
+## setup LS_COLORS
+eval $(dircolors)
 
 ## export for less command
 setup_lessopen() {
