@@ -14,9 +14,9 @@ set -o ignoreeof
 
 
 # command aliases: Linux
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias +x='chmod +x'
 
 alias abspath='readlink -f'
@@ -131,9 +131,16 @@ unset setup_lessopen
 
 # environment variables: Python
 if [ -e ~/.pyenv ]; then
-    export PATH="~/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+    PYENV_BIN='~/.pyenv/bin'
+
+    if ! echo "${PATH}" | \fgrep "${PYENV_BIN}" > /dev/null 2>&1 ; then
+        export PATH=${PYENV_BIN}:${PATH}
+
+        eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
+    fi
+
+    unset PYENV_BIN
 fi
 
 ## won’t try to write .pyc or .pyo files on the import of source modules.
@@ -141,7 +148,7 @@ export PYTHONDONTWRITEBYTECODE=1
 
 
 # share history across multiple consoles
-HISTORY_PROMPT_COMMAND="history -a; history -c; history -r"
+HISTORY_PROMPT_COMMAND='history -a; history -c; history -r'
 if ! echo "${PROMPT_COMMAND}" | \fgrep "${HISTORY_PROMPT_COMMAND}" > /dev/null 2>&1 ; then
     export PROMPT_COMMAND=$(echo ${HISTORY_PROMPT_COMMAND})"; $PROMPT_COMMAND"
 fi
