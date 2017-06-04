@@ -3,6 +3,7 @@
 packages=(
     cmake
     curl
+    fish
     gcc
     gcc-c++
     gdb
