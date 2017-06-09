@@ -42,6 +42,13 @@ unset ls_options
 
 alias echopath='echo $PATH | tr -s ":" "\n"'
 
+
+# git aliases
+alias gsh='git show'
+alias glog='git log'
+alias glogp='git log --patch'
+
+
 # language aliases: Python
 alias py='python'
 alias pyver='python --version'
@@ -78,9 +85,10 @@ fi
 # environment variables: general
 export LC_ALL=C.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
+export PATH=~/bin:${PATH}
 export PS1='[\w]\$ '
 
-## setup LS_COLORS
+## set up LS_COLORS
 eval $(dircolors)
 
 
@@ -104,10 +112,10 @@ export HISTCONTROL=ignoreboth
 
 # environment variables: distribution dependent
 
-## setup LS_COLORS
+## set up LS_COLORS environment variable
 eval $(dircolors)
 
-## export for less command
+## set up LESSOPEN environment variable
 setup_lessopen() {
     local src_hilite_lesspipe_path=$1
 
