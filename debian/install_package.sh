@@ -14,6 +14,9 @@ packages=(
     resolvconf
     shellcheck
     source-highlight
+    sqlite
+    sysstat
+    tig
     wget
 )
 
