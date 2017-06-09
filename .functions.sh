@@ -68,7 +68,7 @@ function fd() {
     fi
 }
 
-# find files and grep filename
+# find files and grep file name
 function ffg() {
     if [ $# -ne 2 ]; then
         echo "Usage: ${FUNCNAME[0]} ROOT_DIR PATTERN" 1>&2
@@ -114,8 +114,9 @@ function extract() {
     fi
 
     case "${archive_file}" in
-        *.tar.bz2) \tar -jxvf "${archive_file}"   ;;
-        *.tar.gz)  \tar -zxvf "${archive_file}"   ;;
+        *.tar.bz2) \tar -xvf "${archive_file}"    ;;
+        *.tar.gz)  \tar -xvf "${archive_file}"    ;;
+        *.tar.xz)  \tar -xvf "${archive_file}"    ;;
         *.bz2)     \bunzip2 "${archive_file}"     ;;
         *.gz)      \gunzip "${archive_file}"      ;;
         *.tar)     \tar -xvf "${archive_file}"    ;;
@@ -140,6 +141,19 @@ function httpserver() {
     fi
 }
 
+# list up installed packages
+function lspkg() {
+    if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
+        dpkg --list
+    elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
+        rpm -qa
+    else
+        echo "unknown distribution" 1>&2
+        return 1
+    fi
+}
+
+# find a package which includes a specified command
 function whichpkg() {
     local command="$1"
     
