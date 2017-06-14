@@ -2,6 +2,7 @@
 
 packages=(
     cmake
+    colordiff
     curl
     fish
     g++
@@ -14,9 +15,9 @@ packages=(
     resolvconf
     shellcheck
     source-highlight
-    sqlite
     sysstat
     tig
+    sqlite3
     wget
 )
 

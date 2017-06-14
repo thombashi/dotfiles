@@ -3,6 +3,7 @@
 packages=(
     bzip2 bzip2-devel
     cmake
+    colordiff
     curl
     fish
     gcc
@@ -19,6 +20,7 @@ packages=(
     sqlite sqlite-devel
     sysstat
     tig
+    sqlite3
     wget
     zlib-devel
 )
