@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+set -u
+
+
+# make backup directory for nano
+\mkdir -p ~/.nano_bkp
+
+
+# install dotfiles
 dotfiles=(
     .bash_profile
     .bashrc
@@ -7,10 +15,6 @@ dotfiles=(
     .inputrc
     .nanorc
 )
-nano_bkp_dir=~/.nano_bkp
-
-
-\mkdir -p ${nano_bkp_dir}
 
 for dotfile in "${dotfiles[@]}"; do
     dst_path=~/${dotfile}
