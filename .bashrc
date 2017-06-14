@@ -25,7 +25,7 @@ alias df='df -h --portability'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
 
-grep_options='--with-filename --line-number --color=always'
+grep_options='--ignore-case --line-number --binary-files=without-match --color=always'
 alias egrep='egrep '$(echo ${grep_options})
 alias fgrep='fgrep '$(echo ${grep_options})
 alias grep='grep '$(echo ${grep_options})
@@ -42,11 +42,19 @@ unset ls_options
 
 alias echopath='echo $PATH | tr -s ":" "\n"'
 
+if type colordiff > /dev/null 2>&1; then
+    alias diff='\colordiff -u --ignore-space-change --tabsize=4'
+else
+    alias diff='\diff -u --ignore-space-change --tabsize=4'
+fi
+
 
 # git aliases
 alias gsh='git show'
 alias glog='git log'
 alias glogp='git log --patch'
+alias glog-oneline='git log --pretty=format:"%cd|%H|%s" --date=short'
+alias glog-summary='git log --pretty=format:"[%cd %H] %s" --date=short --stat'
 
 
 # language aliases: Python
