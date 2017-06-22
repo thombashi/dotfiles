@@ -10,11 +10,15 @@ packages=(
     gcc-c++
     gdb
     git
+    java-1.8.0-openjdk
     jq
     nmap
+    nodejs
     openssl-devel
     python-devel
+    psmisc
     readline-devel
+    redhat-rpm-config
     ShellCheck
     source-highlight
     sqlite sqlite-devel
