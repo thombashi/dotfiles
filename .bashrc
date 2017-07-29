@@ -50,7 +50,7 @@ fi
 
 
 # git aliases
-alias gsh='git show'
+alias gshow='git show'
 alias glog='git log'
 alias glogp='git log --patch'
 alias glog-oneline='git log --pretty=format:"%cd|%H|%s" --date=short'
@@ -118,6 +118,7 @@ export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # e.g. [2017-01-01T01:23:45] xxx
 ##   (1) commands matching the immediately before history entry
 ##   (2) commands that starting with space(s)
 export HISTCONTROL=ignoreboth
+
 
 # environment variables: distribution dependent
 
