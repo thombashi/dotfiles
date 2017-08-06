@@ -10,11 +10,13 @@ packages=(
     gcc-c++
     gdb
     git
+    httping
     java-1.8.0-openjdk
     jq
     nmap
     nodejs
     openssl-devel
+    patch
     python-devel
     psmisc
     readline-devel

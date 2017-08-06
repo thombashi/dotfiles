@@ -9,6 +9,7 @@ packages=(
     gcc
     gdb
     git
+    httping
     jq
     nmap
     python-dev
