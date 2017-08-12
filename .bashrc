@@ -72,8 +72,8 @@ if [ -e ~/.pyenv ]; then
     alias pyenvver='pyenv version'
     alias pyenvsys='pyenv local system'
     alias pyenv2='pyenv local 2.7.13'
-    alias pyenv35='pyenv local 3.5.3'
-    alias pyenv36='pyenv local 3.6.1'
+    alias pyenv35='pyenv local 3.5.4'
+    alias pyenv36='pyenv local 3.6.2'
     alias pyenv3=pyenv36
 fi
 
