@@ -172,7 +172,7 @@ function whichpkg() {
     fi
 }
 
-# select a directory and change current directory to the directory 
+# select a directory and change current directory to the directory
 function cdp() {
     if ! type peco > /dev/null 2>&1; then
         echo "${FUNCNAME[0]}: peco not installed"
