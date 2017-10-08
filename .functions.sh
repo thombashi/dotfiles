@@ -12,6 +12,7 @@ function whichbin() {
 
     result=$?
     if [ "$result" -ne 0 ]; then
+        echo "no ${1} in (${PATH})" 1>&2
         return $result
     fi
 
