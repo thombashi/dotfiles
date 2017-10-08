@@ -2,12 +2,17 @@ function whichbin() {
     local command_path
 
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-        command_path=$(\which $1)
+        command_path=$(\which $1 2> /dev/null)
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
-        command_path=$(\which --skip-alias $1)
+        command_path=$(\which --skip-alias $1 2> /dev/null)
     else
         echo "${FUNCNAME[0]}: unknown distribution" 1>&2
         return 1
+    fi
+
+    result=$?
+    if [ "$result" -ne 0 ]; then
+        return $result
     fi
 
     readlink -f $command_path
