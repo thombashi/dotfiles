@@ -14,6 +14,7 @@ dotfiles=(
     .functions.sh
     .inputrc
     .nanorc
+    .pylintrc
 )
 
 for dotfile in "${dotfiles[@]}"; do
