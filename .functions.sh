@@ -1,12 +1,16 @@
 function whichbin() {
+    local command_path
+
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-        \which $1
+        command_path=$(\which $1)
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
-        \which --skip-alias $1
+        command_path=$(\which --skip-alias $1)
     else
         echo "${FUNCNAME[0]}: unknown distribution" 1>&2
         return 1
     fi
+
+    readlink -f $command_path
 }
 
 << __date2epoch_docstring__
