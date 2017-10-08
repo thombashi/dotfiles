@@ -163,6 +163,29 @@ function lspkg() {
     fi
 }
 
+function listpkg() {
+    for command in $(compgen -c | sort); do
+        bin_path=$(whichbin $command 2> /dev/null)
+        if [ "$?" -ne 0 ]; then
+            continue
+        fi
+
+        package=$(whichpkg $bin_path 2> /dev/null)
+        if [ "$?" -ne 0 ]; then
+            continue
+        fi
+
+        if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
+            echo "$package"
+        elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
+            echo "$package: $bin_path"
+        else
+            echo "unknown distribution" 1>&2
+            return 1
+        fi
+    done
+}
+
 # find a package which includes a specified command
 function whichpkg() {
     local command="$1"
