@@ -172,14 +172,28 @@ function whichpkg() {
         return 1
     fi
 
+    command_path=$(whichbin ${command})
+    result=$?
+    if [ "$result" -ne 0 ]; then
+        return $result
+    fi
+
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-        dpkg -S "$(whichbin ${command})"
+        package=$(dpkg -S "$command_path")
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
-        rpm -qf "$(whichbin ${command})"
+        package=$(rpm -qf "$command_path")
     else
         echo "unknown distribution" 1>&2
         return 1
     fi
+
+    result=$?
+    if [ "$result" -ne 0 ]; then
+        echo "file ${command_path} is not owned by any package"
+        return $result
+    fi
+
+    echo $package
 }
 
 # select a directory and change current directory to the directory
