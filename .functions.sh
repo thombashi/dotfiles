@@ -231,7 +231,7 @@ function cdp() {
         return 1
     fi
 
-    \pushd ${dst_dir}
+    \pushd ${dst_dir} > /dev/null
 }
 
 function ffgp() {
