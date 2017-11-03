@@ -85,7 +85,7 @@ function ffg() {
         return 1
     fi
 
-    \find $1 -type f | \egrep $2
+    \find $1 -type f | \egrep --ignore-case $2
 }
 
 function psgrep() {
