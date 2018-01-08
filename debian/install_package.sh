@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -x
 
 packages=(
     cmake
@@ -18,16 +18,13 @@ packages=(
     source-highlight
     sysstat
     tig
+    tk-dev
     sqlite3
     wget
 )
 
 # Add fish nightly builds repository: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
-echo 'deb http://download.opensuse.org/repositories/shells:/fish:/nightly:/master/Debian_8.0/ /' > /etc/apt/sources.list.d/fish.list 
+#echo 'deb http://download.opensuse.org/repositories/shells:/fish:/nightly:/master/Debian_8.0/ /' > /etc/apt/sources.list.d/fish.list 
 
 aptitude update
-
-for package in "${packages[@]}"; do
-    echo "installing ${package}"
-    aptitude -y install "${package}"
-done
+aptitude -y install "${packages[@]}"
