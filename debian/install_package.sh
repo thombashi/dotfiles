@@ -1,12 +1,11 @@
 #!/bin/bash -x
 
 packages=(
+    build-essential
     cmake
     colordiff
     curl
     fish
-    g++
-    gcc
     gdb
     git
     httping
@@ -18,9 +17,21 @@ packages=(
     source-highlight
     sysstat
     tig
-    tk-dev
-    sqlite3
     wget
+)
+python_build_packages=(
+    libbz2-dev
+    libdb5.3-dev 
+    libexpat1-dev
+    libgdbm-dev
+    liblzma-dev
+    libncurses5-dev
+    libncursesw5-dev
+    libreadline-dev
+    libsqlite3-dev 
+    libssl-dev
+    tk-dev
+    zlib1g-dev
 )
 
 # Add fish nightly builds repository: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
@@ -28,3 +39,4 @@ packages=(
 
 aptitude update
 aptitude -y install "${packages[@]}"
+aptitude -y install "${python_build_packages[@]}"
