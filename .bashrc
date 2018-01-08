@@ -26,6 +26,7 @@ alias date='date --rfc-3339=seconds'
 alias df='df -h --portability'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
+alias uncomment='egrep -v "^\s*#|^\s*$"'
 
 grep_options='--ignore-case --line-number --binary-files=without-match --color=always'
 alias egrep='egrep '$(echo ${grep_options})
