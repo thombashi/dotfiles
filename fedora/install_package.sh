@@ -26,6 +26,7 @@ packages=(
     sqlite sqlite-devel
     sysstat
     tig
+    tk-devel
     sqlite3
     wget
     zlib-devel
