@@ -64,12 +64,6 @@ alias glog-summary='git log --pretty=format:"[%cd %H] %s" --date=short --stat'
 alias py='python'
 alias pyver='python --version'
 
-## language aliases: Python - pip
-if type pip > /dev/null 2>&1; then
-    alias pip-local-upgrade='pip install --upgrade --no-index .'
-    alias pip-upgrade='pip install --upgrade --no-cache-dir'
-fi
-
 ## language aliases: Python - pyenv
 if [ -e ~/.pyenv ]; then
     alias pyenvver='pyenv version'
@@ -166,6 +160,12 @@ fi
 
 ## won’t try to write .pyc or .pyo files on the import of source modules.
 export PYTHONDONTWRITEBYTECODE=1
+
+## language aliases: Python - pip
+if type pip > /dev/null 2>&1; then
+    alias pip-local-upgrade='pip install --upgrade --no-index .'
+    alias pip-upgrade='pip install --upgrade --no-cache-dir'
+fi
 
 
 # share history across multiple consoles
