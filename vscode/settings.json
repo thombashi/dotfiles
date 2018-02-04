@@ -1,6 +1,8 @@
 {
 // Editor
 
+    "editor.formatOnSave": false,
+
     // Controls the font family.
     "editor.fontFamily": "'Fira Code', 'MyricaM M', Consolas, 'Courier New', monospace",
 
@@ -55,24 +57,14 @@
     // If set, overrides the include sorting behavior determined by the SortIncludes parameter.
     "C_Cpp.clang_format_sortIncludes": true,
 
-    // Enable clang-format on save.
-    "C_Cpp.clang_format_formatOnSave": true,
-
 
 // Python Configuration
-
-    // Whether to lint Python files when modified.
-    "python.linting.lintOnTextChange": false,
 
     // Whether to lint Python files using pylama.
     "python.linting.pylamaEnabled": true,
 
     // Arguments passed in. Each argument is a separate item in the array.
     "python.linting.pylintArgs": ["--errors-only"],
-
-    // Format the document upon saving.
-    "python.formatting.formatOnSave": true,
-
 
 // javascript autolinting
 
