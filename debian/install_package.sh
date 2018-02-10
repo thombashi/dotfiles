@@ -5,15 +5,11 @@ packages=(
     cmake
     colordiff
     curl
-    fish
     gdb
     git
     httping
     jq
-    nmap
-    python-dev
     resolvconf
-    shellcheck
     source-highlight
     sysstat
     tig
@@ -30,8 +26,15 @@ python_build_packages=(
     libreadline-dev
     libsqlite3-dev 
     libssl-dev
+    python-dev
     tk-dev
     zlib1g-dev
+)
+optional_packages=(
+    cscope
+    fish
+    nmap
+    shellcheck
 )
 
 # Add fish nightly builds repository: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
@@ -40,3 +43,4 @@ python_build_packages=(
 aptitude update
 aptitude -y install "${packages[@]}"
 aptitude -y install "${python_build_packages[@]}"
+aptitude safe-upgrade
