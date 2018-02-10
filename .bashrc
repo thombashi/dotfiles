@@ -95,6 +95,7 @@ export LC_ALL=C.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
 export PATH=~/bin:${PATH}
 export PS1='[\w]\$ '
+export TZ='Asia/Tokyo'
 
 ## set up LS_COLORS
 eval $(dircolors)
