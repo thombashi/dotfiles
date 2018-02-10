@@ -6,10 +6,12 @@ unset PROMPT_COMMAND
 stty stop undef
 stty start undef
 
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 # Prevent logout from the terminal by 'Ctrl+D'
 set -o ignoreeof
