@@ -28,10 +28,30 @@
     "editor.minimap.enabled": true,
 
 
+// Window
+
+    // Controls how windows are being reopened after a restart. Select 'none' to always start with an empty workspace, 'one' to reopen the last window you worked on, 'folders' to reopen all windows that had folders opened or 'all' to reopen all windows of your last session.
+    "window.restoreWindows": "all",
+
+
 // Terminal
 
-  // Controls the font size in pixels of the terminal.
-  "terminal.integrated.fontSize": 12,
+    // Controls the font size in pixels of the terminal.
+    "terminal.integrated.fontSize": 12,
+
+    // When set, text selected in the terminal will be copied to the clipboard.
+    "terminal.integrated.copyOnSelection": true,
+
+    // Object with environment variables that will be added to the VS Code process to be used by the terminal on Windows
+    "terminal.integrated.env.windows": {
+        "PYTHONDONTWRITEBYTECODE": 1
+    },
+
+    // Controls the font family of the terminal, this defaults to editor.fontFamily's value.
+    "terminal.integrated.fontFamily": "'Fira Code'",
+
+    // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu).
+    "terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\bash.exe",
 
 
 // Files
@@ -65,6 +85,16 @@
 
     // Arguments passed in. Each argument is a separate item in the array.
     "python.linting.pylintArgs": ["--errors-only"],
+
+
+// AutoDocstring Configuration
+
+    // Which docstring format to use.
+    "autoDocstring.docstringFormat": "google",
+
+    // Generate docstring on pressing enter after opening a docstring (""")
+    "autoDocstring.generateDocstringOnEnter": false,
+
 
 // javascript autolinting
 
