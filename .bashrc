@@ -101,7 +101,7 @@ eval $(dircolors)
 # environment variables: history
 #   more detailed information for each parameter can be found at man bash
 
-## increase the size limit of history and ~/.bash_history
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=8192
 export HISTFILESIZE=${HISTSIZE}
 
@@ -111,9 +111,8 @@ export HISTIGNORE='date:exit:history:ls:la:ll:lla:lrt:lrta:pyver:pwd:which *'
 ## datetime display format for history: ISO 8601 format
 export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # e.g. [2017-01-01T01:23:45] xxx
 
-## ignore histories for both:
-##   (1) commands matching the immediately before history entry
-##   (2) commands that starting with space(s)
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
 export HISTCONTROL=ignoreboth
 
 
@@ -175,4 +174,5 @@ if ! echo "${PROMPT_COMMAND}" | \fgrep "${HISTORY_PROMPT_COMMAND}" > /dev/null 2
 fi
 unset HISTORY_PROMPT_COMMAND
 
+# append to the history file, don't overwrite it
 shopt -u histappend
