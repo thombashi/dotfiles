@@ -15,6 +15,9 @@ code --install-extension ms-vscode.cpptools
 # Install TypeScript extensions
 code --install-extension eg2.tslint
 
+# Install docker extensions
+code --install-extension PeterJausovec.vscode-docker
+
 # Install PlantUML extensions
 code --install-extension jebbs.plantuml
 
