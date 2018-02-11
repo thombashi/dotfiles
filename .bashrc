@@ -179,3 +179,9 @@ unset HISTORY_PROMPT_COMMAND
 
 # append to the history file, don't overwrite it
 shopt -u histappend
+
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
