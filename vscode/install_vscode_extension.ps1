@@ -18,7 +18,11 @@ code --install-extension eg2.tslint
 # Install docker extensions
 code --install-extension PeterJausovec.vscode-docker
 
+# Install Jupyter Notebook extensions
+code --install-extension jithurjacob.nbpreviewer
+
 # Install PlantUML extensions
 code --install-extension jebbs.plantuml
+
 
 pause
