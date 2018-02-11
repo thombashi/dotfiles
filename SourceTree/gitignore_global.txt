@@ -27,8 +27,11 @@ Thumbs.db
 *.map
 *.lnk
 
+
 .ipynb_checkpoints/
+.pytest_cache/
 .vscode/
+_TRASH/
 sandbox/
 
 desktop.ini
