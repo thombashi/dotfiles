@@ -33,6 +33,9 @@
     // Controls how windows are being reopened after a restart. Select 'none' to always start with an empty workspace, 'one' to reopen the last window you worked on, 'folders' to reopen all windows that had folders opened or 'all' to reopen all windows of your last session.
     "window.restoreWindows": "all",
 
+    // Controls how to open items in trees and lists using the mouse (if supported). Set to `singleClick` to open items with a single mouse click and `doubleClick` to only open via mouse double click. For parents with children in trees, this setting will control if a single click expands the parent or a double click. Note that some trees and lists might choose to ignore this setting if it is not applicable.
+    "workbench.list.openMode": "doubleClick",
+
 
 // Terminal
 
@@ -52,6 +55,9 @@
 
     // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu).
     "terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\bash.exe",
+    
+    // Controls the maximum amount of lines the terminal keeps in its buffer.
+    "terminal.integrated.scrollback": 8192,
 
 
 // Files
