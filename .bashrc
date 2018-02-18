@@ -1,5 +1,3 @@
-# thombashi/dotfiles/.bashrc
-
 unset PROMPT_COMMAND
 
 # disabled terminal lock(Ctrl+S)/unlock(Ctrl+Q) key map
