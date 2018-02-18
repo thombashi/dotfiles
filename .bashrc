@@ -62,6 +62,8 @@ alias glog-summary='git log --pretty=format:"[%cd %H] %s" --date=short --stat'
 
 # language aliases: Python
 alias py='python'
+alias py2='python2'
+alias py3='python3'
 alias pyver='python --version'
 
 ## language aliases: Python - pyenv
