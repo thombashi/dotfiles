@@ -21,7 +21,9 @@ packages=(
     git
     httping
     jq
+    nmap
     resolvconf
+    shellcheck
     source-highlight
     sysstat
     tig
@@ -29,14 +31,14 @@ packages=(
 )
 python_build_packages=(
     libbz2-dev
-    libdb5.3-dev 
+    libdb5.3-dev
     libexpat1-dev
     libgdbm-dev
     liblzma-dev
     libncurses5-dev
     libncursesw5-dev
     libreadline-dev
-    libsqlite3-dev 
+    libsqlite3-dev
     libssl-dev
     python-dev
     tk-dev
@@ -45,8 +47,6 @@ python_build_packages=(
 optional_packages=(
     cscope
     fish
-    nmap
-    shellcheck
 )
 
 # Add fish nightly builds repository: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
