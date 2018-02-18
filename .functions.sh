@@ -54,7 +54,7 @@ function epoch2date() {
     \date -d @"$1" --rfc-3339=seconds
 }
 
-# find files
+# find files in a directory
 function ff() {
     local path=$1
     local name_pattern=$2
@@ -71,7 +71,7 @@ function ff() {
     fi
 }
 
-# find directories
+# find directories in a directory
 function fd() {
     local path=$1
     local name_pattern=$2
