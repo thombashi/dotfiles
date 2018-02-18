@@ -29,8 +29,8 @@ alias mkdir='mkdir -pv'
 alias uncomment='egrep -v "^\s*#|^\s*$"'
 
 grep_options='--ignore-case --line-number --binary-files=without-match --color=always'
-alias fgrep='fgrep '$(echo ${grep_options})
 alias egrep='\grep -E '$(echo ${grep_options})
+alias fgrep='\grep -F '$(echo ${grep_options})
 alias grep='grep '$(echo ${grep_options})
 unset grep_options
 
