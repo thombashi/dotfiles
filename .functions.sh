@@ -59,10 +59,10 @@ function ff() {
     local path=$1
     local name_pattern=$2
 
-    if [ "${name_pattern}" = "" ]; then
-        \find ${path} -type f
+    if [ "$name_pattern" = "" ]; then
+        \find "$path" -type f
     else
-        \find ${path} -type f -name ${name_pattern}
+        \find "$path" -type f -name "$name_pattern"
     fi
 }
 
@@ -71,10 +71,10 @@ function fd() {
     local path=$1
     local name_pattern=$2
 
-    if [ "${name_pattern}" = "" ]; then
-        \find ${path} -type d
+    if [ "$name_pattern" = "" ]; then
+        \find "$path" -type d
     else
-        \find ${path} -type d -name ${name_pattern}
+        \find "$path" -type d -name $name_pattern
     fi
 }
 
@@ -85,31 +85,34 @@ function ffg() {
         return 1
     fi
 
-    \find $1 -type f | \egrep --ignore-case $2
+    \find "$1" -type f | \grep -E --ignore-case "$2"
 }
 
 function psgrep() {
     local pattern=$1
-    local psaux=$(\ps aux)
+    local psaux
 
-    if [ "${pattern}" = "" ]; then
+    psaux=$(\ps aux)
+
+    if [ "$pattern" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} PATTERN" 1>&2
         return 1
     fi
 
-    echo -e "${psaux}" | \head -1
-    echo -e "${psaux}" | \egrep "${pattern}"
+    echo -e "$psaux" | \head -1
+    echo -e "$psaux" | \grep -E "$pattern"
 }
 
 function pssort() {
     local sort_key=$1
 
-    \ps aux --sort "${sort_key}" > /dev/null 2>&1
-    if [ "$?" -eq 0 ]; then
-        local stdout=$(\ps aux --sort "${sort_key}")
+    if \ps aux --sort "${sort_key}" > /dev/null 2>&1 ; then
+        local stdout
+        stdout=$(\ps aux --sort "${sort_key}")
         echo -e "${stdout}"
     else
-        local header=$(echo -e "$(\ps aux)" | \head -1)
+        local header
+        header=$(echo -e "$(\ps aux)" | \head -1)
         echo "invalid sort key. valid sort keys are:" ${header,,} 1>&2
         return 1
     fi
@@ -140,9 +143,10 @@ function extract() {
 
 function httpserver() {
     local port=$1
+    local pymajorver
 
     # get Python major version number
-    local pymajorver=$(python -c "from __future__ import print_function; import sys; print(sys.version_info[0])")
+    pymajorver=$(python -c "from __future__ import print_function; import sys; print(sys.version_info[0])")
 
     if [ "$pymajorver" = "2" ]; then
         python -m SimpleHTTPServer ${port}
@@ -165,12 +169,12 @@ function lspkg() {
 
 function listpkg() {
     for command in $(compgen -c | sort); do
-        bin_path=$(whichbin $command 2> /dev/null)
+        bin_path=$(whichbin "$command" 2> /dev/null)
         if [ "$?" -ne 0 ]; then
             continue
         fi
 
-        package=$(whichpkg $bin_path 2> /dev/null)
+        package=$(whichpkg "$bin_path" 2> /dev/null)
         if [ "$?" -ne 0 ]; then
             continue
         fi
@@ -189,7 +193,7 @@ function listpkg() {
 # find a package which includes a specified command
 function whichpkg() {
     local command="$1"
-    
+
     if [ "${command}" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} COMMAND" 1>&2
         return 1
