@@ -23,6 +23,7 @@ code --install-extension eg2.tslint
 ## etc
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension jebbs.plantuml
+code --install-extension lextudio.restructuredtext
 
 
 # Install Application Extensions
