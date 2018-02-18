@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Reference:
+#   Get Docker CE for Ubuntu | Docker Documentation]
+#   https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
 if [ $UID -ne 0 ]; then
     echo 'Permission denied' 1>&2
     exit 13
