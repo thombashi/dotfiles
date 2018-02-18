@@ -50,7 +50,7 @@ optional_packages=(
 )
 
 # Add fish nightly builds repository: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
-#echo 'deb http://download.opensuse.org/repositories/shells:/fish:/nightly:/master/Debian_8.0/ /' > /etc/apt/sources.list.d/fish.list 
+#echo 'deb http://download.opensuse.org/repositories/shells:/fish:/nightly:/master/Debian_8.0/ /' > /etc/apt/sources.list.d/fish.list
 
 aptitude update
 aptitude -y install "${packages[@]}"
