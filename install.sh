@@ -14,11 +14,11 @@ dotfiles=(
     .functions.sh
     .inputrc
     .nanorc
-    .pylintrc
+    python/.pylintrc
 )
 
 for dotfile in "${dotfiles[@]}"; do
-    dst_path=~/${dotfile}
+    dst_path="${HOME}/$(basename $dotfile)"
 
     \cp -fv --backup --update ${dotfile} ${dst_path}
 done
