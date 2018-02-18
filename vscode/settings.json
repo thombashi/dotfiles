@@ -55,7 +55,7 @@
 
     // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu).
     "terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\bash.exe",
-    
+
     // Controls the maximum amount of lines the terminal keeps in its buffer.
     "terminal.integrated.scrollback": 8192,
 
@@ -109,4 +109,15 @@
         "tslint",
         "jshint"
     ],
+
+
+// ShellCheck
+    // Exclude types of warnings, for example ["SC1090"].
+    "shellcheck.exclude": [
+        "SC1001",  // This \o will be a regular 'o' in this context.
+        "SC1012",  // \t is just literal 't' here. For tab, use "$(printf "\t")" instead.
+    ],
+
+    // Whether shellcheck is run on save or on type.
+    "shellcheck.run": "onSave",
 }
