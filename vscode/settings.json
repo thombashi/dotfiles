@@ -92,6 +92,9 @@
     // Arguments passed in. Each argument is a separate item in the array.
     "python.linting.pylintArgs": ["--errors-only"],
 
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.sortImports.args": ["-l 100"],  // --line-width=100
+
 
 // AutoDocstring Configuration
 
