@@ -2,12 +2,12 @@
 
 # Install Windows packages via choco
 ```
-> choco install packages.config -y
+> Set-ExecutionPolicy RemoteSigned -Scope Process -Force; ./install_package_.ps1
 ```
 
 # Upgrade packages
 ```
-> cup all
+> Start-Process cup -Verb runas -Wait -ArgumentList all
 ```
 
 # List installed packages
