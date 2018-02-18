@@ -6,6 +6,12 @@ if [ $UID -ne 0 ]; then
     exit 13
 fi
 
+if ! type aptitude > /dev/null 2>&1; then
+    echo 'aptitude command not found: aptitude package installation required' 1>&2
+    exit 1
+fi
+
+
 packages=(
     build-essential
     cmake
