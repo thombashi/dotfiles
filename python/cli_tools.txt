@@ -5,4 +5,5 @@ pyinstaller
 pylama
 pylint
 pytest-watch
+restructuredtext_lint
 watchdog
