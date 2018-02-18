@@ -199,7 +199,7 @@ function whichpkg() {
         return 1
     fi
 
-    command_path=$(whichbin ${command})
+    command_path=$(whichbin "${command}")
     result=$?
     if [ "$result" -ne 0 ]; then
         return $result
@@ -220,7 +220,7 @@ function whichpkg() {
         return $result
     fi
 
-    echo $package
+    echo "$package"
 }
 
 # select a directory and change current directory to the directory
