@@ -59,6 +59,11 @@ function ff() {
     local path=$1
     local name_pattern=$2
 
+    if [ "$path" = "" ]; then
+        echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
+        return 22
+    fi
+
     if [ "$name_pattern" = "" ]; then
         \find "$path" -type f
     else
@@ -70,6 +75,11 @@ function ff() {
 function fd() {
     local path=$1
     local name_pattern=$2
+
+    if [ "$path" = "" ]; then
+        echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
+        return 22
+    fi
 
     if [ "$name_pattern" = "" ]; then
         \find "$path" -type d
