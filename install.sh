@@ -4,7 +4,7 @@ set -u
 
 
 # make backup directory for nano
-\mkdir -p ~/.nano_bkp
+\mkdir -p "${HOME}/.nano_bkp"
 
 
 # install dotfiles
@@ -18,9 +18,9 @@ dotfiles=(
 )
 
 for dotfile in "${dotfiles[@]}"; do
-    dst_path="${HOME}/$(basename $dotfile)"
+    dst_path=${HOME}/$(basename "$dotfile")
 
-    \cp -fv --backup --update ${dotfile} ${dst_path}
+    \cp -fv --backup --update "$dotfile" "$dst_path"
 done
 
 
@@ -29,11 +29,11 @@ bin_dir=bin
 
 if [ -e ${bin_dir} ]; then
     install_dir=~/bin
-    
+
     \mkdir -p ${install_dir}
 
     for bin_file in $(\find ${bin_dir} -type f -name '*.sh'); do
-        full_bin_path=$(\readlink -f ${bin_file})
-        ln -s --force ${full_bin_path} ${install_dir}/$(basename ${full_bin_path} .sh)
+        full_bin_path=$(\readlink -f "$bin_file")
+        ln -s --force "$full_bin_path" ${install_dir}/$(basename "$full_bin_path" .sh)
     done
 fi
