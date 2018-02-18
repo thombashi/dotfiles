@@ -119,9 +119,6 @@ export HISTCONTROL=ignoreboth
 
 # environment variables: distribution dependent
 
-## set up LS_COLORS environment variable
-eval $(dircolors)
-
 ## set up LESSOPEN environment variable
 setup_lessopen() {
     local src_hilite_lesspipe_path=$1
