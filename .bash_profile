@@ -3,8 +3,6 @@
 dotfiles=(
     .bashrc
 )
-extra_dotfiles_dir=~/.extra_dotfiles
-
 
 for dotfile in "${dotfiles[@]}"; do
     [ -r ~/${dotfile} ] && [ -f ~/${dotfile} ] && source ~/${dotfile}
@@ -15,6 +13,7 @@ unset dotfiles
 
 
 # loading extra dot files
+extra_dotfiles_dir=~/.extra_dotfiles
 if [ -e ${extra_dotfiles_dir} ] ; then
     for extra_dotfile in $(\find ${extra_dotfiles_dir} -type f | \egrep -v "~$"); do
         source ${extra_dotfile}
