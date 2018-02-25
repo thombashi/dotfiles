@@ -74,6 +74,27 @@ Temporary Items
 .apdisk
 
 
+# https://github.com/github/gitignore/blob/master/Global/MicrosoftOffice.gitignore
+# ----------------------------------------------------------------------
+
+*.tmp
+
+# Word temporary
+~$*.doc*
+
+# Excel temporary
+~$*.xls*
+
+# Excel Backup File
+*.xlk
+
+# PowerPoint temporary
+~$*.ppt*
+
+# Visio autosave temporary files
+*.~vsd*
+
+
 # https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
 # ----------------------------------------------------------------------
 
