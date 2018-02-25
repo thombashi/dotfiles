@@ -31,8 +31,8 @@
 
   file-trail = log --follow -p -w
   merge-trail = log --ancestry-path --merges
-  oneline = log --pretty=format:"%cI|%H|%s" --date=short
-  summary = log --pretty=format:"[%cd]%H|%s" --date=short --stat
+  log-oneline = log --pretty=format:"%cI|%H|%s" --date=short
+  log-summary = log --pretty=format:"[%cd]%H|%s" --date=short --stat
 
   stashes = stash list
   tuck = stash save
