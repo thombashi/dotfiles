@@ -23,6 +23,8 @@ for dotfile in "${dotfiles[@]}"; do
     \cp -fv --backup --update "$dotfile" "$dst_path"
 done
 
+\cp -fv --backup --update dircolors.ansi-universal "${HOME}/.dircolors"
+
 
 # install commands that included in a bin directory
 bin_dir=bin
