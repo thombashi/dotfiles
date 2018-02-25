@@ -2,7 +2,6 @@
 
 dotfiles=(
     .bashrc
-    .functions.sh
 )
 extra_dotfiles_dir=~/.extra_dotfiles
 

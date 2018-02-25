@@ -183,7 +183,14 @@ unset HISTORY_PROMPT_COMMAND
 shopt -u histappend
 
 
-# Alias definitions.
-if [ -f "${HOME}/.bash_aliases" ]; then
-    source "${HOME}/.bash_aliases"
-fi
+# Load dotfiles
+dotfiles=(
+    .bash_aliases
+    .functions.sh
+)
+for dotfile in "${dotfiles[@]}"; do
+    echo "${HOME}/${dotfile}"
+    [ -r "${HOME}/${dotfile}" ] && [ -f "${HOME}/${dotfile}" ] && source "${HOME}/${dotfile}"
+done
+unset dotfile
+unset dotfiles
