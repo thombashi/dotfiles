@@ -53,11 +53,13 @@ fi
 
 
 # git aliases
-alias gshow='git show'
-alias glog='git log'
-alias glogp='git log --patch'
-alias glog-oneline='git log --pretty=format:"%cd|%H|%s" --date=short'
-alias glog-summary='git log --pretty=format:"[%cd %H] %s" --date=short --stat'
+if type git > /dev/null 2>&1; then
+    alias gshow='git show'
+    alias glog='git log'
+    alias glogp='git log --patch'
+    alias glog-oneline='git log --pretty=format:"%cd|%H|%s" --date=short'
+    alias glog-summary='git log --pretty=format:"[%cd %H] %s" --date=short --stat'
+fi
 
 
 # language aliases: Python
