@@ -67,7 +67,7 @@ alias py3='python3'
 alias pyver='python --version'
 
 ## language aliases: Python - pyenv
-if [ -e ~/.pyenv ]; then
+if [ -e "${HOME}/.pyenv" ]; then
     alias pyenvver='pyenv version'
     alias pyenvsys='pyenv local system'
     alias pyenv2='pyenv local 2.7.14'
@@ -93,7 +93,7 @@ fi
 # environment variables: general
 export LC_ALL=C.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
-export PATH=~/bin:${PATH}
+export PATH=${HOME}/bin:${PATH}
 export PS1='[\w]\$ '
 export TZ='Asia/Tokyo'
 
@@ -144,8 +144,8 @@ fi
 unset setup_lessopen
 
 # environment variables: Python
-if [ -e ~/.pyenv ]; then
-    PYENV_BIN='~/.pyenv/bin'
+if [ -e "${HOME}/.pyenv" ]; then
+    PYENV_BIN="${HOME}/.pyenv/bin"
 
     if ! echo "${PATH}" | \fgrep "${PYENV_BIN}" > /dev/null 2>&1 ; then
         export PATH=${PYENV_BIN}:${PATH}
@@ -179,6 +179,6 @@ shopt -u histappend
 
 
 # Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
+if [ -f "${HOME}/.bash_aliases" ]; then
+    source "${HOME}/.bash_aliases"
 fi
