@@ -14,6 +14,7 @@ dotfiles=(
     .functions.sh
     .inputrc
     .nanorc
+    git/.gitignore_global
     python/.pylintrc
 )
 
