@@ -152,7 +152,7 @@ unset setup_lessopen
 if [ -e "${HOME}/.pyenv" ]; then
     PYENV_BIN="${HOME}/.pyenv/bin"
 
-    if ! echo "${PATH}" | \fgrep "${PYENV_BIN}" > /dev/null 2>&1 ; then
+    if ! echo "${PATH}" | \grep -F "${PYENV_BIN}" > /dev/null 2>&1 ; then
         export PATH=${PYENV_BIN}:${PATH}
 
         eval "$(pyenv init -)"
@@ -174,7 +174,7 @@ fi
 
 # share history across multiple consoles
 HISTORY_PROMPT_COMMAND='history -a; history -c; history -r'
-if ! echo "${PROMPT_COMMAND}" | \fgrep "${HISTORY_PROMPT_COMMAND}" > /dev/null 2>&1 ; then
+if ! echo "${PROMPT_COMMAND}" | \grep -F "${HISTORY_PROMPT_COMMAND}" > /dev/null 2>&1 ; then
     export PROMPT_COMMAND=$(echo ${HISTORY_PROMPT_COMMAND})"; $PROMPT_COMMAND"
 fi
 unset HISTORY_PROMPT_COMMAND
