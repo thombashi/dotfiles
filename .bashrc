@@ -98,8 +98,11 @@ export PS1='[\w]\$ '
 export TZ='Asia/Tokyo'
 
 ## set up LS_COLORS
-eval $(dircolors)
-
+if [ -e "${HOME}/.dircolors" ]; then
+    eval "$(dircolors ${HOME}/.dircolors)"
+else
+    eval "$(dircolors)"
+fi
 
 # environment variables: history
 #   more detailed information for each parameter can be found at man bash
