@@ -1,0 +1,60 @@
+[alias]
+  aliases = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\:\\ /
+
+  unstage = reset -q HEAD --
+  discard = checkout --
+  back = checkout "-"
+  nevermind = !git reset --hard HEAD && git clean -d -f
+  uncommit = reset --mixed HEAD~
+
+  save = commit -m
+  resave = commit --amend
+  amend = commit --amend --no-edit
+  amend-message = commit --amend
+
+  branches = branch -a
+  new-branch = checkout -b
+  rename-branch = branch -m
+  delete-branch = branch -D
+  recent-branches = branch -a --sort=committerdate
+  unmerged = branch --no-merged
+  track = branch --set-upstream-to
+
+  unmerged = diff --name-only --diff-filter=U
+  tags = tag
+  remotes = remote -v
+  move = mv
+  remove = rm
+  untrack = rm -r --cached
+  rewrite = rebase -i
+  patch = add --patch
+
+  file-trail = log --follow -p -w
+  merge-trail = log --ancestry-path --merges
+  oneline = log --pretty=format:"%cI|%H|%s" --date=short
+  summary = log --pretty=format:"[%cd]%H|%s" --date=short --stat
+
+  stashes = stash list
+  tuck = stash save
+  unstash = stash pop
+  untuck = stash pop "stash@{0}"
+[advice]
+  statusHints = false
+[diff]
+  compactionHeuristic = true
+  indentHeuristic = true
+  algorithm = patience
+[blame]
+  date = relative
+[push]
+  default = current
+[core]
+  precomposeunicode = true
+  excludesfile = ~/.gitignore_global
+  untrackedCache = true
+[credential]
+  helper = osxkeychain
+[merge]
+  conflictstyle = diff3
+[mailmap]
+  file = ~/.mailmap
