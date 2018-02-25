@@ -189,7 +189,6 @@ dotfiles=(
     .functions.sh
 )
 for dotfile in "${dotfiles[@]}"; do
-    echo "${HOME}/${dotfile}"
     [ -r "${HOME}/${dotfile}" ] && [ -f "${HOME}/${dotfile}" ] && source "${HOME}/${dotfile}"
 done
 unset dotfile
