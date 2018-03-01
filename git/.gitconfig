@@ -2,25 +2,25 @@
   aliases = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\:\\ /
 
   unstage = reset -q HEAD --
-  discard = checkout --
-  back = checkout "-"
   nevermind = !git reset --hard HEAD && git clean -d -f
   uncommit = reset --mixed HEAD~
 
-  save = commit -m
-  resave = commit --amend
   amend = commit --amend --no-edit
   amend-message = commit --amend
 
-  branches = branch -a
+  discard = checkout --
+  back = checkout "-"
   new-branch = checkout -b
-  rename-branch = branch -m
+
+  branches = branch --all
+  rename-branch = branch --move
   delete-branch = branch -D
-  recent-branches = branch -a --sort=committerdate
-  unmerged = branch --no-merged
+  recent-branches = branch --all --sort=committerdate
   track = branch --set-upstream-to
 
   unmerged = diff --name-only --diff-filter=U
+  dc = diff --cached
+
   tags = tag
   remotes = remote -v
   move = mv
@@ -54,6 +54,8 @@
   untrackedCache = true
 [credential]
   helper = osxkeychain
+[include]
+  path = ~/.gitconfig.private
 [merge]
   conflictstyle = diff3
 [mailmap]
