@@ -13,6 +13,7 @@ dotfiles=(
     .bashrc
     .functions.sh
     .inputrc
+    .jupyter
     .nanorc
     git/.gitconfig
     git/.gitignore_global
@@ -22,7 +23,7 @@ dotfiles=(
 for dotfile in "${dotfiles[@]}"; do
     dst_path=${HOME}/$(basename "$dotfile")
 
-    \cp -fv --backup --update "$dotfile" "$dst_path"
+    \cp -fva --backup --update "$dotfile" "$dst_path"
 done
 
 \cp -fv --backup --update dircolors.ansi-universal "${HOME}/.dircolors"
