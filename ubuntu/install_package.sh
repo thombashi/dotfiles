@@ -12,6 +12,7 @@ fi
 
 
 packages=(
+    bats
     build-essential
     cmake
     colordiff
@@ -25,7 +26,6 @@ packages=(
     shellcheck
     source-highlight
     sysstat
-    tig
     wget
 )
 python_build_packages=(
