@@ -1,6 +1,7 @@
 {
 // Editor
 
+    // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
     "editor.formatOnSave": false,
 
     // Controls the font family.
@@ -38,6 +39,9 @@
 
 
 // Terminal
+
+    // Controls the style of terminal cursor.
+    "terminal.integrated.cursorStyle": "line",
 
     // Controls the font size in pixels of the terminal.
     "terminal.integrated.fontSize": 12,
@@ -85,6 +89,9 @@
 
 
 // Python Configuration
+
+    // Arguments passed in. Each argument is a separate item in the array.
+    "python.formatting.autopep8Args": ["--max-line-length", "100"],
 
     // Whether to lint Python files using pylama.
     "python.linting.pylamaEnabled": true,
