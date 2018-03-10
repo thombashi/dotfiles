@@ -9,6 +9,7 @@ set -u
 
 # install dotfiles
 dotfiles=(
+    .bash_aliases
     .bash_profile
     .bashrc
     .functions.sh
