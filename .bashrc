@@ -15,6 +15,29 @@ shopt -s checkwinsize
 set -o ignoreeof
 
 
+# setup PATH
+if [ "$(uname -s)" == "Darwin" ] && type brew > /dev/null 2>&1; then
+    for brew_package in coreutils findutils gnu-sed gnu-tar; do
+        BREW_PKG_PATH=$(brew --prefix $brew_package)
+
+        if ! echo "$PATH" | \grep -F "$BREW_PKG_PATH" > /dev/null 2>&1 ; then
+            export PATH=${BREW_PKG_PATH}/libexec/gnubin:${PATH}
+            export MANPATH=${BREW_PKG_PATH}/libexec/gnuman:${MANPATH}
+        fi
+    done
+
+    for brew_package in diffutils gawk grep gzip; do
+        BREW_PKG_PATH=$(brew --prefix $brew_package)
+
+        if ! echo "$PATH" | \grep -F "$BREW_PKG_PATH" > /dev/null 2>&1 ; then
+            export PATH=${BREW_PKG_PATH}/bin:${PATH}
+        fi
+    done
+
+    unset BREW_PKG_PATH
+fi
+
+
 # environment variables: general
 export LC_ALL=C.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
