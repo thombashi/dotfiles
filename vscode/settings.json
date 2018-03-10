@@ -130,7 +130,7 @@
     "python.linting.pylintArgs": ["--errors-only"],
 
     // Arguments passed in. Each argument is a separate item in the array.
-    "python.sortImports.args": ["-l 100"],  // --line-width=100
+    "python.sortImports.args": ["--lines", "100", "-ns", "__init__.py"],
 
 
 // AutoDocstring Configuration
