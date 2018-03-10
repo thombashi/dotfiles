@@ -37,18 +37,17 @@ if [ "$(uname -s)" == "Darwin" ] && type brew > /dev/null 2>&1; then
     unset BREW_PKG_PATH
 fi
 
+if ! echo "${PATH}" | \grep -F "${HOME}/bin " > /dev/null 2>&1 ; then
+    if [ -e "${HOME}/bin" ]; then
+        export PATH=${HOME}/bin:${PATH}
+    fi
+fi
 
 # environment variables: general
 export LC_ALL=C.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
 export PS1='[\w]\$ '
 export TZ='Asia/Tokyo'
-
-if ! echo "${PATH}" | \grep -F "${HOME}/bin " > /dev/null 2>&1 ; then
-    if [ -e "${HOME}/bin" ]; then
-        export PATH=${HOME}/bin:${PATH}
-    fi
-fi
 
 ## set up LS_COLORS
 if [ -e "${HOME}/.dircolors" ]; then
