@@ -63,10 +63,31 @@ fi
 
 
 # language aliases: Python
-alias py='python'
-alias py2='python2'
-alias py3='python3'
-alias pyver='python --version'
+if type python > /dev/null 2>&1; then
+    alias py='python'
+    alias pyver='python --version'
+
+    if type python2 > /dev/null 2>&1; then
+        alias py2='python2'
+    fi
+
+    if type python3 > /dev/null 2>&1; then
+        alias py3='python3'
+    fi
+
+    ## language aliases: Python - pytest-runner
+    alias pst='python setup.py test'
+    alias pstv='python setup.py test --addopts -v'
+    alias pstvv='python setup.py test --addopts -vv'
+    alias pstrx='python setup.py test --addopts --runxfail'
+    alias pstrxv='python setup.py test --addopts "--runxfail -v"'
+    alias pstrxvv='python setup.py test --addopts "--runxfail -vv"'
+
+    ## language aliases: Python - pytest-watch
+    if type ptw > /dev/null 2>&1; then
+        alias ptw='ptw --onpass "echo passed" --onfail "echo failed"'
+    fi
+fi
 
 ## language aliases: Python - pyenv
 if [ -e "${HOME}/.pyenv" ]; then
@@ -76,19 +97,6 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenv35='pyenv local 3.5.5'
     alias pyenv36='pyenv local 3.6.4'
     alias pyenv3=pyenv36
-fi
-
-## language aliases: Python - pytest-runner
-alias pst='python setup.py test'
-alias pstv='python setup.py test --addopts -v'
-alias pstvv='python setup.py test --addopts -vv'
-alias pstrx='python setup.py test --addopts --runxfail'
-alias pstrxv='python setup.py test --addopts "--runxfail -v"'
-alias pstrxvv='python setup.py test --addopts "--runxfail -vv"'
-
-## language aliases: Python - pytest-watch
-if type ptw > /dev/null 2>&1; then
-    alias ptw='ptw --onpass "echo passed" --onfail "echo failed"'
 fi
 
 
