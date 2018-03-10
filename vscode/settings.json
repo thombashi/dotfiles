@@ -80,6 +80,8 @@
 
     // Configure glob patterns for excluding files and folders. For example, the files explorer decides which files and folders to show or hide based on this setting.
     "files.exclude": {
+        "**/.eggs": true,
+        "**/*.egg-info": true,
         "**/.git": true,
         "**/.hg": true,
         "**/.jupyter": true,
