@@ -19,8 +19,11 @@
     // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
     "editor.tabCompletion": true,
 
+    // Controls whether the editor should render control characters
+    "editor.renderControlCharacters": true,
+
     // Controls whether the editor should render whitespace characters
-    "editor.renderWhitespace": "boundary",
+    "editor.renderWhitespace": "all",
 
     // Controls whether the editor should render indent guides
     "editor.renderIndentGuides": true,
@@ -69,14 +72,41 @@
     // The default end of line character.
     "files.eol": "\n",
 
-    // When enabled, will trim trailing whitespace when you save a file.
-    "files.trimTrailingWhitespace": true,
-
     // Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange" (editor loses focus), "onWindowChange" (window loses focus). If set to "afterDelay", you can configure the delay in "files.autoSaveDelay".
     "files.autoSave": "afterDelay",
 
     // Controls the delay in ms after which a dirty file is saved automatically. Only applies when "files.autoSave" is set to "afterDelay"
     "files.autoSaveDelay": 60000,
+
+    // Configure glob patterns for excluding files and folders. For example, the files explorer decides which files and folders to show or hide based on this setting.
+    "files.exclude": {
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.jupyter": true,
+        "**/.ipynb_checkpoints": true,
+        "**/.pytest_cache": true,
+        "**/.python-version": true,
+        "**/.svn": true,
+        "**/.vscode": true,
+        "**/*.lnk": true,
+        "**/*.pdb": true,
+
+        "**/.DS_Store": true,
+        "**/CVS": true
+    },
+
+    // When enabled, will trim trailing whitespace when you save a file.
+    "files.trimTrailingWhitespace": true,
+
+
+// Telemetry
+
+    // Enable crash reports to be sent to Microsoft.
+    // This option requires restart to take effect.
+    "telemetry.enableCrashReporter": false,
+
+    // Enable usage data and errors to be sent to Microsoft.
+    "telemetry.enableTelemetry": false,
 
 
 // cpp
@@ -130,4 +160,10 @@
 
     // Whether shellcheck is run on save or on type.
     "shellcheck.run": "onSave",
+
+
+// etc.
+
+  // Specifies whether to enable GitLens telemetry (even if enabled still abides by the overall `telemetry.enableTelemetry` setting
+  "gitlens.advanced.telemetry.enabled": false,
 }
