@@ -19,7 +19,6 @@
   track = branch --set-upstream-to
 
   unmerged = diff --name-only --diff-filter=U
-  dc = diff --cached
 
   tags = tag
   remotes = remote -v
@@ -38,6 +37,10 @@
   tuck = stash save
   unstash = stash pop
   untuck = stash pop "stash@{0}"
+
+  co = checkout
+  dc = diff --cached
+
 [advice]
   statusHints = false
 [diff]
