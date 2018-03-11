@@ -26,7 +26,7 @@ if [ "$(uname -s)" == "Darwin" ] && type brew > /dev/null 2>&1; then
         fi
     done
 
-    for brew_package in diffutils gawk grep gzip; do
+    for brew_package in diffutils gawk grep gzip nano; do
         BREW_PKG_PATH=$(brew --prefix $brew_package)
 
         if ! echo "$PATH" | \grep -F "$BREW_PKG_PATH" > /dev/null 2>&1 ; then
