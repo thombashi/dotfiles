@@ -1,6 +1,6 @@
-# https://github.com/github/gitignore/blob/master/Global/Linux.gitignore
-# ----------------------------------------------------------------------
+#### joe made this: http://goel.io/joe
 
+#### linux ####
 *~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
@@ -16,9 +16,7 @@
 .nfs*
 
 
-# https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
-# ----------------------------------------------------------------------
-
+#### windows ####
 # Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
@@ -43,16 +41,14 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
-# ----------------------------------------------------------------------
-
+#### macos ####
 # General
 .DS_Store
 .AppleDouble
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
@@ -74,9 +70,7 @@ Temporary Items
 .apdisk
 
 
-# https://github.com/github/gitignore/blob/master/Global/MicrosoftOffice.gitignore
-# ----------------------------------------------------------------------
-
+#### microsoftoffice ####
 *.tmp
 
 # Word temporary
@@ -95,8 +89,7 @@ Temporary Items
 *.~vsd*
 
 
-# https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
-# ----------------------------------------------------------------------
+#### eclipse ####
 
 .metadata
 bin/
@@ -122,7 +115,7 @@ local.properties
 # CDT-specific (C/C++ Development Tooling)
 .cproject
 
-# CDT- autotools
+# CDT- autotools 
 .autotools
 
 # Java annotation processor (APT)
@@ -152,21 +145,18 @@ local.properties
 .worksheet
 
 
-# https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
-# ----------------------------------------------------------------------
-
+#### visualstudiocode ####
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-
-# User Settings
-# ----------------------------------------------------------------------
+#### User Settings ####
 .ipynb_checkpoints/
 .pytest_cache/
 
+.gitconfig.private
 .python-version
 
 _trash/
@@ -176,3 +166,4 @@ _SANDBOX/
 
 upgrade.sh
 release.sh
+
