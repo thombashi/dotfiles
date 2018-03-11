@@ -43,23 +43,31 @@
 
 [advice]
   statusHints = false
+
 [diff]
   compactionHeuristic = true
   indentHeuristic = true
   algorithm = patience
+
 [blame]
   date = relative
+
 [push]
   default = current
+
 [core]
   precomposeunicode = true
   excludesfile = ~/.gitignore_global
   untrackedCache = true
+
 [credential]
   helper = osxkeychain
+
 [include]
   path = ~/.gitconfig.private
+
 [merge]
   conflictstyle = diff3
+
 [mailmap]
   file = ~/.mailmap
