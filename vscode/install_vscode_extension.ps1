@@ -13,6 +13,7 @@ code --install-extension njpwerner.autodocstring
 
 ## C++
 code --install-extension ms-vscode.cpptools
+code --install-extension mine.cpplint
 
 ## Shell Script
 code --install-extension timonwong.shellcheck
