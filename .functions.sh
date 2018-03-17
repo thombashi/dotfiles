@@ -19,17 +19,15 @@ function whichbin() {
     readlink -f $command_path
 }
 
-<< __date2epoch_docstring__
-Convert datetime to an epoch time.
-
-example: a datetime to an epoch time
-    $ date2epoch "2017-01-01 00:00:00+0900"
-    1483196400
-
-example: show current epoc time
-    $ date2epoch
-    1493254466
-__date2epoch_docstring__
+# Convert datetime to an epoch time.
+#
+# example: a datetime to an epoch time
+#     $ date2epoch "2017-01-01 00:00:00+0900"
+#     1483196400
+#
+# example: show current epoc time
+#     $ date2epoch
+#     1493254466
 function date2epoch() {
     if [ "$1" != "" ]; then
         \date +%s -d "$1"
@@ -38,13 +36,11 @@ function date2epoch() {
     fi
 }
 
-<< __epoch2date_docstring__
-Convert an epoch time to a datetime
-
-example:
-    $ epoch2date 1483196400
-    2017-01-01 00:00:00+09:00
-__epoch2date_docstring__
+# Convert an epoch time to a datetime
+#
+# example:
+#     $ epoch2date 1483196400
+#     2017-01-01 00:00:00+09:00
 function epoch2date() {
     if [ "$1" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} EPOCH_TIME" 1>&2
