@@ -252,3 +252,15 @@ function ffgp() {
 
     less $(ffg . $1 | peco)
 }
+
+
+function lastmodified() {
+    local dir_path="$1"
+
+    if [ "${dir_path}" = "" ]; then
+        echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
+        return 22
+    fi
+
+    \find "$dir_path" -type d -name '.*' -prune -o -type f -printf '%T+ %p\n' | sort
+}
