@@ -87,3 +87,9 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenv36='pyenv local 3.6.4'
     alias pyenv3=pyenv36
 fi
+
+
+# language aliases: Golang
+if type go > /dev/null 2>&1; then
+    alias gover='go version'
+fi
