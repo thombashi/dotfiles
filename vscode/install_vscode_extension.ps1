@@ -35,6 +35,3 @@ code --install-extension eamodio.gitlens
 
 ## Jupyter Notebook
 code --install-extension jithurjacob.nbpreviewer
-
-
-pause
