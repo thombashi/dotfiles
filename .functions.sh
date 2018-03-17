@@ -7,7 +7,7 @@ function whichbin() {
         command_path=$(\which --skip-alias $1 2> /dev/null)
     else
         echo "${FUNCNAME[0]}: unknown distribution" 1>&2
-        return 1
+        return 22
     fi
 
     result=$?
@@ -48,7 +48,7 @@ __epoch2date_docstring__
 function epoch2date() {
     if [ "$1" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} EPOCH_TIME" 1>&2
-        return 1
+        return 22
     fi
 
     \date -d @"$1" --rfc-3339=seconds
@@ -92,7 +92,7 @@ function fd() {
 function ffg() {
     if [ $# -ne 2 ]; then
         echo "Usage: ${FUNCNAME[0]} ROOT_DIR PATTERN" 1>&2
-        return 1
+        return 22
     fi
 
     \find "$1" -type f | \grep -E --ignore-case "$2"
@@ -106,7 +106,7 @@ function psgrep() {
 
     if [ "$pattern" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} PATTERN" 1>&2
-        return 1
+        return 22
     fi
 
     echo -e "$psaux" | \head -1
@@ -206,7 +206,7 @@ function whichpkg() {
 
     if [ "${command}" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} COMMAND" 1>&2
-        return 1
+        return 22
     fi
 
     command_path=$(whichbin "${command}")
