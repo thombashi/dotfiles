@@ -12,6 +12,7 @@ fi
 
 
 packages=(
+    p7zip-full
     bats
     build-essential
     cmake
@@ -22,6 +23,7 @@ packages=(
     httping
     jq
     nmap
+    openjdk-8-jdk-headless
     resolvconf
     shellcheck
     source-highlight
