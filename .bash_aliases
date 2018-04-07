@@ -10,6 +10,7 @@ alias df='df -h --portability'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
 alias rmcomment='\grep -vE "^\s*#|^\s*$"'
+alias sudo='sudo '
 
 grep_options='--ignore-case --line-number --binary-files=without-match --color=always'
 alias egrep='\grep -E '$(echo ${grep_options})
