@@ -40,6 +40,9 @@
     // Controls how to open items in trees and lists using the mouse (if supported). Set to `singleClick` to open items with a single mouse click and `doubleClick` to only open via mouse double click. For parents with children in trees, this setting will control if a single click expands the parent or a double click. Note that some trees and lists might choose to ignore this setting if it is not applicable.
     "workbench.list.openMode": "doubleClick",
 
+    // Controls the sizing of editor tabs. Set to 'fit' to keep tabs always large enough to show the full editor label. Set to 'shrink' to allow tabs to get smaller when the available space is not enough to show all tabs at once.
+    "workbench.editor.tabSizing": "shrink",
+
 
 // Terminal
 
@@ -170,6 +173,9 @@
 
 // etc.
 
-  // Specifies whether to enable GitLens telemetry (even if enabled still abides by the overall `telemetry.enableTelemetry` setting
-  "gitlens.advanced.telemetry.enabled": false,
+    // Specifies whether to enable GitLens telemetry (even if enabled still abides by the overall `telemetry.enableTelemetry` setting
+    "gitlens.advanced.telemetry.enabled": false,
+
+    // Use ordered list (1. ..., 2. ...)
+    "markdown.extension.toc.orderedList": false,
 }
