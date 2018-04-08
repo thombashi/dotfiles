@@ -85,7 +85,7 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenvsys='pyenv local system'
     alias pyenv2='pyenv local 2.7.14'
     alias pyenv35='pyenv local 3.5.5'
-    alias pyenv36='pyenv local 3.6.4'
+    alias pyenv36='pyenv local 3.6.5'
     alias pyenv3=pyenv36
 fi
 
