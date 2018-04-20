@@ -8,4 +8,5 @@ pylama
 pylint
 pytest-watch
 restructuredtext_lint
+twine
 watchdog
