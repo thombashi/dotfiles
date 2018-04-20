@@ -5,12 +5,6 @@ if [ $UID -ne 0 ]; then
     exit 13
 fi
 
-if ! type aptitude > /dev/null 2>&1; then
-    echo 'aptitude command not found: aptitude package installation required' 1>&2
-    exit 1
-fi
-
-
 packages=(
     p7zip-full
     bats
@@ -53,7 +47,8 @@ optional_packages=(
 # Add fish nightly builds repository: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
 #echo 'deb http://download.opensuse.org/repositories/shells:/fish:/nightly:/master/Debian_8.0/ /' > /etc/apt/sources.list.d/fish.list
 
-aptitude update
-aptitude -y install "${packages[@]}"
-aptitude -y install "${python_build_packages[@]}"
-aptitude safe-upgrade
+apt update
+apt -y install "${packages[@]}"
+apt -y install "${python_build_packages[@]}"
+#apt -y install "${optional_packages[@]}"
+apt upgrade

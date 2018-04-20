@@ -9,11 +9,6 @@ if [ $UID -ne 0 ]; then
     exit 13
 fi
 
-if ! type aptitude > /dev/null 2>&1; then
-    echo 'aptitude command not found: aptitude package installation required' 1>&2
-    exit 1
-fi
-
 # Install packages to allow apt to use a repository over HTTPS:
 https_packages=(
     apt-transport-https
@@ -22,8 +17,8 @@ https_packages=(
     software-properties-common
 )
 
-aptitude update
-aptitude -y install "${https_packages[@]}"
+apt update
+apt -y install "${https_packages[@]}"
 
 # Add Docker’s official GPG key:
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -34,7 +29,7 @@ add-apt-repository \
     $(lsb_release -cs) \
     stable"
 
-aptitude update
+apt update
 
 # Install Docker CE
-aptitude install docker-ce
+apt install docker-ce
