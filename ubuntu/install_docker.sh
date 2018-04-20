@@ -5,7 +5,7 @@
 #   https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 if [ $UID -ne 0 ]; then
-    echo 'Permission denied' 1>&2
+    echo 'requires superuser privilege' 1>&2
     exit 13
 fi
 
