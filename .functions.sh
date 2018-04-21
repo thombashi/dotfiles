@@ -255,7 +255,7 @@ function ffgp() {
 
 
 function lastmodified() {
-    local dir_path="$1"
+    local dir_path=$(readlink -f "$1")
 
     if [ "${dir_path}" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
