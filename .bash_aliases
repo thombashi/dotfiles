@@ -56,6 +56,7 @@ fi
 if type python > /dev/null 2>&1; then
     alias py='python'
     alias pyver='python --version'
+    alias pybuild='python setup.py build'
 
     if type python2 > /dev/null 2>&1; then
         alias py2='python2'
