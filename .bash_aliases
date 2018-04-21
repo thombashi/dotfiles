@@ -56,7 +56,6 @@ fi
 if type python > /dev/null 2>&1; then
     alias py='python'
     alias pyver='python --version'
-    alias pybuild='python setup.py build'
 
     if type python2 > /dev/null 2>&1; then
         alias py2='python2'
@@ -71,6 +70,8 @@ if type python > /dev/null 2>&1; then
         alias pip-local-upgrade='pip install --upgrade --no-index .'
         alias pip-upgrade='pip install --upgrade --no-cache-dir'
     fi
+
+    alias psbuild='python setup.py build'
 
     ## language aliases: Python - pytest-runner
     alias pst='python setup.py test'
