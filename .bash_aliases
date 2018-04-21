@@ -11,6 +11,7 @@ alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
 alias rmcomment='\grep -vE "^\s*#|^\s*$"'
 alias sudo='sudo '
+alias sudoe='sudo -E '
 
 grep_options='--ignore-case --line-number --binary-files=without-match --color=always'
 alias egrep='\grep -E '$(echo ${grep_options})
@@ -28,6 +29,11 @@ alias lrta='\ls -lrtA '$(echo ${ls_options})
 unset ls_options
 
 alias echopath='echo $PATH | tr -s ":" "\n"'
+
+
+if type apt > /dev/null 2>&1; then
+    alias apt-update='apt update; apt list --upgradable'
+fi
 
 if type colordiff > /dev/null 2>&1; then
     alias diff='\colordiff -u --ignore-space-change --tabsize=4'
