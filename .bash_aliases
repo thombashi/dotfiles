@@ -71,7 +71,7 @@ if type python > /dev/null 2>&1; then
         alias pip-upgrade='pip install --upgrade --no-cache-dir'
     fi
 
-    alias psbuild='python setup.py build'
+    alias psbuild='python setup.py build && rm -rf build/'
     alias psrelease='python setup.py release'
 
     ## language aliases: Python - pytest-runner
