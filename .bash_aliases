@@ -72,6 +72,7 @@ if type python > /dev/null 2>&1; then
     fi
 
     alias psbuild='python setup.py build'
+    alias psrelease='python setup.py release'
 
     ## language aliases: Python - pytest-runner
     alias pst='python setup.py test'
