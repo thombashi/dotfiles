@@ -178,4 +178,7 @@
 
     // Use ordered list (1. ..., 2. ...)
     "markdown.extension.toc.orderedList": false,
+
+    // Extra arguments to doc8.
+    "restructuredtext.linter.extraArgs": ["--max-line-length", 120],
 }
