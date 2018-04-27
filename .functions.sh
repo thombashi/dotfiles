@@ -50,7 +50,7 @@ function epoch2date() {
     \date -d @"$1" --rfc-3339=seconds
 }
 
-# find files in a directory
+# find files in a directory with exclude hidden files/directories
 function ff() {
     local path=$1
     local name_pattern=$2
@@ -61,13 +61,13 @@ function ff() {
     fi
 
     if [ "$name_pattern" = "" ]; then
-        \find "$path" -type f
+        \find "$path" -not -path '*/\.*' -type f
     else
-        \find "$path" -type f -name "$name_pattern"
+        \find "$path" -not -path '*/\.*' -type f -name "$name_pattern"
     fi
 }
 
-# find directories in a directory
+# find directories in a directory with exclude hidden directories
 function fd() {
     local path=$1
     local name_pattern=$2
@@ -78,20 +78,20 @@ function fd() {
     fi
 
     if [ "$name_pattern" = "" ]; then
-        \find "$path" -type d
+        \find "$path" -not -path '*/\.*' -type d
     else
-        \find "$path" -type d -name $name_pattern
+        \find "$path" -not -path '*/\.*' -type d -name "$name_pattern"
     fi
 }
 
-# find files and grep file name
+# find files and grep file name with exclude hidden files/directories
 function ffg() {
     if [ $# -ne 2 ]; then
         echo "Usage: ${FUNCNAME[0]} ROOT_DIR PATTERN" 1>&2
         return 22
     fi
 
-    \find "$1" -type f | \grep -E --ignore-case "$2"
+    ff "$1" | \grep -E --ignore-case "$2"
 }
 
 function psgrep() {
