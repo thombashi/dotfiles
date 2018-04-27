@@ -9,10 +9,12 @@ echo "
 .gitconfig.private
 .python-version
 
-_trash/
-_TRASH/
 _sandbox/
 _SANDBOX/
+_todo/
+_TODO/
+_trash/
+_TRASH/
 
 upgrade.sh
 release.sh
