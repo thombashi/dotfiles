@@ -21,6 +21,7 @@ packages=(
     resolvconf
     shellcheck
     source-highlight
+    sqlite3
     sysstat
     wget
 )
