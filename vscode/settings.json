@@ -91,6 +91,7 @@
 
         "**/.git": true,
         "**/.hg": true,
+        "**/.svn": true,
 
         "**/.eggs": true,
         "**/*.egg-info": true,
@@ -101,7 +102,7 @@
         "**/.pytest_cache": true,
         "**/.python-version": true,
 
-        "**/.svn": true,
+        "**/.cache": true,
         "**/.vscode": true,
 
         "**/.DS_Store": true,
