@@ -9,6 +9,7 @@ Get-AppxPackage *Microsoft.WindowsMaps* | Remove-AppxPackage
 Get-AppxPackage *Microsoft.XboxApp* | Remove-AppxPackage
 Get-AppxPackage *Microsoft.ZuneMusic* | Remove-AppxPackage
 
+Get-AppxPackage *.Twitter | Remove-AppxPackage
 Get-AppxPackage Flipboard.Flipboard | Remove-AppxPackage
 Get-AppxPackage Microsoft.BingNews | Remove-AppxPackage
 Get-AppxPackage Microsoft.FreshPaint | Remove-AppxPackage
