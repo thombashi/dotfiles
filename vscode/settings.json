@@ -85,18 +85,24 @@
 
     // Configure glob patterns for excluding files and folders. For example, the files explorer decides which files and folders to show or hide based on this setting.
     "files.exclude": {
-        "**/.eggs": true,
-        "**/*.egg-info": true,
-        "**/.git": true,
-        "**/.hg": true,
-        "**/.jupyter": true,
-        "**/.ipynb_checkpoints": true,
-        "**/.pytest_cache": true,
-        "**/.python-version": true,
-        "**/.svn": true,
-        "**/.vscode": true,
+        "**/desktop.ini": true,
         "**/*.lnk": true,
         "**/*.pdb": true,
+
+        "**/.git": true,
+        "**/.hg": true,
+
+        "**/.eggs": true,
+        "**/*.egg-info": true,
+        "**/.ipynb_checkpoints": true,
+        "**/.jupyter": true,
+        "**/.project": true,
+        "**/.pydevproject": true,
+        "**/.pytest_cache": true,
+        "**/.python-version": true,
+
+        "**/.svn": true,
+        "**/.vscode": true,
 
         "**/.DS_Store": true,
         "**/CVS": true
@@ -175,11 +181,26 @@
 
 // etc.
 
+    // The path to the cpplint executable. If not set, the default location will be used.
+    "cpplint.cpplintPath": "C:\\Python36\\Scripts\\cpplint.exe",
+
+    // This is the allowed line length for the project.
+    "cpplint.lineLength": 120,
+
+    // Controls if the explorer should ask for confirmation to move files and folders via drag and drop.
+    "explorer.confirmDragAndDrop": false,
+
     // Specifies whether to enable GitLens telemetry (even if enabled still abides by the overall `telemetry.enableTelemetry` setting
     "gitlens.advanced.telemetry.enabled": false,
 
     // Use ordered list (1. ..., 2. ...)
     "markdown.extension.toc.orderedList": false,
+
+    // Controls the font size in pixels used in the markdown preview.
+    "markdown.preview.fontSize": 11,
+
+    // Controls the line height used in the markdown preview. This number is relative to the font size.
+    "markdown.preview.lineHeight": 1.4,
 
     // Extra arguments to doc8.
     "restructuredtext.linter.extraArgs": ["--max-line-length", 120],
