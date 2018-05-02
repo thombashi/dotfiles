@@ -25,21 +25,6 @@ packages=(
     sysstat
     wget
 )
-python_build_packages=(
-    libbz2-dev
-    libdb5.3-dev
-    libexpat1-dev
-    libgdbm-dev
-    liblzma-dev
-    libncurses5-dev
-    libncursesw5-dev
-    libreadline-dev
-    libsqlite3-dev
-    libssl-dev
-    python-dev
-    tk-dev
-    zlib1g-dev
-)
 optional_packages=(
     cscope
     fish
@@ -50,6 +35,5 @@ optional_packages=(
 
 apt update
 apt -y install "${packages[@]}"
-apt -y install "${python_build_packages[@]}"
 #apt -y install "${optional_packages[@]}"
 apt upgrade
