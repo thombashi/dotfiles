@@ -1,0 +1,31 @@
+## Back up files to the current filename plus a tilde.
+set backup
+
+## The directory to put unique backup files in.
+set backupdir "~/.nano_bkp"
+
+## Constantly display the cursor position in the statusbar.  Note that
+## this overrides "quickblank".
+#set constantshow
+set const
+
+## Enable ~/.nano_history for saving and reading search/replace strings.
+set historylog
+
+## Use the blank line below the titlebar as extra editing space.
+set morespace
+
+## Don't wrap text at all.
+set nowrap
+
+## Use smooth scrolling as the default.
+set smooth
+
+## Use this tab size instead of the default; it must be greater than 0.
+set tabsize 4
+
+## Convert typed tabs to spaces.
+set tabstospaces
+
+
+## Nanorc files (automatically added)

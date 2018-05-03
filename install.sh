@@ -15,7 +15,6 @@ dotfiles=(
     .functions.sh
     .inputrc
     .jupyter
-    .nanorc
     git/.gitconfig
     git/.gitignore_global
     python/.isort.cfg
