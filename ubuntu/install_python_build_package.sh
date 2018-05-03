@@ -7,11 +7,9 @@ fi
 
 packages=(
     libbz2-dev
-    libdb5.3-dev
     libexpat1-dev
     libgdbm-dev
     liblzma-dev
-    libncurses5-dev
     libncursesw5-dev
     libreadline-dev
     libsqlite3-dev
