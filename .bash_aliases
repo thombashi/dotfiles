@@ -92,10 +92,10 @@ fi
 if [ -e "${HOME}/.pyenv" ]; then
     alias pyenvver='pyenv version'
     alias pyenvsys='pyenv local system'
-    alias pyenv2='pyenv local 2.7.14'
-    alias pyenv35='pyenv local 3.5.5'
-    alias pyenv36='pyenv local 3.6.5'
-    alias pyenv3=pyenv36
+    alias pyenv2='pyenv local $(pyenv versions | \grep -oE "2\.7\.[0-9]+" | sort -r | head -n 1)'
+    alias pyenv35='pyenv local $(pyenv versions | \grep -oE "3\.5\.[0-9]+" | sort -r | head -n 1)'
+    alias pyenv36='pyenv local $(pyenv versions | \grep -oE "3\.6\.[0-9]+" | sort -r | head -n 1)'
+    alias pyenv3='pyenv local $(pyenv versions | \grep -oE "3\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
 fi
 
 
