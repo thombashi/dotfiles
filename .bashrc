@@ -51,7 +51,8 @@ if ! echo "${PATH}" | \grep -F "${HOME}/bin " > /dev/null 2>&1 ; then
 fi
 
 # environment variables: general
-export LC_ALL=C.UTF-8
+export EDITOR=nano
+export LC_ALL=en_US.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
 export PS1='[\w]\$ '
 export TZ='Asia/Tokyo'
@@ -106,6 +107,8 @@ fi
 unset setup_lessopen
 
 # environment variables: Python
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
+
 if [ -e "${HOME}/.pyenv" ]; then
     PYENV_BIN="${HOME}/.pyenv/bin"
 
