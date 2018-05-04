@@ -23,6 +23,7 @@ packages=(
     source-highlight
     sqlite3
     sysstat
+    unzip
     wget
 )
 optional_packages=(
