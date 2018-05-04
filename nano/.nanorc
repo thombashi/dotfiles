@@ -6,8 +6,7 @@ set backupdir "~/.nano_bkp"
 
 ## Constantly display the cursor position in the statusbar.  Note that
 ## this overrides "quickblank".
-#set constantshow
-set const
+set constantshow
 
 ## Enable ~/.nano_history for saving and reading search/replace strings.
 set historylog
