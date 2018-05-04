@@ -54,7 +54,7 @@ fi
 export EDITOR=nano
 export LC_ALL=en_US.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
-export PS1='[\w]\$ '
+export PS1='\h: \w \$ '
 export TZ='Asia/Tokyo'
 
 ## set up LS_COLORS
