@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-joe g linux,windows,macos,microsoftoffice,eclipse,visualstudiocode > .gitignore_global
+joe g linux,windows,macos,microsoftoffice,visualstudiocode > .gitignore_global
 echo "
 #### User Settings ####
 .ipynb_checkpoints/
@@ -17,5 +17,4 @@ _trash/
 _TRASH/
 
 upgrade.sh
-release.sh
 " >> .gitignore_global
