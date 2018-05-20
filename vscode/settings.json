@@ -37,6 +37,13 @@
     // Controls how windows are being reopened after a restart. Select 'none' to always start with an empty workspace, 'one' to reopen the last window you worked on, 'folders' to reopen all windows that had folders opened or 'all' to reopen all windows of your last session.
     "window.restoreWindows": "all",
 
+// Workbench
+
+    // Overrides editor colors and font style from the currently selected color theme.
+    "workbench.colorCustomizations": {
+        "editorLineNumber.foreground": "#808080"
+    },
+
     // Controls how to open items in trees and lists using the mouse (if supported). Set to `singleClick` to open items with a single mouse click and `doubleClick` to only open via mouse double click. For parents with children in trees, this setting will control if a single click expands the parent or a double click. Note that some trees and lists might choose to ignore this setting if it is not applicable.
     "workbench.list.openMode": "doubleClick",
 
