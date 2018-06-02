@@ -16,5 +16,7 @@ _TODO/
 _trash/
 _TRASH/
 
+*.sqlite
+*.db
 upgrade.sh
 " >> .gitignore_global
