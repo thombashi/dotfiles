@@ -7,7 +7,9 @@ fi
 
 packages=(
     libbz2-dev
+    libc6-dev 
     libexpat1-dev
+    libffi-dev
     libgdbm-dev
     liblzma-dev
     libncursesw5-dev
@@ -15,7 +17,9 @@ packages=(
     libsqlite3-dev
     libssl-dev
     python-dev
+    tcl-dev
     tk-dev
+    xz-utils
     zlib1g-dev
 )
 
