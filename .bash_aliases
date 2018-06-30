@@ -81,6 +81,7 @@ if type python > /dev/null 2>&1; then
     alias pstrx='python setup.py test --addopts --runxfail'
     alias pstrxv='python setup.py test --addopts "--runxfail -v"'
     alias pstrxvv='python setup.py test --addopts "--runxfail -vv"'
+    alias pstlf='python setup.py test --addopts "--lf -vv"'
 
     ## language aliases: Python - pytest-watch
     if type ptw > /dev/null 2>&1; then
