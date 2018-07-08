@@ -56,7 +56,7 @@ fi
 if type python > /dev/null 2>&1; then
     alias py='python'
     alias pyver='python --version'
-    alias pyclean='rm -rf .eggs/ .cache/ .pytest_cache/ *.egg-info/'
+    alias pycleanup='rm -rfv .eggs/ .cache/ .pytest_cache/ *.egg-info/ .python-version'
 
     if type python2 > /dev/null 2>&1; then
         alias py2='python2'
