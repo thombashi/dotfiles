@@ -1,4 +1,5 @@
 autopep8
+black
 cpplint
 doc8
 isort
