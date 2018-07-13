@@ -264,3 +264,13 @@ function lastmodified() {
 
     \find "$dir_path" -type d -name '.*' -prune -o -type f -printf '%T+ %p\n' | sort
 }
+
+
+function histgrep() {
+    if [ "$1" = "" ]; then
+        echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
+        return 22
+    fi
+
+    history | \grep -E "$1" | uniq --skip-fields 2
+}
