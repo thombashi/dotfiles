@@ -154,6 +154,9 @@
     "python.sortImports.args": [
         "--lines", "100",
         "--multi-line", "4",
+        "--lines-after-imports", "2",
+        "-m", "3",
+        "--trailing-comma",
         "-ns", "__init__.py"
     ],
 
