@@ -113,7 +113,9 @@
         "**/.vscode": true,
 
         "**/.DS_Store": true,
-        "**/CVS": true
+        "**/CVS": true,
+
+        "**/_sandbox/**": true
     },
 
     // When enabled, will trim trailing whitespace when you save a file.
