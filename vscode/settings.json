@@ -142,7 +142,13 @@
 // Python Configuration
 
     // Arguments passed in. Each argument is a separate item in the array.
-    "python.formatting.autopep8Args": ["--max-line-length", "100"],
+    "python.formatting.blackArgs": [
+        "--line-length", "100",
+        "--exclude", "setup.py",
+    ],
+
+    // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
+    "python.formatting.provider": "black",
 
     // Whether to lint Python files using pylama.
     "python.linting.pylamaEnabled": true,
