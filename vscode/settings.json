@@ -1,14 +1,14 @@
 {
-// Editor
+    // Editor --------------------
 
     // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
 
     // Controls the font family.
     "editor.fontFamily": "'Fira Code', 'MyricaM M', Consolas, 'Courier New', monospace",
 
     // Controls the font size in pixels.
-    "editor.fontSize": 12,
+    "editor.fontSize": 14,
 
     // Enables font ligatures
     "editor.fontLigatures": true,
@@ -31,13 +31,12 @@
     // Controls if the minimap is shown
     "editor.minimap.enabled": true,
 
-
-// Window
+    // Window --------------------
 
     // Controls how windows are being reopened after a restart. Select 'none' to always start with an empty workspace, 'one' to reopen the last window you worked on, 'folders' to reopen all windows that had folders opened or 'all' to reopen all windows of your last session.
     "window.restoreWindows": "all",
 
-// Workbench
+    // Workbench --------------------
 
     // Overrides editor colors and font style from the currently selected color theme.
     "workbench.colorCustomizations": {
@@ -53,7 +52,7 @@
     // Controls the visibility of the Twitter feedback (smiley) in the status bar at the bottom of the workbench.
     "workbench.statusBar.feedback.visible": false,
 
-// Terminal
+    // Terminal --------------------
 
     // Controls the style of terminal cursor.
     "terminal.integrated.cursorStyle": "line",
@@ -78,8 +77,7 @@
     // Controls the maximum amount of lines the terminal keeps in its buffer.
     "terminal.integrated.scrollback": 8192,
 
-
-// Files
+    // Files --------------------
 
     // The default end of line character.
     "files.eol": "\n",
@@ -121,8 +119,7 @@
     // When enabled, will trim trailing whitespace when you save a file.
     "files.trimTrailingWhitespace": true,
 
-
-// Telemetry
+    // Telemetry --------------------
 
     // Enable crash reports to be sent to Microsoft.
     // This option requires restart to take effect.
@@ -131,8 +128,7 @@
     // Enable usage data and errors to be sent to Microsoft.
     "telemetry.enableTelemetry": false,
 
-
-// cpp
+    // cpp --------------------
 
     // Name of the predefined style used as a fallback in case clang-format is invoked with style "file" but the .clang-format file is not found. Possible values are Visual Studio, LLVM, Google, Chromium, Mozilla, WebKit, or none.
     "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
@@ -140,14 +136,10 @@
     // If set, overrides the include sorting behavior determined by the SortIncludes parameter.
     "C_Cpp.clang_format_sortIncludes": true,
 
-
-// Python Configuration
+    // Python Configuration --------------------
 
     // Arguments passed in. Each argument is a separate item in the array.
-    "python.formatting.blackArgs": [
-        "--line-length", "100",
-        "--exclude", "setup.py",
-    ],
+    "python.formatting.blackArgs": ["--line-length", "100", "--exclude", "*/**/setup.py"],
 
     // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
     "python.formatting.provider": "black",
@@ -160,16 +152,20 @@
 
     // Arguments passed in. Each argument is a separate item in the array.
     "python.sortImports.args": [
-        "--lines", "100",
-        "--multi-line", "4",
-        "--lines-after-imports", "2",
-        "-m", "3",
+        "--lines",
+        "100",
+        "--multi-line",
+        "4",
+        "--lines-after-imports",
+        "2",
+        "-m",
+        "3",
         "--trailing-comma",
-        "-ns", "__init__.py"
+        "-ns",
+        "__init__.py"
     ],
 
-
-// AutoDocstring Configuration
+    // AutoDocstring Configuration --------------------
 
     // Which docstring format to use.
     "autoDocstring.docstringFormat": "google",
@@ -177,28 +173,37 @@
     // Generate docstring on pressing enter after opening a docstring (""")
     "autoDocstring.generateDocstringOnEnter": false,
 
+    // prettier --------------------
 
-// javascript autolinting
+    // Fit code within this line limit
+    "prettier.printWidth": 100,
+
+    // Number of spaces it should use per tab
+    "prettier.tabWidth": 4,
+
+    // Controls the printing of trailing commas wherever possible.
+    //  Valid options:
+    //     'none' - No trailing commas
+    //     'es5' - Trailing commas where valid in ES5 (objects, arrays, etc)
+    //     'all' - Trailing commas wherever possible (function arguments)
+    "prettier.trailingComma": "es5",
+
+    // javascript autolinting --------------------
 
     // Set default linters to be used when no configuration file can be found in the current workspace.
-    "jsAutolint.defaultLinters": [
-        "tslint",
-        "jshint"
-    ],
+    "jsAutolint.defaultLinters": ["tslint", "jshint"],
 
-
-// ShellCheck
+    // ShellCheck
     // Exclude types of warnings, for example ["SC1090"].
     "shellcheck.exclude": [
-        "SC1001",  // This \o will be a regular 'o' in this context.
-        "SC1012",  // \t is just literal 't' here. For tab, use "$(printf "\t")" instead.
+        "SC1001", // This \o will be a regular 'o' in this context.
+        "SC1012" // \t is just literal 't' here. For tab, use "$(printf "\t")" instead.
     ],
 
     // Whether shellcheck is run on save or on type.
     "shellcheck.run": "onSave",
 
-
-// etc.
+    // etc. --------------------
 
     // The path to the cpplint executable. If not set, the default location will be used.
     "cpplint.cpplintPath": "C:\\Python36\\Scripts\\cpplint.exe",
@@ -222,5 +227,5 @@
     "markdown.preview.lineHeight": 1.4,
 
     // Extra arguments to doc8.
-    "restructuredtext.linter.extraArgs": ["--max-line-length", 120],
+    "restructuredtext.linter.extraArgs": ["--max-line-length", 120]
 }
