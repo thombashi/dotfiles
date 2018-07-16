@@ -106,6 +106,7 @@ fi
 
 unset setup_lessopen
 
+
 # environment variables: Python
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
@@ -124,6 +125,12 @@ fi
 
 ## won’t try to write .pyc or .pyo files on the import of source modules.
 export PYTHONDONTWRITEBYTECODE=1
+
+
+# environment variables: golang
+if type go > /dev/null 2>&1 ; then
+    export GOPATH=${HOME}/go
+fi
 
 
 # share history across multiple consoles
