@@ -44,11 +44,13 @@ if [ "$(uname -s)" == "Darwin" ] && type brew > /dev/null 2>&1; then
     unset BREW_PKG_PATH
 fi
 
-if ! echo "${PATH}" | \grep -F "${HOME}/bin " > /dev/null 2>&1 ; then
-    if [ -e "${HOME}/bin" ]; then
-        export PATH=${HOME}/bin:${PATH}
+for bin_path in "${HOME}/bin" "${HOME}/.local/bin"; do
+    if [ -e "$bin_path" ]; then
+        if ! echo "${PATH}" | \grep -F "$bin_path" > /dev/null 2>&1 ; then
+            export PATH=${bin_path}:${PATH}
+        fi
     fi
-fi
+done
 
 # environment variables: general
 export EDITOR=nano
