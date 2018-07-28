@@ -3,11 +3,10 @@
 
 # Install Language Extensions
 ## golang
-code --install-extension lukehoban.go
+code --install-extension ms-vscode.go
 
 ## Python
 code --install-extension ms-python.python
-code --install-extension ms-vscode.powershell
 code --install-extension njpwerner.autodocstring
 
 ## C++
@@ -23,6 +22,7 @@ code --install-extension eg2.tslint
 ## etc
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension jebbs.plantuml
+code --install-extension ms-vscode.powershell
 code --install-extension lextudio.restructuredtext
 
 
