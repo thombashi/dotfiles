@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+joe update
 joe g linux,windows,macos,microsoftoffice,visualstudiocode > .gitignore_global
 echo "
 #### User Settings ####
