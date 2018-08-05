@@ -18,6 +18,7 @@ packages=(
     jq
     nmap
     openjdk-8-jdk-headless
+    pandoc
     resolvconf
     shellcheck
     source-highlight
