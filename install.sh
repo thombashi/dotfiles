@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-set -u
 
+update_option=""
+
+if [ "$1" = "--update" ]; then
+    update_option="--update"
+fi
 
 # make backup directory for nano
 \mkdir -p "${HOME}/.nano_bkp"
@@ -24,10 +28,10 @@ dotfiles=(
 for dotfile in "${dotfiles[@]}"; do
     dst_path=${HOME}/$(basename "$dotfile")
 
-    \cp -fva --backup --update "$dotfile" "$dst_path"
+    \cp -fva --backup $update_option "$dotfile" "$dst_path"
 done
 
-\cp -fv --backup --update dircolors.ansi-universal "${HOME}/.dircolors"
+\cp -fv --backup $update_option dircolors.ansi-universal "${HOME}/.dircolors"
 
 
 # install commands that included in a bin directory
