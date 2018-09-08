@@ -24,6 +24,7 @@ packages=(
     source-highlight
     sqlite3
     sysstat
+    tree
     unzip
     wget
 )
