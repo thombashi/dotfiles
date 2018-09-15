@@ -27,7 +27,7 @@ if [ "$(uname -s)" == "Darwin" ] && type brew > /dev/null 2>&1; then
     for brew_package in coreutils findutils gnu-sed gnu-tar; do
         BREW_PKG_PATH=$(brew --prefix $brew_package)
 
-        if ! echo "$PATH" | \grep -F "$BREW_PKG_PATH" > /dev/null 2>&1 ; then
+        if ! echo "$PATH" | \grep -qF "$BREW_PKG_PATH" ; then
             export PATH=${BREW_PKG_PATH}/libexec/gnubin:${PATH}
             export MANPATH=${BREW_PKG_PATH}/libexec/gnuman:${MANPATH}
         fi
@@ -36,7 +36,7 @@ if [ "$(uname -s)" == "Darwin" ] && type brew > /dev/null 2>&1; then
     for brew_package in diffutils gawk grep gzip nano; do
         BREW_PKG_PATH=$(brew --prefix $brew_package)
 
-        if ! echo "$PATH" | \grep -F "$BREW_PKG_PATH" > /dev/null 2>&1 ; then
+        if ! echo "$PATH" | \grep -qF "$BREW_PKG_PATH" ; then
             export PATH=${BREW_PKG_PATH}/bin:${PATH}
         fi
     done
@@ -46,7 +46,7 @@ fi
 
 for bin_path in "${HOME}/bin" "${HOME}/.local/bin"; do
     if [ -e "$bin_path" ]; then
-        if ! echo "${PATH}" | \grep -F "$bin_path" > /dev/null 2>&1 ; then
+        if ! echo "${PATH}" | \grep -qF "$bin_path" ; then
             export PATH=${bin_path}:${PATH}
         fi
     fi
@@ -115,7 +115,7 @@ export PYTHON_CONFIGURE_OPTS="--enable-shared"
 if [ -e "${HOME}/.pyenv" ]; then
     PYENV_BIN="${HOME}/.pyenv/bin"
 
-    if ! echo "${PATH}" | \grep -F "${PYENV_BIN}" > /dev/null 2>&1 ; then
+    if ! echo "${PATH}" | \grep -qF "${PYENV_BIN}" ; then
         export PATH=${PYENV_BIN}:${PATH}
 
         eval "$(pyenv init -)"
@@ -137,7 +137,7 @@ fi
 
 # share history across multiple consoles
 HISTORY_PROMPT_COMMAND='history -a; history -c; history -r'
-if ! echo "${PROMPT_COMMAND}" | \grep -F "${HISTORY_PROMPT_COMMAND}" > /dev/null 2>&1 ; then
+if ! echo "${PROMPT_COMMAND}" | \grep -qF "${HISTORY_PROMPT_COMMAND}" ; then
     export PROMPT_COMMAND=$(echo ${HISTORY_PROMPT_COMMAND})"; $PROMPT_COMMAND"
 fi
 unset HISTORY_PROMPT_COMMAND
