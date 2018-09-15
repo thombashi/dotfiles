@@ -130,6 +130,10 @@ export PYTHONDONTWRITEBYTECODE=1
 
 
 # environment variables: golang
+if [ -e "/usr/local/go/bin" ] && ! echo "${PATH}" | \grep -qF "/usr/local/go/bin" ; then
+    export PATH=$PATH:/usr/local/go/bin
+fi
+
 if type go > /dev/null 2>&1 ; then
     export GOPATH=${HOME}/go
 fi
