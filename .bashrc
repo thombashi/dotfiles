@@ -136,6 +136,10 @@ fi
 
 if type go > /dev/null 2>&1 ; then
     export GOPATH=${HOME}/go
+
+    if ! echo "${PATH}" | \grep -qF "$GOPATH" ; then
+        export PATH=${PATH}:${GOPATH}/bin
+    fi
 fi
 
 
