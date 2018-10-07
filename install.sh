@@ -31,6 +31,7 @@ for dotfile in "${dotfiles[@]}"; do
     \cp -fva --backup $update_option "$dotfile" "$dst_path"
 done
 
+# seebi/dircolors-solarized
 \cp -fv --backup $update_option dircolors.ansi-universal "${HOME}/.dircolors"
 
 
