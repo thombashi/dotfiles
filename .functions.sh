@@ -1,4 +1,4 @@
-function whichbin() {
+whichbin() {
     local command_path
 
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
@@ -28,7 +28,7 @@ function whichbin() {
 # example: show current epoc time
 #     $ date2epoch
 #     1493254466
-function date2epoch() {
+date2epoch() {
     if [ "$1" != "" ]; then
         \date +%s -d "$1"
     else
@@ -41,7 +41,7 @@ function date2epoch() {
 # example:
 #     $ epoch2date 1483196400
 #     2017-01-01 00:00:00+09:00
-function epoch2date() {
+epoch2date() {
     if [ "$1" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} EPOCH_TIME" 1>&2
         return 22
@@ -51,7 +51,7 @@ function epoch2date() {
 }
 
 # find files in a directory with exclude hidden files/directories
-function ff() {
+ff() {
     local path=$1
     local name_pattern=$2
 
@@ -68,7 +68,7 @@ function ff() {
 }
 
 # find directories in a directory with exclude hidden directories
-function fd() {
+fd() {
     local path=$1
     local name_pattern=$2
 
@@ -85,7 +85,7 @@ function fd() {
 }
 
 # find files and grep file name with exclude hidden files/directories
-function ffg() {
+ffg() {
     if [ $# -ne 2 ]; then
         echo "Usage: ${FUNCNAME[0]} ROOT_DIR PATTERN" 1>&2
         return 22
@@ -94,7 +94,7 @@ function ffg() {
     ff "$1" | \grep -E --ignore-case "$2"
 }
 
-function psgrep() {
+psgrep() {
     local pattern=$1
     local psaux
 
@@ -109,7 +109,7 @@ function psgrep() {
     echo -e "$psaux" | \grep -E "$pattern"
 }
 
-function pssort() {
+pssort() {
     local sort_key=$1
 
     if \ps aux --sort "${sort_key}" > /dev/null 2>&1 ; then
@@ -124,7 +124,7 @@ function pssort() {
     fi
 }
 
-function extract() {
+extract() {
     local archive_file=$1
 
     if [ ! -f "${archive_file}" ]; then
@@ -148,7 +148,7 @@ function extract() {
 }
 
 # list up installed packages
-function lspkg() {
+lspkg() {
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
         dpkg --list
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
@@ -159,7 +159,7 @@ function lspkg() {
     fi
 }
 
-function listpkg() {
+listpkg() {
     for command in $(compgen -c | sort); do
         bin_path=$(whichbin "$command" 2> /dev/null)
         if [ "$?" -ne 0 ]; then
@@ -183,7 +183,7 @@ function listpkg() {
 }
 
 # find a package which includes a specified command
-function whichpkg() {
+whichpkg() {
     local command="$1"
 
     if [ "${command}" = "" ]; then
@@ -216,7 +216,7 @@ function whichpkg() {
 }
 
 # select a directory and change current directory to the directory
-function cdp() {
+cdp() {
     if ! type peco > /dev/null 2>&1; then
         echo "${FUNCNAME[0]}: peco not installed"
         return 1
@@ -230,7 +230,7 @@ function cdp() {
     \pushd ${dst_dir} > /dev/null
 }
 
-function ffgp() {
+ffgp() {
     if ! type peco > /dev/null 2>&1; then
         echo "${FUNCNAME[0]}: peco not installed"
         return 1
@@ -240,7 +240,7 @@ function ffgp() {
 }
 
 
-function lastmodified() {
+lastmodified() {
     local dir_path=$(readlink -f "$1")
 
     if [ "${dir_path}" = "" ]; then
@@ -252,7 +252,7 @@ function lastmodified() {
 }
 
 
-function histgrep() {
+histgrep() {
     if [ "$1" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
         return 22
@@ -262,7 +262,7 @@ function histgrep() {
 }
 
 if type python > /dev/null 2>&1; then
-    function httpserver() {
+    httpserver() {
         local port=$1
         local pymajorver
 
@@ -276,7 +276,7 @@ if type python > /dev/null 2>&1; then
         fi
     }
 
-    function pycleanup() {
+    pycleanup() {
         rm -rfv .eggs/ .cache/ .pytest_cache/ __pycache__/ *.egg-info/ .python-version
 
         targets=$(ff . | \grep -E "[a-zA-Z0-9_\-]+\.[a-z0-9]{32}\.py")
