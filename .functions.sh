@@ -147,20 +147,6 @@ function extract() {
     esac
 }
 
-function httpserver() {
-    local port=$1
-    local pymajorver
-
-    # get Python major version number
-    pymajorver=$(python -c "from __future__ import print_function; import sys; print(sys.version_info[0])")
-
-    if [ "$pymajorver" = "2" ]; then
-        python -m SimpleHTTPServer ${port}
-    elif [ "$pymajorver" = "3" ]; then
-        python -m http.server ${port}
-    fi
-}
-
 # list up installed packages
 function lspkg() {
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
@@ -274,3 +260,19 @@ function histgrep() {
 
     history | \grep -E "$1" | uniq --skip-fields 2
 }
+
+if type python > /dev/null 2>&1; then
+    function httpserver() {
+        local port=$1
+        local pymajorver
+
+        # get Python major version number
+        pymajorver=$(python -c "from __future__ import print_function; import sys; print(sys.version_info[0])")
+
+        if [ "$pymajorver" = "2" ]; then
+            python -m SimpleHTTPServer ${port}
+        elif [ "$pymajorver" = "3" ]; then
+            python -m http.server ${port}
+        fi
+    }
+fi
