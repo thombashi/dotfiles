@@ -275,4 +275,13 @@ if type python > /dev/null 2>&1; then
             python -m http.server ${port}
         fi
     }
+
+    function pycleanup() {
+        rm -rfv .eggs/ .cache/ .pytest_cache/ __pycache__/ *.egg-info/ .python-version
+
+        targets=$(ff . | \grep -E "[a-zA-Z0-9_\-]+\.[a-z0-9]{32}\.py")
+        if [ "$targets" != "" ]; then
+            echo $targets | xargs rm
+        fi
+    }
 fi
