@@ -11,19 +11,12 @@ unset PROMPT_COMMAND
 stty stop undef
 stty start undef
 
-# Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
 # Prevent logout from the terminal by 'Ctrl+D'
 set -o ignoreeof
 
 
 # setup PATH
-if [ "$(uname -s)" == "Darwin" ] && type brew > /dev/null 2>&1; then
+if [ "$(uname -s)" = "Darwin" ] && type brew > /dev/null 2>&1; then
     for brew_package in coreutils findutils gnu-sed gnu-tar; do
         BREW_PKG_PATH=$(brew --prefix $brew_package)
 
@@ -56,8 +49,7 @@ done
 export EDITOR=nano
 export LC_ALL=en_US.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
-export PS1='\h: \w \$ '
-export TZ='Asia/Tokyo'
+export TZ='Asia/Tokyo' 
 
 ## set up LS_COLORS
 if [ -e "${HOME}/.dircolors" ]; then
@@ -150,10 +142,6 @@ if ! echo "${PROMPT_COMMAND}" | \grep -qF "${HISTORY_PROMPT_COMMAND}" ; then
 fi
 unset HISTORY_PROMPT_COMMAND
 
-# append to the history file, don't overwrite it
-shopt -u histappend
-
-
 # Load dotfiles
 dotfiles=(
     .bash_aliases
@@ -167,13 +155,28 @@ unset dotfile
 unset dotfiles
 
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
+if readlink /proc/$$/exe | \grep -qF bash ; then
+    export PS1='\h: \w \$ '  # <host>: <locastion> $
+    # Case-insensitive globbing (used in pathname expansion)
+    shopt -s nocaseglob
+
+    # check the window size after each command and, if necessary,
+    # update the values of LINES and COLUMNS.
+    shopt -s checkwinsize
+
+    # append to the history file, don't overwrite it
+    shopt -u histappend
+
+    # enable programmable completion features (you don't need to enable
+    # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+    # sources /etc/bash.bashrc).
+    if ! shopt -oq posix; then
+        if [ -f /usr/share/bash-completion/bash_completion ]; then
+            . /usr/share/bash-completion/bash_completion
+        elif [ -f /etc/bash_completion ]; then
+            . /etc/bash_completion
+        fi
     fi
+elif readlink /proc/$$/exe | \grep -qF zsh ; then
+    export PS1='%m: %~ $ '  # <host>: <locastion> $
 fi
