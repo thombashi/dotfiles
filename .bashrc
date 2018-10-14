@@ -158,6 +158,7 @@ shopt -u histappend
 dotfiles=(
     .bash_aliases
     .functions.sh
+    docker_aliases
 )
 for dotfile in "${dotfiles[@]}"; do
     [ -r "${HOME}/${dotfile}" ] && [ -f "${HOME}/${dotfile}" ] && source "${HOME}/${dotfile}"
