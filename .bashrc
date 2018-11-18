@@ -146,7 +146,7 @@ unset HISTORY_PROMPT_COMMAND
 dotfiles=(
     .bash_aliases
     .functions.sh
-    docker_aliases
+    .docker_aliases
 )
 for dotfile in "${dotfiles[@]}"; do
     [ -r "${HOME}/${dotfile}" ] && [ -f "${HOME}/${dotfile}" ] && source "${HOME}/${dotfile}"

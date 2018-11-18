@@ -10,7 +10,7 @@ fi
 # make backup directory for nano
 \mkdir -p "${HOME}/.nano_bkp"
 
-wget --quiet https://raw.githubusercontent.com/thombashi/docker-alias/master/docker_aliases.sh -O docker_aliases
+wget --quiet https://raw.githubusercontent.com/thombashi/docker-alias/master/docker_aliases.sh -O .docker_aliases
 
 # install dotfiles
 dotfiles=(
@@ -20,7 +20,7 @@ dotfiles=(
     .functions.sh
     .inputrc
     .jupyter
-    docker_aliases
+    .docker_aliases
     git/.gitconfig
     git/.gitignore_global
     python/.isort.cfg
