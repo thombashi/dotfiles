@@ -20,6 +20,7 @@ packages=(
     openjdk-8-jdk-headless
     pandoc
     resolvconf
+    silversearcher-ag
     shellcheck
     source-highlight
     sqlite3
