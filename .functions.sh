@@ -277,7 +277,7 @@ if type python > /dev/null 2>&1; then
     }
 
     pycleanup() {
-        rm -rfv .eggs/ .cache/ .pytest_cache/ __pycache__/ *.egg-info/ .python-version
+        rm -rfv .eggs/ .cache/ .pytest_cache/ **/*/__pycache__/ *.egg-info/ .python-version
 
         targets=$(ff . | \grep -E "[a-zA-Z0-9_\-]+\.[a-z0-9]{32}\.py")
         if [ "$targets" != "" ]; then
