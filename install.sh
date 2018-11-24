@@ -36,6 +36,9 @@ done
 # seebi/dircolors-solarized
 \cp -fv --backup $update_option dircolors.ansi-universal "${HOME}/.dircolors"
 
+# cealnup
+rm -f .docker_aliases
+
 
 # install commands that included in a bin directory
 # bin_dir=bin
