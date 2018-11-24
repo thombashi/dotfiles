@@ -28,6 +28,8 @@
   rewrite = rebase -i
   patch = add --patch
 
+  pull-upstream = "!f() { git fetch upstream && git merge upstream/master; }; f"
+
   file-trail = log --follow -p -w
   merge-trail = log --ancestry-path --merges
   log-oneline = log --pretty=format:"%cI|%H|%s" --date=short
