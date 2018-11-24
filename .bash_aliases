@@ -32,6 +32,10 @@ unset ls_options
 alias echopath='echo $PATH | tr -s ":" "\n"'
 
 
+if type ag > /dev/null 2>&1; then
+    alias ag='ag --pager less'
+fi
+
 if type apt > /dev/null 2>&1; then
     alias apt-update='apt update; apt list --upgradable'
 fi
