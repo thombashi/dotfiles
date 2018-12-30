@@ -34,6 +34,9 @@ alias echopath='echo $PATH | tr -s ":" "\n"'
 
 if type ag > /dev/null 2>&1; then
     alias ag='ag --pager less'
+    alias agcpp="ag --pager less --cpp"
+    alias aggo="ag --pager less --go"
+    alias agpy="ag --pager less --python"
 fi
 
 if type apt > /dev/null 2>&1; then
