@@ -1,6 +1,7 @@
 black
 cpplint
 doc8
+eradicate
 isort
 jupyter
 pylama
