@@ -14,6 +14,7 @@ packages=(
     curl
     gdb
     git
+    gpgv2
     httping
     jq
     nmap
