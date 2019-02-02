@@ -27,6 +27,7 @@ packages=(
     sqlite3
     sysstat
     tree
+    tmux
     unzip
     wget
 )
@@ -41,4 +42,3 @@ optional_packages=(
 apt update
 apt -y install "${packages[@]}"
 #apt -y install "${optional_packages[@]}"
-apt upgrade
