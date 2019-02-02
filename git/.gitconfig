@@ -46,9 +46,6 @@
 [advice]
   statusHints = false
 
-[commit]
-  gpgsign = true
-
 [diff]
   compactionHeuristic = true
   indentHeuristic = true
