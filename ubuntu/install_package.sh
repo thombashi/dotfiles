@@ -18,6 +18,7 @@ packages=(
     httping
     jq
     nmap
+    npm
     openjdk-8-jdk-headless
     pandoc
     resolvconf
