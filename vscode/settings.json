@@ -28,6 +28,8 @@
     // Controls whether the editor should render indent guides
     "editor.renderIndentGuides": true,
 
+    "editor.trimAutoWhitespace": false,
+
     // Controls if the minimap is shown
     "editor.minimap.enabled": true,
 
@@ -35,6 +37,8 @@
 
     // Controls how windows are being reopened after a restart. Select 'none' to always start with an empty workspace, 'one' to reopen the last window you worked on, 'folders' to reopen all windows that had folders opened or 'all' to reopen all windows of your last session.
     "window.restoreWindows": "all",
+
+    "window.title": "${dirty} ${rootName}/${activeEditorMedium}",
 
     // Workbench --------------------
 
@@ -217,6 +221,10 @@
     // Specifies whether to enable GitLens telemetry (even if enabled still abides by the overall `telemetry.enableTelemetry` setting
     "gitlens.advanced.telemetry.enabled": false,
 
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+
     // Use ordered list (1. ..., 2. ...)
     "markdown.extension.toc.orderedList": false,
 
@@ -227,5 +235,7 @@
     "markdown.preview.lineHeight": 1.4,
 
     // Extra arguments to doc8.
-    "restructuredtext.linter.extraArgs": ["--max-line-length", 120]
+    "restructuredtext.linter.extraArgs": ["--max-line-length", 120],
+
+    "shellcheck.disableVersionCheck": true,
 }
