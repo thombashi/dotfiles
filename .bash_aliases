@@ -96,6 +96,12 @@ if type python > /dev/null 2>&1; then
     if type ptw > /dev/null 2>&1; then
         alias ptw='ptw --onpass "echo passed" --onfail "echo failed"'
     fi
+
+    ## language aliases: Python - watchdog
+    if type watchmedo > /dev/null 2>&1; then
+        alias localci-test='watchmedo shell-command -W -p="*.py" -R --command="python setup.py test --addopts \"--runxfail --lf\"" .'
+        alias localci-update='watchmedo shell-command -W -p="*.py" -R --command="date --rfc-3339=seconds; pip install -e . --upgrade" .'
+    fi
 fi
 
 ## language aliases: Python - pyenv
