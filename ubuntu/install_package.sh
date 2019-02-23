@@ -15,6 +15,7 @@ packages=(
     gdb
     git
     gpgv2
+    fping
     httping
     jq
     nmap
