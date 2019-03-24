@@ -6,6 +6,7 @@ isort
 jupyter
 pylama
 pylint
+pyre-check
 pytest-watch
 restructuredtext_lint
 twine
