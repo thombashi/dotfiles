@@ -5,6 +5,9 @@ if [ $UID -ne 0 ]; then
     exit 13
 fi
 
+# https://github.com/golang/go/wiki/Ubuntu
+add-apt-repository ppa:longsleep/golang-backports
+
 packages=(
     p7zip-full
     bats
@@ -15,6 +18,7 @@ packages=(
     gdb
     git
     gpgv2
+    golang-go
     fping
     httping
     jq
