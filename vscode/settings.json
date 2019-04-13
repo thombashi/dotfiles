@@ -196,9 +196,6 @@
 
     // etc. --------------------
 
-    // The path to the cpplint executable. If not set, the default location will be used.
-    "cpplint.cpplintPath": "C:\\Python36\\Scripts\\cpplint.exe",
-
     // This is the allowed line length for the project.
     "cpplint.lineLength": 120,
 
