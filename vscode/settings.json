@@ -17,7 +17,7 @@
     "editor.wordWrap": "on",
 
     // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
-    "editor.tabCompletion": true,
+    "editor.tabCompletion": "on",
 
     // Controls whether the editor should render control characters
     "editor.renderControlCharacters": true,
@@ -29,9 +29,6 @@
     "editor.renderIndentGuides": true,
 
     "editor.trimAutoWhitespace": false,
-
-    // Controls if the minimap is shown
-    "editor.minimap.enabled": true,
 
     // Window --------------------
 
@@ -46,9 +43,6 @@
     "workbench.colorCustomizations": {
         "editorLineNumber.foreground": "#808080"
     },
-
-    // Controls how to open items in trees and lists using the mouse (if supported). Set to `singleClick` to open items with a single mouse click and `doubleClick` to only open via mouse double click. For parents with children in trees, this setting will control if a single click expands the parent or a double click. Note that some trees and lists might choose to ignore this setting if it is not applicable.
-    "workbench.list.openMode": "doubleClick",
 
     // Controls the sizing of editor tabs. Set to 'fit' to keep tabs always large enough to show the full editor label. Set to 'shrink' to allow tabs to get smaller when the available space is not enough to show all tabs at once.
     "workbench.editor.tabSizing": "shrink",
@@ -69,7 +63,7 @@
 
     // Object with environment variables that will be added to the VS Code process to be used by the terminal on Windows
     "terminal.integrated.env.windows": {
-        "PYTHONDONTWRITEBYTECODE": 1
+        "PYTHONDONTWRITEBYTECODE": "1"
     },
 
     // Controls the font family of the terminal, this defaults to editor.fontFamily's value.
@@ -90,34 +84,27 @@
     "files.autoSave": "afterDelay",
 
     // Controls the delay in ms after which a dirty file is saved automatically. Only applies when "files.autoSave" is set to "afterDelay"
-    "files.autoSaveDelay": 60000,
+    "files.autoSaveDelay": 3000,
 
     // Configure glob patterns for excluding files and folders. For example, the files explorer decides which files and folders to show or hide based on this setting.
     "files.exclude": {
-        "**/desktop.ini": true,
-        "**/*.lnk": true,
-        "**/*.pdb": true,
-
+        "**/.cache": true,
+        "**/.DS_Store": true,
+        "**/.eggs": true,
         "**/.git": true,
         "**/.hg": true,
-        "**/.svn": true,
-
-        "**/.eggs": true,
-        "**/*.egg-info": true,
         "**/.ipynb_checkpoints": true,
-        "**/.jupyter": true,
         "**/.project": true,
         "**/.pydevproject": true,
         "**/.pytest_cache": true,
         "**/.python-version": true,
-
-        "**/.cache": true,
+        "**/.svn": true,
         "**/.vscode": true,
-
-        "**/.DS_Store": true,
+        "**/*.egg-info": true,
+        "**/*.lnk": true,
+        "**/*.pdb": true,
         "**/CVS": true,
-
-        "**/_sandbox/**": true
+        "**/desktop.ini": true
     },
 
     // When enabled, will trim trailing whitespace when you save a file.
