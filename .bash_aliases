@@ -7,7 +7,7 @@ alias +x='chmod +x'
 alias abspath='readlink -f'
 alias current_shell='readlink /proc/$$/exe'
 alias date='date --rfc-3339=seconds'
-alias dchi='dch -i --distribution bionic --urgency low'
+alias dchi='debchange --increment --distribution bionic --urgency low'
 alias df='df -h --portability'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
@@ -34,7 +34,7 @@ alias echopath='echo $PATH | tr -s ":" "\n"'
 
 
 if type ag > /dev/null 2>&1; then
-    alias ag='ag --pager less'
+    alias ag='ag --pager less -B 2 -A 8'
     alias agcpp="ag --pager less --cpp"
     alias aggo="ag --pager less --go"
     alias agpy="ag --pager less --python"
