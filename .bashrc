@@ -45,6 +45,10 @@ for bin_path in "${HOME}/bin" "${HOME}/.local/bin"; do
     fi
 done
 
+# environment variables: personal info
+export DEBFULLNAME="Tsuyoshi Hombashi"
+export DEBEMAIL="tsuyoshi.hombashi@gmail.com"
+
 # environment variables: general
 export EDITOR=nano
 export GPG_TTY=$(tty)
