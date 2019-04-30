@@ -7,13 +7,15 @@ alias +x='chmod +x'
 alias abspath='readlink -f'
 alias current_shell='readlink /proc/$$/exe'
 alias date='date --rfc-3339=seconds'
-alias dchi='debchange --increment --distribution bionic --urgency low'
 alias df='df -h --portability'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
 alias rmcomment='\grep -vE "^\s*#|^\s*$"'
 alias sudo='sudo '
 alias sudoe='sudo -E '
+
+alias dchi='debchange --increment --distribution bionic --urgency low'
+alias dputppa="dput ppa:thombashi/ppa"
 
 grep_options='--ignore-case --line-number --binary-files=without-match --color=always'
 alias egrep='\grep -E '$(echo ${grep_options})
@@ -77,7 +79,7 @@ if type python > /dev/null 2>&1; then
     ## language aliases: Python - pip
     if type pip > /dev/null 2>&1; then
         alias pip-local-upgrade='pip install --upgrade --no-index .'
-        alias pip-upgrade='pip install --upgrade --upgrade-strategy eager --no-cache-dir'
+        alias pip-upgrade='pip install --upgrade --upgrade-strategy eager'
     fi
 
     alias psbuild='python setup.py build && rm -rf build/'
