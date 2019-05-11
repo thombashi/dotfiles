@@ -103,7 +103,7 @@ if type python > /dev/null 2>&1; then
     ## language aliases: Python - watchdog
     if type watchmedo > /dev/null 2>&1; then
         alias localci-test='watchmedo shell-command -W -p="*.py" -R --command="python setup.py test --addopts \"--runxfail --lf -vv\"" .'
-        alias localci-upgrade='watchmedo shell-command -W -p="*.py" -R --command="date --rfc-3339=seconds; pip install -e . --upgrade" .'
+        alias localci-upgrade='watchmedo shell-command -W -p="*.py" -R --command="date --rfc-3339=seconds; pip install . --upgrade" .'
     fi
 fi
 
@@ -115,6 +115,7 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenv35='pyenv local $(pyenv versions | \grep -oE "3\.5\.[0-9]+" | sort -r | head -n 1)'
     alias pyenv36='pyenv local $(pyenv versions | \grep -oE "3\.6\.[0-9]+" | sort -r | head -n 1)'
     alias pyenv37='pyenv local $(pyenv versions | \grep -oE "3\.7\.[0-9]+" | sort -r | head -n 1)'
+    alias pyenv38='pyenv local $(pyenv versions | \grep -oE "3\.8\.[0-9]+|3.8-dev" | sort -r | head -n 1)'
     alias pyenv3='pyenv local $(pyenv versions | \grep -oE "3\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
 fi
 
