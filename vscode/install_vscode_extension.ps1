@@ -22,7 +22,6 @@ code --install-extension ms-vscode.vscode-typescript-tslint-plugin
 ## etc
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension jebbs.plantuml
-code --install-extension ms-vscode.powershell
 code --install-extension lextudio.restructuredtext
 
 
