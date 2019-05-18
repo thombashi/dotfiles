@@ -82,9 +82,6 @@ if type python > /dev/null 2>&1; then
         alias pip-upgrade='pip install --upgrade --upgrade-strategy eager'
     fi
 
-    alias psbuild='python setup.py build && rm -rf build/'
-    alias psrelease='python setup.py release'
-
     ## language aliases: Python - pytest-runner
     alias pst='python setup.py test'
     alias pstv='python setup.py test --addopts -v'
