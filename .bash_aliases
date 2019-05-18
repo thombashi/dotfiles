@@ -106,6 +106,7 @@ fi
 
 ## language aliases: Python - pyenv
 if [ -e "${HOME}/.pyenv" ]; then
+    alias pyenvs='pyenv versions'
     alias pyenvver='pyenv version'
     alias pyenvsys='pyenv local system'
     alias pyenv2='pyenv local $(pyenv versions | \grep -oE "2\.7\.[0-9]+" | sort -r | head -n 1)'
