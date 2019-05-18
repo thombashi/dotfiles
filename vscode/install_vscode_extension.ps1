@@ -17,7 +17,7 @@ code --install-extension mine.cpplint
 code --install-extension timonwong.shellcheck
 
 ## TypeScript
-code --install-extension eg2.tslint
+code --install-extension ms-vscode.vscode-typescript-tslint-plugin
 
 ## etc
 code --install-extension yzhang.markdown-all-in-one
