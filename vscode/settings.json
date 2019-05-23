@@ -208,6 +208,7 @@
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
+    "gitlens.showWhatsNewAfterUpgrades": false,
 
     // Use ordered list (1. ..., 2. ...)
     "markdown.extension.toc.orderedList": false,
