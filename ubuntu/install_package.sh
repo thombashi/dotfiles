@@ -15,6 +15,7 @@ packages=(
     cmake
     colordiff
     curl
+    fontconfig
     gdb
     git
     gpgv2
