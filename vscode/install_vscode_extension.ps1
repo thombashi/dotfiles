@@ -3,34 +3,35 @@
 
 # Install Language Extensions
 ## golang
-code --install-extension ms-vscode.go
+code --force --install-extension ms-vscode.go
 
 ## Python
-code --install-extension ms-python.python
-code --install-extension njpwerner.autodocstring
+code --force --install-extension ms-python.python
+code --force --install-extension njpwerner.autodocstring
 
 ## C++
-code --install-extension ms-vscode.cpptools
-code --install-extension mine.cpplint
+code --force --install-extension ms-vscode.cpptools
+code --force --install-extension mine.cpplint
 
 ## Shell Script
-code --install-extension timonwong.shellcheck
+code --force --install-extension timonwong.shellcheck
 
 ## TypeScript
-code --install-extension ms-vscode.vscode-typescript-tslint-plugin
+code --force --install-extension ms-vscode.vscode-typescript-tslint-plugin
 
 ## etc
-code --install-extension yzhang.markdown-all-in-one
-code --install-extension jebbs.plantuml
-code --install-extension lextudio.restructuredtext
+code --force --install-extension bungcip.better-toml
+code --force --install-extension yzhang.markdown-all-in-one
+code --force --install-extension jebbs.plantuml
+code --force --install-extension lextudio.restructuredtext
 
 
 # Install Application Extensions
 ## docker
-code --install-extension PeterJausovec.vscode-docker
+code --force --install-extension PeterJausovec.vscode-docker
 
 ## Git
-code --install-extension eamodio.gitlens
+code --force --install-extension eamodio.gitlens
 
 ## Jupyter Notebook
-code --install-extension jithurjacob.nbpreviewer
+code --force --install-extension jithurjacob.nbpreviewer
