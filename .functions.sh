@@ -184,7 +184,10 @@ listpkg() {
 
 # find a package which includes a specified command
 whichpkg() {
-    local command="$1"
+    local command=$1
+    local command_path
+    local result
+    local package
 
     if [ "${command}" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} COMMAND" 1>&2
