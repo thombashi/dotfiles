@@ -24,11 +24,12 @@ code --force --install-extension bungcip.better-toml
 code --force --install-extension yzhang.markdown-all-in-one
 code --force --install-extension jebbs.plantuml
 code --force --install-extension lextudio.restructuredtext
+code --force --install-extension redhat.vscode-yaml
 
 
 # Install Application Extensions
 ## docker
-code --force --install-extension PeterJausovec.vscode-docker
+code --force --install-extension ms-azuretools.vscode-docker
 
 ## Git
 code --force --install-extension eamodio.gitlens
