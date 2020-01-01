@@ -12,7 +12,9 @@
   back = checkout "-"
   new-branch = checkout -b
 
+  b = branch
   branches = branch --all
+  current-branch = rev-parse --abbrev-ref HEAD
   rename-branch = branch --move
   delete-branch = branch -D
   recent-branches = branch --all --sort=committerdate
@@ -41,7 +43,9 @@
   untuck = stash pop "stash@{0}"
 
   co = checkout
+  d = diff
   dc = diff --cached
+  dno = diff --name-only
 
 [advice]
   statusHints = false
