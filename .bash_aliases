@@ -7,6 +7,7 @@ alias +x='chmod +x'
 alias abspath='readlink -f'
 alias current_shell='readlink /proc/$$/exe'
 alias date='date --rfc-3339=seconds'
+alias default_ip="echo $(ifdata -pa $(route | \grep "^default" | awk '{print $8}' | uniq))"
 alias df='df -h --portability'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
@@ -55,6 +56,7 @@ fi
 
 # git aliases
 if type git > /dev/null 2>&1; then
+    alias g='git'
     alias gshow='git show'
     alias glog='git log'
     alias glogp='git log --patch'
