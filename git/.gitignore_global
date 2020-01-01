@@ -19,6 +19,7 @@
 #### windows ####
 # Windows thumbnail cache files
 Thumbs.db
+Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
@@ -99,6 +100,7 @@ Backup of *.doc*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+*.code-workspace
 
 #### User Settings ####
 .ipynb_checkpoints/
