@@ -53,7 +53,7 @@ export DEBEMAIL="tsuyoshi.hombashi@gmail.com"
 export EDITOR=nano
 export GPG_TTY=$(tty)
 export LC_ALL=en_US.UTF-8
-export LESS='-R --hilite-search --ignore-case --jump-target=.4 --LONG-PROMPT --HILITE-UNREAD'
+export LESS='-R --hilite-search --ignore-case --jump-target=.4 --quit-if-one-screen --no-init --LONG-PROMPT --HILITE-UNREAD'
 export TZ='Asia/Tokyo' 
 
 ## set up LS_COLORS
