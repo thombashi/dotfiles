@@ -71,7 +71,7 @@ export HISTSIZE=8192
 export HISTFILESIZE=${HISTSIZE}
 
 ## does not save uninformative commands as a history
-export HISTIGNORE='date:exit:history:ls:la:ll:lla:lrt:lrta:pyver:pwd:which *'
+export HISTIGNORE='date:exit:history:ls:la:ll:lla:lrt:lrta:pyver:pwd:which:histgrep *'
 
 ## datetime display format for history: ISO 8601 format
 export HISTTIMEFORMAT='[%Y-%m-%dT%T] '  # e.g. [2017-01-01T01:23:45] xxx
