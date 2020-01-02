@@ -276,16 +276,10 @@ histgrep() {
 if type python > /dev/null 2>&1; then
     httpserver() {
         local port=$1
-        local pymajorver
+        local ipaddr
 
-        # get Python major version number
-        pymajorver=$(python -c "from __future__ import print_function; import sys; print(sys.version_info[0])")
-
-        if [ "$pymajorver" = "2" ]; then
-            python -m SimpleHTTPServer ${port}
-        elif [ "$pymajorver" = "3" ]; then
-            python -m http.server ${port}
-        fi
+        ipaddr=$(ifdata -pa $(route | \grep "^default" | awk '{print $8}' | uniq))
+        python3 -m http.server --bind "$ipaddr" "${port:-8888}"
     }
 
     pycleanup() {
