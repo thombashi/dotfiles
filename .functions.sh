@@ -252,14 +252,15 @@ ffgp() {
 
 
 lastmodified() {
-    local dir_path=$(readlink -f "$1")
+    local dir_path
 
+    dir_path=$(readlink -f "$1")
     if [ "${dir_path}" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
         return 22
     fi
 
-    \find "$dir_path" -type d -name '.*' -prune -o -type f -printf '%T+ %p\n' | sort
+    \find "$dir_path" -type d -name '.*' -prune -o -type f -printf '%TY-%Tm-%TdT%TH:%TM %p\n' | sort
 }
 
 
