@@ -218,6 +218,14 @@ whichpkg() {
     echo "$package"
 }
 
+ccat() {
+    pygmentize -O style=monokai -f console256 -g "$1"
+}
+
+cless() {
+    pygmentize -O style=monokai -f console256 -g "$1" | less
+}
+
 # select a directory and change current directory to the directory
 cdp() {
     if ! type peco > /dev/null 2>&1; then
