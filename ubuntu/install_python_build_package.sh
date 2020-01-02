@@ -7,7 +7,7 @@ fi
 
 packages=(
     libbz2-dev
-    libc6-dev 
+    libc6-dev
     libexpat1-dev
     libffi-dev
     libgdbm-dev
@@ -23,4 +23,5 @@ packages=(
     zlib1g-dev
 )
 
-apt -y install "${packages[@]}"
+apt update
+apt -y install --no-install-recommends "${packages[@]}"
