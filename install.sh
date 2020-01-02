@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-
 update_option=""
 
 if [ "$1" = "--update" ]; then
     update_option="--update"
 fi
 
-# make backup directory for nano
-\mkdir -p "${HOME}/.nano_bkp"
+TMP_DIR=$(mktemp -d)
+trap "rm -rf $TMP_DIR" 0 1 2 3 15
 
-wget --quiet https://raw.githubusercontent.com/thombashi/docker-alias/master/docker_aliases.sh -O .docker_aliases
+wget --quiet https://raw.githubusercontent.com/thombashi/docker-alias/master/docker_aliases.sh -O ${TMP_DIR}/.docker_aliases
+wget --quiet https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-universal -O ${TMP_DIR}/.dircolors
 
 # install dotfiles
 dotfiles=(
@@ -20,7 +20,8 @@ dotfiles=(
     .functions.sh
     .inputrc
     .jupyter
-    .docker_aliases
+    ${TMP_DIR}/.docker_aliases
+    ${TMP_DIR}/.dircolors
     git/.gitconfig
     git/.gitignore_global
     python/.isort.cfg
@@ -32,12 +33,6 @@ for dotfile in "${dotfiles[@]}"; do
 
     \cp -fva --backup $update_option "$dotfile" "$dst_path"
 done
-
-# seebi/dircolors-solarized
-\cp -fv --backup $update_option dircolors.ansi-universal "${HOME}/.dircolors"
-
-# cealnup
-rm -f .docker_aliases
 
 
 # install commands that included in a bin directory
