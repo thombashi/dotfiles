@@ -1,3 +1,11 @@
+if type fzf > /dev/null 2>&1 ; then
+    SELECTOR=\fzf
+elif type peco > /dev/null 2>&1 ; then
+    SELECTOR=\peco
+else
+    SELECTOR=
+fi
+
 whichbin() {
     local command_path
 
@@ -228,12 +236,12 @@ cless() {
 
 # select a directory and change current directory to the directory
 cdp() {
-    if ! type peco > /dev/null 2>&1; then
-        echo "${FUNCNAME[0]}: peco not installed"
+    if ! type "$SELECTOR" > /dev/null 2>&1; then
+        echo "${FUNCNAME[0]}: require fzf|peco" 1>&2
         return 1
     fi
 
-    dst_dir=$(\find $1 -maxdepth 2 -type d | \peco)
+    dst_dir=$(\ls -d */ */*/ | sed 's/\/$//g' | $SELECTOR)
     if [ "$dst_dir" = "" ]; then
         return 1
     fi
@@ -242,12 +250,12 @@ cdp() {
 }
 
 ffgp() {
-    if ! type peco > /dev/null 2>&1; then
-        echo "${FUNCNAME[0]}: peco not installed"
+    if ! type "$SELECTOR" > /dev/null 2>&1; then
+        echo "${FUNCNAME[0]}: require fzf|peco" 1>&2
         return 1
     fi
 
-    less $(ffg . $1 | peco)
+    less $(ffg . $1 | $SELECTOR)
 }
 
 
