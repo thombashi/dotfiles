@@ -24,7 +24,6 @@ dotfiles=(
     ${TMP_DIR}/.dircolors
     git/.gitconfig
     git/.gitignore_global
-    python/.isort.cfg
     python/.pylintrc
 )
 
