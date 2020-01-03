@@ -11,6 +11,9 @@ add-apt-repository -y --no-update ppa:longsleep/golang-backports
 # https://launchpad.net/~byobu/+archive/ubuntu/ppa
 add-apt-repository -y --no-update ppa:byobu/ppa
 
+# https://github.com/jesseduffield/lazygit
+add-apt-repository -y --no-update ppa:lazygit-team/release
+
 packages=(
     p7zip-full
     bats
@@ -27,6 +30,7 @@ packages=(
     fping
     httping
     jq
+    lazygit
     nmap
     npm
     openjdk-8-jdk-headless
