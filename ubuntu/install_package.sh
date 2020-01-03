@@ -6,7 +6,7 @@ if [ $UID -ne 0 ]; then
 fi
 
 # https://github.com/golang/go/wiki/Ubuntu
-add-apt-repository ppa:longsleep/golang-backports
+add-apt-repository -y --no-update ppa:longsleep/golang-backports
 
 # https://launchpad.net/~byobu/+archive/ubuntu/ppa
 add-apt-repository -y --no-update ppa:byobu/ppa
