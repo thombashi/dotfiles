@@ -31,18 +31,20 @@ packages=(
     httping
     jq
     lazygit
+    moreutils
     nmap
     npm
     openjdk-8-jdk-headless
     pandoc
+    peco
     resolvconf
     silversearcher-ag
     shellcheck
+    snapd
     source-highlight
     sqlite3
     sysstat
     tree
-    tmux
     unzip
     wget
 )
