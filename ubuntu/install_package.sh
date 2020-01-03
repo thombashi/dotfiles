@@ -53,5 +53,5 @@ optional_packages=(
 )
 
 apt update
-apt -y install "${packages[@]}"
+apt -y install --no-install-recommends "${packages[@]}"
 #apt -y install "${optional_packages[@]}"
