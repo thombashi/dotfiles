@@ -56,7 +56,7 @@ apt -y install --no-install-recommends "${packages[@]}"
 #apt -y install "${optional_packages[@]}"
 
 snap install micro --classic
-snap install yq
+snap install yq travis
 
 # install the latest lts npm
 if ! n lts --version > /dev/null 2>&1; then
