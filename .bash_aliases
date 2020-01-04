@@ -118,6 +118,7 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenv38='pyenv local $(pyenv versions | \grep -oE "3\.8\.[0-9]+" | sort -r | head -n 1)'
     alias pyenv39='pyenv local $(pyenv versions | \grep -oE "3\.9\.[0-9]+|3.9-dev" | sort -r | head -n 1)'
     alias pyenv3='pyenv local $(pyenv versions | \grep -oE "3\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
+    alias pyenvpypy='pyenv local $(pyenv versions | \grep -oE "pypy[3-9]\.[0-9]+-[0-9]+\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
     alias pyenvconda='pyenv local $(pyenv versions | \grep -oE "anaconda[2-9]-20[0-9]{2}.[12][0-9]" | sort -r | head -n 1)'
 fi
 
