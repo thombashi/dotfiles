@@ -7,7 +7,7 @@ alias +x='chmod +x'
 alias abspath='readlink -f'
 alias current_shell='readlink /proc/$$/exe'
 alias date='date --rfc-3339=seconds'
-alias default_ip="echo $(ifdata -pa $(route | \grep "^default" | awk '{print $8}' | uniq))"
+alias default_ip_addr="echo $(ifdata -pa $(route | \grep -E '^default|^0\.0\.0\.0' | awk '{print $8}' | uniq))"
 alias df='df -h --portability'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
