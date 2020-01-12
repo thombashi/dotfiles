@@ -43,6 +43,8 @@
   untuck = stash pop "stash@{0}"
 
   co = checkout
+  s = status
+
   d = diff
   dc = diff --cached
   dno = diff --name-only
