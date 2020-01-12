@@ -4,6 +4,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias +x='chmod +x'
 
+alias bashrc='source ~/.bashrc'
+alias bashfuncs='source ~/.bash_functions'
+alias bashaliases='source ~/.bash_aliases'
+
 alias abspath='readlink -f'
 alias current_shell='readlink /proc/$$/exe'
 alias date='date --rfc-3339=seconds'
