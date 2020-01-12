@@ -1,14 +1,14 @@
 autoflake
 black
+codespell
 cpplint
 doc8
-eradicate
 isort
 jupyter
 pylama
 pylint
 pyre-check
 pytest-watch
+pytype
 restructuredtext_lint
-twine
 watchdog

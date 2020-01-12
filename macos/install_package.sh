@@ -12,7 +12,6 @@ brew_packages=(
     gnu-tar
     gzip
     jq
-    nano
     pandoc
     wget
 )

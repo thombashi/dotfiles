@@ -19,6 +19,7 @@ packages=(
     bats
     build-essential
     byobu
+    clang-format
     cmake
     colordiff
     curl
