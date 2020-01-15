@@ -14,6 +14,9 @@ add-apt-repository -y --no-update ppa:byobu/ppa
 # https://github.com/jesseduffield/lazygit
 add-apt-repository -y --no-update ppa:lazygit-team/release
 
+# https://launchpad.net/~git-core/+archive/ubuntu/ppa
+apt-add-repository -y --no-update ppa:git-core/ppa
+
 packages=(
     p7zip-full
     bats
