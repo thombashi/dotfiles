@@ -59,9 +59,11 @@ apt update
 apt -y install --no-install-recommends "${packages[@]}"
 #apt -y install "${optional_packages[@]}"
 
-snap install micro --classic
-snap install snapcraft --classic
-snap install yq travis
+if ! uname -r | \grep -q Microsoft ; then
+    snap install micro --classic
+    snap install snapcraft --classic
+    snap install yq travis
+fi
 
 # install the latest lts npm
 if ! n lts --version > /dev/null 2>&1; then
