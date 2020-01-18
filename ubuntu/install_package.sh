@@ -60,6 +60,7 @@ apt -y install --no-install-recommends "${packages[@]}"
 #apt -y install "${optional_packages[@]}"
 
 snap install micro --classic
+snap install snapcraft --classic
 snap install yq travis
 
 # install the latest lts npm
