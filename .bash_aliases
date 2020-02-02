@@ -98,6 +98,8 @@ if type python > /dev/null 2>&1; then
     alias pstlf='python setup.py test --addopts "--lf -vv"'
     alias pstrxlf='python setup.py test --addopts "--lf -vv --runxfail"'
 
+    alias pstlog='python setup.py test | tee pytest.log'
+
     ## language aliases: Python - pytest-watch
     if type ptw > /dev/null 2>&1; then
         alias ptw='ptw --onpass "echo passed" --onfail "echo failed"'
@@ -124,6 +126,8 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenv3='pyenv local $(pyenv versions | \grep -oE "3\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
     alias pyenvpypy='pyenv local $(pyenv versions | \grep -oE "pypy[3-9]\.[0-9]+-[0-9]+\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
     alias pyenvconda='pyenv local $(pyenv versions | \grep -oE "anaconda[2-9]-20[0-9]{2}.[12][0-9]" | sort -r | head -n 1)'
+
+    alias pyenvall='pyenv local 3.6.10 3.7.6 3.8.1 3.9-dev pypy3.6-7.3.0'
 fi
 
 
