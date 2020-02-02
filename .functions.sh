@@ -289,13 +289,4 @@ if type python > /dev/null 2>&1; then
         ipaddr=$(ifdata -pa $(route | \grep "^default" | awk '{print $8}' | uniq))
         python3 -m http.server --bind "$ipaddr" "${port:-8888}"
     }
-
-    pycleanup() {
-        rm -rfv .eggs/ .cache/ .pytest_cache/ .tox/ **/*/__pycache__/ *.egg-info/
-
-        targets=$(ff . | \grep -E "[a-zA-Z0-9_\-]+\.[a-z0-9]{32}\.py")
-        if [ "$targets" != "" ]; then
-            echo $targets | xargs rm
-        fi
-    }
 fi
