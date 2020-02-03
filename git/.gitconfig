@@ -20,9 +20,9 @@
   recent-branches = branch --all --sort=committerdate
   track = branch --set-upstream-to
 
-  unmerged = diff --name-only --diff-filter=U
-
   tags = tag
+  push-tags = push origin --tags
+
   remotes = remote -v
   move = mv
   remove = rm
@@ -48,6 +48,7 @@
   d = diff
   dc = diff --cached
   dno = diff --name-only
+  unmerged = diff --name-only --diff-filter=U
 
 [advice]
   statusHints = false
