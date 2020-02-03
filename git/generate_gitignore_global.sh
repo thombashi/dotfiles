@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 joe update
-joe g linux,windows,macos,microsoftoffice,visualstudiocode > .gitignore_global
+joe g archives,linux,windows,macos,microsoftoffice,visualstudiocode > .gitignore_global
+
 echo "
 #### User Settings ####
 .ipynb_checkpoints/
