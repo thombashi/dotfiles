@@ -67,7 +67,7 @@ fi
 #   more detailed information for each parameter can be found at man bash
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTSIZE=8192
+export HISTSIZE=16384
 export HISTFILESIZE=${HISTSIZE}
 
 ## does not save uninformative commands as a history
