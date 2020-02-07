@@ -103,7 +103,7 @@ if type python > /dev/null 2>&1; then
 
     ## language aliases: Python - watchdog
     if type watchmedo > /dev/null 2>&1; then
-        alias localci-test='watchmedo shell-command -W -p="*.py" -R --command="python setup.py test --addopts \"--runxfail --lf -vv\"" .'
+        alias localci-test='watchmedo shell-command -W -p="*.py" -R --command="pytest --runxfail --lf -vv" .'
     fi
 fi
 
