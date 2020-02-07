@@ -89,14 +89,10 @@ if type python > /dev/null 2>&1; then
     fi
 
     ## language aliases: Python - pytest-runner
-    alias pst='python setup.py test'
-    alias pstv='python setup.py test --addopts -v'
-    alias pstvv='python setup.py test --addopts -vv'
-    alias pstrx='python setup.py test --addopts --runxfail'
-    alias pstrxv='python setup.py test --addopts "--runxfail -v"'
-    alias pstrxvv='python setup.py test --addopts "--runxfail -vv"'
-    alias pstlf='python setup.py test --addopts "--lf -vv"'
-    alias pstrxlf='python setup.py test --addopts "--lf -vv --runxfail"'
+    alias pyt='pytest'
+    alias pytrx='pytest --runxfail'
+    alias pytlf='pytest --last-failed'
+    alias pytrxlf='pytest --runxfail --last-failed'
 
     alias pstlog='python setup.py test | tee pytest.log'
 
