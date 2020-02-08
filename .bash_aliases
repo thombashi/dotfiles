@@ -96,6 +96,11 @@ if type python > /dev/null 2>&1; then
 
     alias pytlog=' | tee pytest.log'
 
+    ## language aliases: Python - pyupgrade
+    if type pyupgrade > /dev/null 2>&1; then
+        alias pyupgrade-py3plus='ffg . "\.py$" | xargs pyupgrade --py3-plus'
+        alias pyupgrade-py36='ffg . "\.py$" | xargs pyupgrade --py36'
+    fi
 
     ## language aliases: Python - pytest-watch
     if type ptw > /dev/null 2>&1; then
@@ -123,6 +128,7 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenvpypy='pyenv local $(pyenv versions | \grep -oE "pypy[3-9]\.[0-9]+-[0-9]+\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
     alias pyenvconda='pyenv local $(pyenv versions | \grep -oE "anaconda[2-9]-20[0-9]{2}.[12][0-9]" | sort -r | head -n 1)'
 
+    #alias pyenvall='pyenv local 3.5.9 3.6.10 3.7.6 3.8.1 3.9-dev pypy3.6-7.3.0'
     alias pyenvall='pyenv local 3.6.10 3.7.6 3.8.1 3.9-dev pypy3.6-7.3.0'
 fi
 
