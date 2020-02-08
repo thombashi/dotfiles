@@ -88,7 +88,7 @@ if type python > /dev/null 2>&1; then
         alias pip-upgrade='pip install --upgrade --upgrade-strategy eager'
     fi
 
-    ## language aliases: Python - pytest-runner
+    ## language aliases: Python - pytest
     alias pyt='pytest'
     alias pytrx='pytest --runxfail'
     alias pytlf='pytest --last-failed'
