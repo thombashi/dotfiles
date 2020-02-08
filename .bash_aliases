@@ -94,7 +94,8 @@ if type python > /dev/null 2>&1; then
     alias pytlf='pytest --last-failed'
     alias pytrxlf='pytest --runxfail --last-failed'
 
-    alias pstlog='python setup.py test | tee pytest.log'
+    alias pytlog=' | tee pytest.log'
+
 
     ## language aliases: Python - pytest-watch
     if type ptw > /dev/null 2>&1; then
