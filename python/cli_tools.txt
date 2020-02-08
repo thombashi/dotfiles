@@ -1,14 +1,9 @@
-autoflake
-black
-codespell
 cpplint
 doc8
-isort
 jupyter
-pylama
-pylint
 pyre-check
 pytest-watch
-pytype
+pytest-pudb
+pyupgrade
 restructuredtext_lint
 watchdog
