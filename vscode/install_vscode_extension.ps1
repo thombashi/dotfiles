@@ -11,7 +11,6 @@ code --force --install-extension njpwerner.autodocstring
 
 ## C++
 code --force --install-extension ms-vscode.cpptools
-code --force --install-extension mine.cpplint
 
 ## Shell Script
 code --force --install-extension timonwong.shellcheck
