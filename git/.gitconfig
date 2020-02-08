@@ -12,7 +12,7 @@
   back = checkout "-"
   new-branch = checkout -b
 
-  b = branch
+  br = branch
   branches = branch --all
   current-branch = rev-parse --abbrev-ref HEAD
   rename-branch = branch --move
