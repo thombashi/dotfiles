@@ -21,12 +21,11 @@ code --force --install-extension ms-vscode.vscode-typescript-tslint-plugin
 ## etc
 code --force --install-extension bungcip.better-toml
 code --force --install-extension yzhang.markdown-all-in-one
-code --force --install-extension jebbs.plantuml
 code --force --install-extension lextudio.restructuredtext
 code --force --install-extension redhat.vscode-yaml
 
 
-# Install Application Extensions
+# Install Application Specific Extensions
 ## docker
 code --force --install-extension ms-azuretools.vscode-docker
 
@@ -35,3 +34,6 @@ code --force --install-extension eamodio.gitlens
 
 ## Jupyter Notebook
 code --force --install-extension jithurjacob.nbpreviewer
+
+## PlantUML
+code --force --install-extension jebbs.plantuml
