@@ -13,6 +13,8 @@
     // Enables font ligatures
     "editor.fontLigatures": true,
 
+    "editor.minimap.enabled": false,
+
     // Controls if lines should wrap. The lines will wrap at min(editor.wrappingColumn, viewportWidthInColumns).
     "editor.wordWrap": "on",
 
@@ -88,8 +90,10 @@
 
     // Configure glob patterns for excluding files and folders. For example, the files explorer decides which files and folders to show or hide based on this setting.
     "files.exclude": {
+        "**/__pycache__": true,
         "**/.cache": true,
         "**/.classpath": true,
+        "**/.coverage": true,
         "**/.DS_Store": true,
         "**/.eggs": true,
         "**/.factorypath": true,
@@ -99,21 +103,24 @@
         "**/.mypy_cache": true,
         "**/.project": true,
         "**/.pydevproject": true,
+        "**/.pyre": true,
         "**/.pytest_cache": true,
         "**/.python-version": true,
+        "**/.pytype": true,
         "**/.settings": true,
         "**/.svn": true,
+        "**/.tox": true,
         "**/.vscode": true,
         "**/*.dll": true,
         "**/*.egg-info": true,
         "**/*.lnk": true,
         "**/*.pdb": true,
+        "**/*.pyc": true,
+        "**/*.snap": true,
         "**/CVS": true,
-        "**/desktop.ini": true
+        "**/desktop.ini": true,
+        "**/nodemodules": true
     },
-
-    // When enabled, will trim trailing whitespace when you save a file.
-    "files.trimTrailingWhitespace": true,
 
     // Telemetry --------------------
 
@@ -140,11 +147,17 @@
     // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
     "python.formatting.provider": "black",
 
+    "python.linting.mypyEnabled": true,
+
     // Whether to lint Python files using pylama.
     "python.linting.pylamaEnabled": true,
 
     // Arguments passed in. Each argument is a separate item in the array.
     "python.linting.pylintArgs": ["--errors-only"],
+
+    "python.linting.pylamaArgs": [
+        "max_line_length = 100"
+    ],
 
     // Arguments passed in. Each argument is a separate item in the array.
     "python.sortImports.args": [
@@ -228,4 +241,12 @@
     "restructuredtext.linter.extraArgs": ["--max-line-length", 120],
 
     "shellcheck.disableVersionCheck": true,
+
+    "breadcrumbs.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.inputValidationSubjectLength": null,
+    "search.exclude": {
+        "**/__pycache__": true,
+        "**/.coverage": true
+    },
 }
