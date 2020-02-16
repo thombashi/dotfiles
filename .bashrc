@@ -16,7 +16,7 @@ set -o ignoreeof
 
 
 # setup PATH
-if [ "$(uname -s)" = "Darwin" ] && type brew > /dev/null 2>&1; then
+if [ "$(uname -s)" = "Darwin" ] && command -v brew > /dev/null 2>&1; then
     for brew_package in coreutils findutils gnu-sed gnu-tar; do
         BREW_PKG_PATH=$(brew --prefix $brew_package)
 
@@ -131,7 +131,7 @@ if [ -e "/usr/local/go/bin" ] && ! echo "${PATH}" | \grep -qF "/usr/local/go/bin
     export PATH=$PATH:/usr/local/go/bin
 fi
 
-if type go > /dev/null 2>&1 ; then
+if command -v go > /dev/null 2>&1 ; then
     export GOPATH=${HOME}/go
 
     if ! echo "${PATH}" | \grep -qF "$GOPATH" ; then

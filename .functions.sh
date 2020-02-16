@@ -1,6 +1,6 @@
-if type fzf > /dev/null 2>&1 ; then
+if command -v fzf > /dev/null 2>&1 ; then
     SELECTOR=\fzf
-elif type peco > /dev/null 2>&1 ; then
+elif command -v peco > /dev/null 2>&1 ; then
     SELECTOR=\peco
 else
     SELECTOR=
@@ -236,7 +236,7 @@ cless() {
 
 # select a directory and change current directory to the directory
 cdp() {
-    if ! type "$SELECTOR" > /dev/null 2>&1; then
+    if ! command -v "$SELECTOR" > /dev/null 2>&1; then
         echo "${FUNCNAME[0]}: require fzf|peco" 1>&2
         return 1
     fi
@@ -250,7 +250,7 @@ cdp() {
 }
 
 ffgp() {
-    if ! type "$SELECTOR" > /dev/null 2>&1; then
+    if ! command -v "$SELECTOR" > /dev/null 2>&1; then
         echo "${FUNCNAME[0]}: require fzf|peco" 1>&2
         return 1
     fi
@@ -281,7 +281,7 @@ histgrep() {
     history | \grep -E "$1" | uniq --skip-fields 2
 }
 
-if type python > /dev/null 2>&1; then
+if command -v python > /dev/null 2>&1; then
     httpserver() {
         local port=$1
         local ipaddr

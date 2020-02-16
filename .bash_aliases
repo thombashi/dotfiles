@@ -40,18 +40,18 @@ unset ls_options
 alias echopath='echo $PATH | tr -s ":" "\n"'
 
 
-if type ag > /dev/null 2>&1; then
+if command -v ag > /dev/null 2>&1; then
     alias ag='ag --pager less -B 2 -A 8'
     alias agcpp="ag --pager less --cpp"
     alias aggo="ag --pager less --go"
     alias agpy="ag --pager less --python"
 fi
 
-if type apt > /dev/null 2>&1; then
+if command -v apt > /dev/null 2>&1; then
     alias apt-update='apt update; apt list --upgradable'
 fi
 
-if type colordiff > /dev/null 2>&1; then
+if command -v colordiff > /dev/null 2>&1; then
     alias diff='\colordiff -u --ignore-space-change --tabsize=4'
 else
     alias diff='\diff -u --ignore-space-change --tabsize=4'
@@ -59,7 +59,7 @@ fi
 
 
 # git aliases
-if type git > /dev/null 2>&1; then
+if command -v git > /dev/null 2>&1; then
     alias g='git'
     alias gshow='git show'
     alias glog='git log'
@@ -70,20 +70,20 @@ fi
 
 
 # language aliases: Python
-if type python > /dev/null 2>&1; then
+if command -v python > /dev/null 2>&1; then
     alias py='python'
     alias pyver='python --version'
 
-    if type python2 > /dev/null 2>&1; then
+    if command -v python2 > /dev/null 2>&1; then
         alias py2='python2'
     fi
 
-    if type python3 > /dev/null 2>&1; then
+    if command -v python3 > /dev/null 2>&1; then
         alias py3='python3'
     fi
 
     ## language aliases: Python - pip
-    if type pip > /dev/null 2>&1; then
+    if command -v pip > /dev/null 2>&1; then
         alias pip-local-upgrade='pip install --upgrade --no-index .'
         alias pip-upgrade='pip install --upgrade --upgrade-strategy eager'
     fi
@@ -97,18 +97,18 @@ if type python > /dev/null 2>&1; then
     alias pytlog=' | tee pytest.log'
 
     ## language aliases: Python - pyupgrade
-    if type pyupgrade > /dev/null 2>&1; then
+    if command -v pyupgrade > /dev/null 2>&1; then
         alias pyupgrade-py3plus='ffg . "\.py$" | xargs pyupgrade --py3-plus'
         alias pyupgrade-py36='ffg . "\.py$" | xargs pyupgrade --py36'
     fi
 
     ## language aliases: Python - pytest-watch
-    if type ptw > /dev/null 2>&1; then
+    if command -v ptw > /dev/null 2>&1; then
         alias ptw='ptw --onpass "echo passed" --onfail "echo failed"'
     fi
 
     ## language aliases: Python - watchdog
-    if type watchmedo > /dev/null 2>&1; then
+    if command -v watchmedo > /dev/null 2>&1; then
         alias localci-test='watchmedo shell-command -W -p="*.py" -R --command="pytest --runxfail --lf -vv" .'
     fi
 fi
@@ -134,6 +134,6 @@ fi
 
 
 # language aliases: Golang
-if type go > /dev/null 2>&1; then
+if command -v go > /dev/null 2>&1; then
     alias gover='go version'
 fi
