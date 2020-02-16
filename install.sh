@@ -9,8 +9,9 @@ fi
 TMP_DIR=$(mktemp -d)
 trap "\rm -rf $TMP_DIR" 0 1 2 3 15
 
-wget --quiet https://raw.githubusercontent.com/thombashi/docker-alias/master/docker_aliases.sh -O ${TMP_DIR}/.docker_aliases
-wget --quiet https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-universal -O ${TMP_DIR}/.dircolors
+GITHUB=https://raw.githubusercontent.com
+wget --quiet $GITHUB/thombashi/docker-alias/master/docker_aliases.sh -O ${TMP_DIR}/.docker_aliases
+wget --quiet $GITHUB/seebi/dircolors-solarized/master/dircolors.ansi-universal -O ${TMP_DIR}/.dircolors
 
 # install dotfiles
 dotfiles=(
