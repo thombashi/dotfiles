@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if command -v fzf > /dev/null 2>&1 ; then
     SELECTOR=\fzf
 elif command -v peco > /dev/null 2>&1 ; then
@@ -10,21 +12,21 @@ whichbin() {
     local command_path
 
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-        command_path=$(\which $1 2> /dev/null)
+        command_path=$(\which "$1" 2> /dev/null)
     elif [ -e /etc/fedora-release ] || [ -e /etc/redhat-release ]; then
-        command_path=$(\which --skip-alias $1 2> /dev/null)
+        command_path=$(\which --skip-alias "$1" 2> /dev/null)
     else
         echo "${FUNCNAME[0]}: unknown distribution" 1>&2
         return 22
     fi
 
-    result=$?
+    local result=$?
     if [ "$result" -ne 0 ]; then
         echo "no ${1} in (${PATH})" 1>&2
         return $result
     fi
 
-    readlink -f $command_path
+    readlink -f "$command_path"
 }
 
 # Convert datetime to an epoch time.
@@ -279,6 +281,11 @@ histgrep() {
     fi
 
     history | \grep -E "$1" | uniq --skip-fields 2
+}
+
+histexec() {
+    command=$(history | sort --reverse --numeric-sort | $SELECTOR |  awk '{c="";for(i=3;i<=NF;i++) c=c $i" "; print c}')
+    $command
 }
 
 if command -v python > /dev/null 2>&1; then
