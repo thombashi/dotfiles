@@ -5,7 +5,7 @@ alias ....='cd ../../..'
 alias +x='chmod +x'
 
 alias bashrc='source ~/.bashrc'
-alias bashfuncs='source ~/.bash_functions'
+alias bashfuncs='source ~/.functions.sh'
 alias bashaliases='source ~/.bash_aliases'
 
 alias abspath='readlink -f'
