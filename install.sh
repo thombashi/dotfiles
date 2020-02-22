@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-update_option=""
+cp_option=""
 
-if [ "$1" = "--update" ]; then
-    update_option="--update"
+if [ "$1" = "--force" ]; then
+    cp_option="--force"
+else
+    cp_option="--interactive"
 fi
 
 TMP_DIR=$(mktemp -d)
@@ -30,7 +32,7 @@ dotfiles=(
 for dotfile in "${dotfiles[@]}"; do
     dst_path=${HOME}/$(basename "$dotfile")
 
-    \cp -fva --backup $update_option "$dotfile" "$dst_path"
+    \cp -va --backup "$cp_option" "$dotfile" "$dst_path"
 done
 
 
