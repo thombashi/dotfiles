@@ -27,6 +27,7 @@ packages=(
     colordiff
     curl
     fontconfig
+    fonts-firacode
     gdb
     git
     gpgv2
@@ -60,9 +61,10 @@ apt -y install --no-install-recommends "${packages[@]}"
 #apt -y install "${optional_packages[@]}"
 
 if ! uname -r | \grep -q Microsoft ; then
+    snap install hub --classic
     snap install micro --classic
     snap install snapcraft --classic
-    snap install yq travis
+    snap install circleci yq travis
 fi
 
 # install the latest lts npm
@@ -72,3 +74,5 @@ if ! n lts --version > /dev/null 2>&1; then
     n lts
     apt purge nodejs npm -y --autoremove
 fi
+
+go get -u github.com/justjanne/powerline-go
