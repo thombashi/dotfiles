@@ -77,3 +77,6 @@
 
 [mailmap]
   file = ~/.mailmap
+
+[hub]
+    protocol = https
