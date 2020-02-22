@@ -297,3 +297,7 @@ if command -v python > /dev/null 2>&1; then
         python3 -m http.server --bind "$ipaddr" "${port:-8888}"
     }
 fi
+
+default_ip_addr() {
+    echo $(ifdata -pa $(route | \grep -E '^default|^0\.0\.0\.0' | awk '{print $8}' | uniq))
+}
