@@ -161,7 +161,16 @@ unset dotfiles
 
 
 if readlink /proc/$$/exe | \grep -qF bash ; then
-    export PS1='\h: \w \$ '  # <host>: <locastion> $
+    function _update_ps1() {
+        PS1="$($GOPATH/bin/powerline-go -mode flat -modules "venv,cwd,perms,git,exit,newline,root" -error $?)"
+    }
+
+    if [ -f "$GOPATH/bin/powerline-go" ]; then
+        PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+    else
+        export PS1='\w \$ '  # <locastion> $
+    fi
+
     # Case-insensitive globbing (used in pathname expansion)
     shopt -s nocaseglob
 
