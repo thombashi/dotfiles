@@ -50,7 +50,7 @@ export DEBFULLNAME="Tsuyoshi Hombashi"
 export DEBEMAIL="tsuyoshi.hombashi@gmail.com"
 
 # environment variables: general
-export EDITOR=micro
+export EDITOR=nano
 export GPG_TTY=$(tty)
 export LC_ALL=en_US.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --quit-if-one-screen --no-init --LONG-PROMPT --HILITE-UNREAD'
@@ -162,11 +162,12 @@ unset dotfiles
 
 if readlink /proc/$$/exe | \grep -qF bash ; then
     function _update_ps1() {
-        PS1="$($GOPATH/bin/powerline-go -mode flat -modules "venv,cwd,perms,git,exit,newline,root" -error $?)"
+        PS1="$($GOPATH/bin/powerline-go -mode compatible -modules "venv,cwd,perms,git,exit,newline,root" -error $?)"
     }
 
     if [ -f "$GOPATH/bin/powerline-go" ]; then
         PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+        export PS1
     else
         export PS1='\w \$ '  # <locastion> $
     fi
