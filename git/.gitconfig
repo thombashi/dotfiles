@@ -43,7 +43,7 @@
   untuck = stash pop "stash@{0}"
 
   co = checkout
-  s = status
+  st = status
 
   d = diff
   dc = diff --cached
