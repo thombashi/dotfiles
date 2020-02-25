@@ -108,7 +108,7 @@ if command -v python > /dev/null 2>&1; then
 
     ## language aliases: Python - watchdog
     if command -v watchmedo > /dev/null 2>&1; then
-        alias localci-test='watchmedo shell-command -W -p="*.py" -R --command="pytest --runxfail --lf -vv" .'
+        alias localci-py='watchmedo shell-command -W -p="*.py" -R --command="pytest --runxfail --lf -vv" .'
     fi
 fi
 
