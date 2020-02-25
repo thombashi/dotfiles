@@ -43,7 +43,6 @@ packages=(
     peco
     resolvconf
     silversearcher-ag
-    shellcheck
     snapd
     source-highlight
     sqlite3
@@ -64,7 +63,9 @@ if ! uname -r | \grep -q Microsoft ; then
     snap install hub --classic
     snap install micro --classic
     snap install snapcraft --classic
-    snap install circleci yq travis
+    snap install circleci shellcheck travis yq
+else
+    apt -y install --no-install-recommends shellcheck
 fi
 
 # install the latest lts npm
