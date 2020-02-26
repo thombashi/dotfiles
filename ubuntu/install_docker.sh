@@ -46,4 +46,8 @@ apt install docker-ce
 
 # Manage Docker as a non-root user
 groupadd docker
-gpasswd -a $USER docker
+
+echo
+echo "complete installation"
+echo "execute docker commands w/ not a super-user, you need to execute:" 
+echo "  gpasswd -a $USER docker"
