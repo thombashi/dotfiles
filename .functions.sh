@@ -276,8 +276,15 @@ lastmodified() {
 
 histgrep() {
     if [ "$1" = "" ]; then
-        echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
-        return 22
+        if ! command -v "$SELECTOR" > /dev/null 2>&1; then
+            echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
+            return 22
+        fi
+
+        command=$(history | sort --reverse --numeric-sort | $SELECTOR | awk '{c="";for(i=3;i<=NF;i++) c=c $i" "; print c}')
+        echo "$command"
+
+        return 0
     fi
 
     history | \grep -E "$1" | uniq --skip-fields 2
