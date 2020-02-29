@@ -93,7 +93,9 @@ if command -v python > /dev/null 2>&1; then
     alias pytlf='pytest --last-failed'
     alias pytrxlf='pytest --runxfail --last-failed'
 
-    alias pytlog=' | tee pytest.log'
+    function pytlog () {
+        pytest "$1" | tee pytest.log
+    }
 
     ## language aliases: Python - pyupgrade
     if command -v pyupgrade > /dev/null 2>&1; then
