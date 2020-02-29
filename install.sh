@@ -23,8 +23,8 @@ dotfiles=(
     .functions.sh
     .inputrc
     .jupyter
-    ${TMP_DIR}/.docker_aliases
-    ${TMP_DIR}/.dircolors
+    "${TMP_DIR}/.docker_aliases"
+    "${TMP_DIR}/.dircolors"
     git/.gitconfig
     git/.gitignore_global
 )
