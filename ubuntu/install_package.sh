@@ -28,6 +28,7 @@ packages=(
     curl
     fontconfig
     fonts-firacode
+    gawk
     gdb
     git
     gpgv2
