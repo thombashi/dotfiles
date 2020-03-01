@@ -22,6 +22,7 @@
 
   tags = tag
   push-tags = push origin --tags
+  signed-tag = tag --sign -m 'GPG signed tag'
 
   remotes = remote -v
   move = mv
