@@ -32,7 +32,7 @@ dotfiles=(
 for dotfile in "${dotfiles[@]}"; do
     dst_path=${HOME}/$(basename "$dotfile")
 
-    \cp -va --backup "$cp_option" "$dotfile" "$dst_path"
+    \cp -va --update --backup "$cp_option" "$dotfile" "$dst_path"
 done
 
 
