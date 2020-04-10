@@ -1,6 +1,8 @@
 cpplint
 doc8
 jupyter
+mypy
+pylama
 pyre-check
 pytest-watch
 pytest-pudb
