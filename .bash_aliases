@@ -56,6 +56,9 @@ else
     alias diff='\diff -u --ignore-space-change --tabsize=4'
 fi
 
+if command -v errno > /dev/null 2>&1; then
+    alias last_errno='errno "$?"'
+fi
 
 # git aliases
 if command -v git > /dev/null 2>&1; then
@@ -84,7 +87,13 @@ if command -v python > /dev/null 2>&1; then
     ## language aliases: Python - pip
     if command -v pip > /dev/null 2>&1; then
         alias pip-local-upgrade='pip install --upgrade --no-index .'
+        alias pip-outdated='pip list --outdated'
         alias pip-upgrade='pip install --upgrade --upgrade-strategy eager'
+    fi
+
+    ## language aliases: Python - mypy
+    if command -v pip > /dev/null 2>&1; then
+        alias mypy='mypy --ignore-missing-imports --show-error-context --show-error-codes --python-version 3.5'
     fi
 
     ## language aliases: Python - pytest
