@@ -47,7 +47,7 @@ if command -v ag > /dev/null 2>&1; then
 fi
 
 if command -v apt > /dev/null 2>&1; then
-    alias apt-update='apt update; apt list --upgradable'
+    alias apt-update='apt update && apt list --upgradable'
 fi
 
 if command -v colordiff > /dev/null 2>&1; then
