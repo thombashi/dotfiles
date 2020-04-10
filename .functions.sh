@@ -157,6 +157,25 @@ extract() {
     esac
 }
 
+lsarchive() {
+    local archive_file=$1
+
+    if [ ! -f "${archive_file}" ]; then
+        echo "'${archive_file}' is not a valid file to extract" 1>&2
+        return 1
+    fi
+
+    case "${archive_file}" in
+        *.tar.bz2) \tar -ztvf "${archive_file}"  ;;
+        *.tar.gz)  \tar -ztvf "${archive_file}"  ;;
+        *.tar.xz)  \tar -ztvf "${archive_file}"  ;;
+        *.tar)     \tar -ztvf "${archive_file}"  ;;
+        *.tgz)     \tar -ztvf "${archive_file}"  ;;
+        *.whl)     \unzip -l "${archive_file}"  ;;
+        *.zip)     \unzip -l "${archive_file}"  ;;
+    esac
+}
+
 # list up installed packages
 lspkg() {
     if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
