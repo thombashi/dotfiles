@@ -119,18 +119,27 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenvs='pyenv versions'
     alias pyenvver='pyenv version'
     alias pyenvsys='pyenv local system'
-    alias pyenv2='pyenv local $(pyenv versions | \grep -oE "2\.7\.[0-9]+" | sort -r | head -n 1)'
-    alias pyenv35='pyenv local $(pyenv versions | \grep -oE "3\.5\.[0-9]+" | sort -r | head -n 1)'
-    alias pyenv36='pyenv local $(pyenv versions | \grep -oE "3\.6\.[0-9]+" | sort -r | head -n 1)'
-    alias pyenv37='pyenv local $(pyenv versions | \grep -oE "3\.7\.[0-9]+" | sort -r | head -n 1)'
-    alias pyenv38='pyenv local $(pyenv versions | \grep -oE "3\.8\.[0-9]+" | sort -r | head -n 1)'
-    alias pyenv39='pyenv local $(pyenv versions | \grep -oE "3\.9\.[0-9]+|3.9-dev" | sort -r | head -n 1)'
-    alias pyenv3='pyenv local $(pyenv versions | \grep -oE "3\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
-    alias pyenvpypy='pyenv local $(pyenv versions | \grep -oE "pypy[3-9]\.[0-9]+-[0-9]+\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
-    alias pyenvconda='pyenv local $(pyenv versions | \grep -oE "anaconda[2-9]-20[0-9]{2}.[12][0-9]" | sort -r | head -n 1)'
 
-    #alias pyenvall='pyenv local 3.5.9 3.6.10 3.7.6 3.8.1 3.9-dev pypy3.6-7.3.0'
-    alias pyenvall='pyenv local 3.6.10 3.7.6 3.8.1 3.9-dev pypy3.6-7.3.0'
+    alias pyenv2='pyenv local $(pyenv versions | \grep -oE "2\.7\.[0-9]+" | sort -r | head -n 1)'
+
+    alias pyver35='echo $(pyenv versions | \grep -oE "3\.5\.[0-9]+" | sort | tail -n 1)'
+    alias pyver36='echo $(pyenv versions | \grep -oE "3\.6\.[0-9]+" | sort | tail -n 1)'
+    alias pyver37='echo $(pyenv versions | \grep -oE "3\.7\.[0-9]+" | sort | tail -n 1)'
+    alias pyver38='echo $(pyenv versions | \grep -oE "3\.8\.[0-9]+" | sort | tail -n 1)'
+    alias pyver39='echo $(pyenv versions | \grep -oE "3\.9\.[0-9]+|3.9-dev" | sort | tail -n 1)'
+    alias pyverpypy='echo $(pyenv versions | \grep -oE "pypy[3-9]\.[0-9]+-[0-9]+\.[0-9]+\.[0-9]+" | sort | tail -n 1)'
+    alias pyverconda='echo $(pyenv versions | \grep -oE "anaconda[2-9]-20[0-9]{2}.[12][0-9]" | sort | tail -n 1)'
+
+    alias pyenv35='pyenv local $(pyver35)'
+    alias pyenv36='pyenv local $(pyver36)'
+    alias pyenv37='pyenv local $(pyver37)'
+    alias pyenv38='pyenv local $(pyver38)'
+    alias pyenv39='pyenv local $(pyver39)'
+    alias pyenv3='pyenv local $(pyenv versions | \grep -oE "3\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
+    alias pyenvpypy='pyenv local $(pyverpypy)'
+    alias pyenvconda='pyenv local $(pyverconda)'
+
+    alias pyenvall='pyenv local $(pyver36) $(pyver37) $(pyver38) $(pyver39) $(pyverpypy)'
 fi
 
 
