@@ -47,6 +47,7 @@ packages=(
     snapd
     source-highlight
     sqlite3
+    sshpass
     sysstat
     tree
     unzip
