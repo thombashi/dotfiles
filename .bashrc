@@ -173,7 +173,6 @@ if readlink /proc/$$/exe | \grep -qF bash ; then
 
     if [ -f "$GOPATH/bin/powerline-go" ]; then
         PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-        export PS1
     else
         export PS1='\w \$ '  # <locastion> $
     fi
