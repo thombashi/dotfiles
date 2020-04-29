@@ -86,7 +86,7 @@
     "files.autoSave": "afterDelay",
 
     // Controls the delay in ms after which a dirty file is saved automatically. Only applies when "files.autoSave" is set to "afterDelay"
-    "files.autoSaveDelay": 3000,
+    "files.autoSaveDelay": 1000,
 
     // Configure glob patterns for excluding files and folders. For example, the files explorer decides which files and folders to show or hide based on this setting.
     "files.exclude": {
@@ -120,6 +120,14 @@
         "**/CVS": true,
         "**/desktop.ini": true,
         "**/nodemodules": true
+    },
+
+    "files.watcherExclude": {
+        "**/.eggs/**": true,
+        "**/.mypy_cache/**": true,
+        "**/.pytype/**": true,
+        "**/.tox/**": true,
+        "**/*.egg-info/**": true
     },
 
     // Telemetry --------------------
