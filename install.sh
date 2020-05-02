@@ -23,6 +23,7 @@ dotfiles=(
     .functions.sh
     .inputrc
     .jupyter
+    .shellcheckrc
     "${TMP_DIR}/.docker_aliases"
     "${TMP_DIR}/.dircolors"
     git/.gitconfig
