@@ -137,7 +137,7 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyver38='echo $(pyenv versions | \grep -oE "3\.8\.[0-9]+" | sort | tail -n 1)'
     alias pyver39='echo $(pyenv versions | \grep -oE "3\.9\.[0-9]+|3.9-dev" | sort | tail -n 1)'
     alias pyverpypy='echo $(pyenv versions | \grep -oE "pypy[3-9]\.[0-9]+-[0-9]+\.[0-9]+\.[0-9]+" | sort | tail -n 1)'
-    alias pyverconda='echo $(pyenv versions | \grep -oE "anaconda[2-9]-20[0-9]{2}.[12][0-9]" | sort | tail -n 1)'
+    alias pyverconda='echo $(pyenv versions | \grep -oE "anaconda[2-9]-20[0-9]{2}.[012][0-9]" | sort | tail -n 1)'
 
     alias pyenv35='pyenv local $(pyver35)'
     alias pyenv36='pyenv local $(pyver36)'
