@@ -327,3 +327,24 @@ fi
 default_ip_a() {
     ifdata -pa $(route | \grep -E '^default|^0\.0\.0\.0' | awk '{print $8}' | uniq)
 }
+
+
+# find files and grep file name with exclude hidden files/directories
+fetch_gh_tarball_sha256() {
+    if [ $# -ne 1 ]; then
+        echo "Usage: ${FUNCNAME[0]} owner/repo" 1>&2
+        return 22
+    fi
+
+    REPO_ID=$1
+    URL="https://api.github.com/repos/$REPO_ID/releases/latest"
+    TAG_NAME=$(curl -sSL "$URL" | jq -er .tag_name)
+
+    if [ "$?" != "0" ]; then
+        echo "failed to fetch tag_name from $URL" 1>&2
+        return 2
+    fi
+
+    echo "https://github.com/$REPO_ID/archive/${TAG_NAME}.tar.gz"
+    curl -sL https://github.com/$REPO_ID/archive/${TAG_NAME}.tar.gz | openssl sha256 -r
+}
