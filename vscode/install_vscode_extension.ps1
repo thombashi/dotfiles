@@ -3,10 +3,11 @@
 
 # Install Language Extensions
 ## golang
-code --force --install-extension ms-vscode.go
+code --force --install-extension golang.go
 
 ## Python
 code --force --install-extension ms-python.python
+code --force --install-extension ms-python.vscode-pylance
 code --force --install-extension njpwerner.autodocstring
 
 ## C++
