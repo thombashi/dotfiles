@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Reference:
-#   Get Docker CE for Ubuntu | Docker Documentation
-#   https://docs.docker.com/install/linux/docker-ce/ubuntu/
-#   (amd64)
+#   Install Docker Engine on Ubuntu | Docker Documentation
+#   https://docs.docker.com/engine/install/ubuntu/
+#   (x86_64 / amd64)
 
 if [ $UID -ne 0 ]; then
     echo 'requires superuser privilege' 1>&2
@@ -12,13 +12,14 @@ fi
 
 
 # Uninstall older versions of Docker
-apt remove docker docker-engine docker.io
+apt remove docker docker-engine docker.io containerd runc
 
 # Install packages to allow apt to use a repository over HTTPS:
 https_packages=(
     apt-transport-https
     ca-certificates
     curl
+    gnupg-agent
     software-properties-common
 )
 
@@ -37,7 +38,7 @@ add-apt-repository \
 apt update
 
 # Install Docker CE
-apt install docker-ce
+apt install docker-ce docker-ce-cli containerd.io
 
 
 # Reference:
