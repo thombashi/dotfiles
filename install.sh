@@ -22,7 +22,6 @@ dotfiles=(
     .bashrc
     .functions.sh
     .inputrc
-    .jupyter
     .shellcheckrc
     "${TMP_DIR}/.docker_aliases"
     "${TMP_DIR}/.dircolors"
@@ -35,6 +34,8 @@ for dotfile in "${dotfiles[@]}"; do
 
     \cp -va --update --backup "$cp_option" "$dotfile" "$dst_path"
 done
+
+\cp -va --update --backup "$cp_option" .jupyter/* "${HOME}/.jupyter/"
 
 
 # install commands that included in a bin directory
