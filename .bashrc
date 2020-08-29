@@ -158,6 +158,7 @@ dotfiles=(
     .bash_aliases
     .functions.sh
     .docker_aliases
+    .secrets
 )
 for dotfile in "${dotfiles[@]}"; do
     [ -r "${HOME}/${dotfile}" ] && [ -f "${HOME}/${dotfile}" ] && source "${HOME}/${dotfile}"
