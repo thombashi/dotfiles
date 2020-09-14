@@ -201,3 +201,8 @@ if readlink /proc/$$/exe | \grep -qF bash ; then
 elif readlink /proc/$$/exe | \grep -qF zsh ; then
     export PS1='%m: %~ $ '  # <host>: <locastion> $
 fi
+
+
+# environment variables: k8s
+source <(kubectl completion bash)
+complete -o default -F __start_kubectl k
