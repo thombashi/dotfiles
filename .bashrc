@@ -203,6 +203,14 @@ elif readlink /proc/$$/exe | \grep -qF zsh ; then
 fi
 
 
-# environment variables: k8s
-source <(kubectl completion bash)
-complete -o default -F __start_kubectl k
+# environments: k8s
+if command -v kubectl > /dev/null 2>&1 ; then
+    alias k='kubectl'
+
+    source <(kubectl completion bash)
+    complete -o default -F __start_kubectl k
+fi
+
+if command -v kind > /dev/null 2>&1 ; then
+    source <(kind completion bash)
+fi
