@@ -17,6 +17,10 @@ add-apt-repository -y --no-update ppa:lazygit-team/release
 # https://launchpad.net/~git-core/+archive/ubuntu/ppa
 apt-add-repository -y --no-update ppa:git-core/ppa
 
+# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+apt-add-repository https://cli.github.com/packages
+
 packages=(
     p7zip-full
     bats
@@ -30,6 +34,7 @@ packages=(
     fonts-firacode
     gawk
     gdb
+    gh
     git
     gpgv2
     golang-go
@@ -62,7 +67,6 @@ apt -y install --no-install-recommends "${packages[@]}"
 #apt -y install "${optional_packages[@]}"
 
 if ! uname -r | \grep -q Microsoft ; then
-    snap install hub --classic
     snap install micro --classic
     snap install snapcraft --classic
     snap install circleci shellcheck travis yq
