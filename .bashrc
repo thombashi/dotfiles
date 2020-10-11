@@ -214,3 +214,9 @@ fi
 if command -v kind > /dev/null 2>&1 ; then
     source <(kind completion bash)
 fi
+
+
+# environments: GitHub
+if command -v gh > /dev/null 2>&1 ; then
+    eval "$(gh completion -s bash)"
+fi
