@@ -5,21 +5,24 @@ if [ $UID -ne 0 ]; then
     exit 13
 fi
 
-# https://github.com/golang/go/wiki/Ubuntu
-add-apt-repository -y --no-update ppa:longsleep/golang-backports
-
-# https://launchpad.net/~byobu/+archive/ubuntu/ppa
-add-apt-repository -y --no-update ppa:byobu/ppa
-
-# https://github.com/jesseduffield/lazygit
-add-apt-repository -y --no-update ppa:lazygit-team/release
-
-# https://launchpad.net/~git-core/+archive/ubuntu/ppa
-apt-add-repository -y --no-update ppa:git-core/ppa
-
 # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-apt-add-repository https://cli.github.com/packages
+
+apt_repositories=(
+    ppa:byobu/ppa  # https://launchpad.net/~byobu/+archive/ubuntu/ppa
+    ppa:git-core/ppa  # https://launchpad.net/~git-core/+archive/ubuntu/ppa
+    ppa:lazygit-team/release  # https://github.com/jesseduffield/lazygit
+    ppa:longsleep/golang-backports  # https://github.com/golang/go/wiki/Ubuntu
+    https://cli.github.com/packages  # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+)
+
+for repository in "${apt_repositories[@]}"; do
+    if lsb_release --id | \grep -q Ubuntu ; then
+        add-apt-repository -y --no-update "$repository"
+    else
+        add-apt-repository -y "$repository"
+    fi
+done
 
 packages=(
     p7zip-full
