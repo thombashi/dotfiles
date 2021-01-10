@@ -86,3 +86,4 @@ if ! n lts --version > /dev/null 2>&1; then
 fi
 
 go get -u github.com/justjanne/powerline-go
+GO111MODULE=on go get mvdan.cc/sh/v3/cmd/shfmt
