@@ -169,7 +169,7 @@ unset dotfiles
 
 if readlink /proc/$$/exe | \grep -qF bash ; then
     function _update_ps1() {
-        PS1="$($GOPATH/bin/powerline-go -mode compatible -modules "venv,cwd,perms,git,exit,newline,root" -error $?)"
+        PS1="$($GOPATH/bin/powerline-go -mode compatible -hostname-only-if-ssh -modules "venv,vgo,ssh,host,cwd,perms,git,exit,newline,root" -error $?)"
     }
 
     if [ -f "$GOPATH/bin/powerline-go" ]; then
