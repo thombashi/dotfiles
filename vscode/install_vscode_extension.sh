@@ -1,6 +1,5 @@
 # Script to install extensions for code-server-server
 
-
 # Install Language Extensions
 ## golang
 code-server --force --install-extension golang.go
@@ -24,7 +23,6 @@ code-server --force --install-extension bungcip.better-toml
 code-server --force --install-extension yzhang.markdown-all-in-one
 code-server --force --install-extension lextudio.restructuredtext
 code-server --force --install-extension redhat.vscode-yaml
-
 
 # Install Application Specific Extensions
 ## docker

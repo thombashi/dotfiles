@@ -37,7 +37,6 @@ done
 
 \cp -va --update --backup "$cp_option" .jupyter/* "${HOME}/.jupyter/"
 
-
 # install commands that included in a bin directory
 # bin_dir=bin
 #

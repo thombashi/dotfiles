@@ -10,7 +10,6 @@ if [ $UID -ne 0 ]; then
     exit 13
 fi
 
-
 # Uninstall older versions of Docker
 apt remove docker docker-engine docker.io containerd runc
 
@@ -40,7 +39,6 @@ apt update
 # Install Docker CE
 apt install docker-ce docker-ce-cli containerd.io
 
-
 # Reference:
 #   Post-installation steps for Linux | Docker Documentation
 #   https://docs.docker.com/install/linux/linux-postinstall/
@@ -50,5 +48,5 @@ groupadd docker
 
 echo
 echo "complete installation"
-echo "execute docker commands w/ not a super-user, you need to execute:" 
+echo "execute docker commands w/ not a super-user, you need to execute:"
 echo "  gpasswd -a $USER docker"

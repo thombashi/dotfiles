@@ -17,7 +17,7 @@ apt_repositories=(
 )
 
 for repository in "${apt_repositories[@]}"; do
-    if lsb_release --id | \grep -q Ubuntu ; then
+    if lsb_release --id | \grep -q Ubuntu; then
         add-apt-repository -y --no-update "$repository"
     else
         add-apt-repository -y "$repository"
@@ -69,7 +69,7 @@ apt update
 apt -y install --no-install-recommends "${packages[@]}"
 #apt -y install "${optional_packages[@]}"
 
-if ! uname -r | \grep -q Microsoft ; then
+if ! uname -r | \grep -q Microsoft; then
     snap install micro --classic
     snap install snapcraft --classic
     snap install circleci shellcheck travis yq

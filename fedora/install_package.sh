@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 if [ $UID -ne 0 ]; then
     echo 'Permission denied' 1>&2
     exit 13

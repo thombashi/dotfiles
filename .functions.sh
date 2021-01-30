@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if command -v fzf > /dev/null 2>&1 ; then
+if command -v fzf > /dev/null 2>&1; then
     SELECTOR=\fzf
-elif command -v peco > /dev/null 2>&1 ; then
+elif command -v peco > /dev/null 2>&1; then
     SELECTOR=\peco
 else
     SELECTOR=
@@ -122,7 +122,7 @@ psgrep() {
 pssort() {
     local sort_key=$1
 
-    if \ps aux --sort "${sort_key}" > /dev/null 2>&1 ; then
+    if \ps aux --sort "${sort_key}" > /dev/null 2>&1; then
         local stdout
         stdout=$(\ps aux --sort "${sort_key}")
         echo -e "${stdout}"
@@ -279,7 +279,6 @@ ffgp() {
     less $(ffg . $1 | $SELECTOR)
 }
 
-
 lastmodified() {
     local dir_path
 
@@ -291,7 +290,6 @@ lastmodified() {
 
     \find "$dir_path" -type d -name '.*' -prune -o -type f -printf '%TY-%Tm-%TdT%TH:%TM %p\n' | sort
 }
-
 
 histgrep() {
     if [ "$1" = "" ]; then
@@ -327,7 +325,6 @@ fi
 default_ip_a() {
     ifdata -pa $(route | \grep -E '^default|^0\.0\.0\.0' | awk '{print $8}' | uniq)
 }
-
 
 # find files and grep file name with exclude hidden files/directories
 fetch_gh_tarball_sha256() {
