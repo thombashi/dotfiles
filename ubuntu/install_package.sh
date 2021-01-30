@@ -51,7 +51,7 @@ packages=(
     lazygit
     moreutils
     nmap
-    openjdk-8-jdk-headless
+    openjdk-11-jdk-headless
     pandoc
     peco
     resolvconf
