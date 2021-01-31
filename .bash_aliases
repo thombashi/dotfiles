@@ -151,7 +151,7 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenvpypy='pyenv local $(pyverpypy)'
     alias pyenvconda='pyenv local $(pyverconda)'
 
-    alias pyenvall='pyenv local $(pyver36) $(pyver37) $(pyver38) $(pyver39) $(pyverpypy)'
+    alias pyenvall='pyenv local $(pyver36) $(pyver37) $(pyver38) $(pyver39) $(pyver310) $(pyverpypy)'
 fi
 
 
