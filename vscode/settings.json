@@ -40,6 +40,7 @@
     "window.title": "${dirty} ${rootName}/${activeEditorMedium}",
 
     // Workbench --------------------
+    "workbench.colorTheme": "Default Dark+",
 
     // Overrides editor colors and font style from the currently selected color theme.
     "workbench.colorCustomizations": {
