@@ -61,6 +61,8 @@ if command -v errno > /dev/null 2>&1; then
     alias last_errno='errno "$?"'
 fi
 
+alias update-code-server='\curl -fsSL https://code-server.dev/install.sh | sh'
+
 # git aliases
 if command -v git > /dev/null 2>&1; then
     alias g='git'
