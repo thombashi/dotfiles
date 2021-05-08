@@ -113,6 +113,7 @@ if command -v python > /dev/null 2>&1; then
     if command -v pyupgrade > /dev/null 2>&1; then
         alias pyupgrade-py3plus='ffg . "\.py$" | xargs pyupgrade --py3-plus'
         alias pyupgrade-py36='ffg . "\.py$" | xargs pyupgrade --py36'
+        alias pyupgrade-py37='ffg . "\.py$" | xargs pyupgrade --py37'
     fi
 
     ## language aliases: Python - pytest-watch
