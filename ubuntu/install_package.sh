@@ -14,7 +14,6 @@ apt_repositories=(
 ppa_repositories=(
     ppa:byobu/ppa  # https://launchpad.net/~byobu/+archive/ubuntu/ppa
     ppa:git-core/ppa  # https://launchpad.net/~git-core/+archive/ubuntu/ppa
-    ppa:lazygit-team/release  # https://github.com/jesseduffield/lazygit
     ppa:longsleep/golang-backports  # https://github.com/golang/go/wiki/Ubuntu
 )
 
@@ -48,7 +47,6 @@ packages=(
     fping
     httping
     jq
-    lazygit
     moreutils
     nmap
     openjdk-11-jdk-headless
@@ -89,5 +87,6 @@ if ! n lts --version > /dev/null 2>&1; then
     apt purge nodejs npm -y --autoremove
 fi
 
+GO111MODULE=on go get -u github.com/jesseduffield/lazygit
 GO111MODULE=on go get -u github.com/justjanne/powerline-go
 GO111MODULE=on go get -u mvdan.cc/sh/v3/cmd/shfmt
