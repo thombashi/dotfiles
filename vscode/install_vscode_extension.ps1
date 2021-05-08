@@ -36,7 +36,7 @@ code --force --install-extension ms-azuretools.vscode-docker
 code --force --install-extension eamodio.gitlens
 
 ## Jupyter Notebook
-code --force --install-extension jithurjacob.nbpreviewer
+code --force --install-extension ms-toolsai.jupyter
 
 ## PlantUML
 code --force --install-extension jebbs.plantuml
