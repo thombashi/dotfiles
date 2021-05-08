@@ -13,6 +13,7 @@ Get-AppxPackage Microsoft.Print3D* | Remove-AppxPackage
 Get-AppxPackage Microsoft.WindowsMaps* | Remove-AppxPackage
 Get-AppxPackage Microsoft.WindowsFeedbackHub | Remove-AppxPackage
 Get-AppxPackage Microsoft.Xbox* | Remove-AppxPackage
+Get-AppxPackage Microsoft.YourPhone | Remove-AppxPackage
 Get-AppxPackage Microsoft.ZuneMusic* | Remove-AppxPackage
 Get-AppxPackage SpotifyAB.SpotifyMusic | Remove-AppxPackage
 
