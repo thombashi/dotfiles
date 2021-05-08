@@ -23,5 +23,5 @@ packages=(
     zlib1g-dev
 )
 
-apt update
-apt -y install --no-install-recommends "${packages[@]}"
+apt -qq update
+apt -qq -y install --no-install-recommends "${packages[@]}"

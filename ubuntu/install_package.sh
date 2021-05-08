@@ -69,9 +69,9 @@ optional_packages=(
     cscope
 )
 
-apt update
-apt -y install --no-install-recommends "${packages[@]}"
-#apt -y install "${optional_packages[@]}"
+apt update -qq
+apt -qq -y install --no-install-recommends "${packages[@]}"
+#apt -qq -y install "${optional_packages[@]}"
 
 if ! uname -r | \grep -q Microsoft; then
     snap install micro --classic

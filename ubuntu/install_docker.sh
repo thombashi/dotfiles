@@ -11,7 +11,7 @@ if [ $UID -ne 0 ]; then
 fi
 
 # Uninstall older versions of Docker
-apt remove docker docker-engine docker.io containerd runc
+apt remove -qq docker docker-engine docker.io containerd runc
 
 # Install packages to allow apt to use a repository over HTTPS:
 https_packages=(
@@ -22,8 +22,8 @@ https_packages=(
     software-properties-common
 )
 
-apt update
-apt -y install "${https_packages[@]}"
+apt -qq update
+apt -qq -y install "${https_packages[@]}"
 
 # Add Docker’s official GPG key:
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -34,10 +34,10 @@ add-apt-repository \
     $(lsb_release -cs) \
     stable"
 
-apt update
+apt -qq update
 
 # Install Docker CE
-apt install docker-ce docker-ce-cli containerd.io
+apt -qq -y install docker-ce docker-ce-cli containerd.io
 
 # Reference:
 #   Post-installation steps for Linux | Docker Documentation
