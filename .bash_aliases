@@ -52,9 +52,9 @@ if command -v apt > /dev/null 2>&1; then
 fi
 
 if command -v colordiff > /dev/null 2>&1; then
-    alias diff='\colordiff -u --ignore-space-change --tabsize=4'
+    alias diff='\colordiff -u --ignore-space-change --tabsize=4 --exclude=.git --exclude=.tox'
 else
-    alias diff='\diff -u --ignore-space-change --tabsize=4'
+    alias diff='\diff -u --ignore-space-change --tabsize=4 --exclude=.git --exclude=.tox'
 fi
 
 if command -v errno > /dev/null 2>&1; then
