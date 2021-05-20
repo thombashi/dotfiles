@@ -115,11 +115,13 @@ unset setup_lessopen
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
 if [ -e "${HOME}/.pyenv" ]; then
-    PYENV_BIN="${HOME}/.pyenv/bin"
+    export PYENV_ROOT="$HOME/.pyenv"
+    PYENV_BIN="${PYENV_ROOT}/bin"
 
     if ! echo "${PATH}" | \grep -qF "${PYENV_BIN}" ; then
         export PATH=${PYENV_BIN}:${PATH}
 
+        eval "$(pyenv init --path)"
         eval "$(pyenv init -)"
         eval "$(pyenv virtualenv-init -)"
     fi
