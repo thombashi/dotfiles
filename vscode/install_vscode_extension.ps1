@@ -21,6 +21,7 @@ code --force --install-extension jetmartin.bats
 code --force --install-extension ms-vscode.vscode-typescript-tslint-plugin
 
 ## etc
+code --force --install-extension asciidoctor.asciidoctor-vscode
 code --force --install-extension bungcip.better-toml
 code --force --install-extension ms-vscode-remote.vscode-remote-extensionpack
 code --force --install-extension yzhang.markdown-all-in-one
