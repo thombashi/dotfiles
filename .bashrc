@@ -55,10 +55,12 @@ export LANG=C.UTF-8
 export LESS='-R --hilite-search --ignore-case --jump-target=.4 --quit-if-one-screen --no-init --LONG-PROMPT --HILITE-UNREAD'
 export TZ='Asia/Tokyo'
 
-if command -v micro > /dev/null 2>&1; then
-    export EDITOR=micro
-else
+if command -v nano > /dev/null 2>&1; then
     export EDITOR=nano
+elif command -v micro > /dev/null 2>&1; then
+    export EDITOR=micro
+elif command -v vim > /dev/null 2>&1; then
+    export EDITOR=vim
 fi
 
 ## set up LS_COLORS
