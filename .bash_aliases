@@ -16,6 +16,7 @@ alias du='du -h -d 1 | sort -h | tail'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
 alias rmcomment='\grep -vE "^\s*#|^\s*$"'
+alias rsync='rsync -va --exclude=.git --exclude=.tox --exclude=.mypy_cache'
 alias sudo='sudo '
 alias sudoe='sudo -E '
 
