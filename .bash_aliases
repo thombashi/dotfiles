@@ -16,7 +16,7 @@ alias du='du -h -d 1 | sort -h | tail'
 alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
 alias rmcomment='\grep -vE "^\s*#|^\s*$"'
-alias rsync='rsync -va --exclude=.git --exclude=.tox --exclude=.mypy_cache'
+alias rsync='rsync -va --exclude=.git --exclude=.tox --exclude=.mypy_cache --exclude=.pytest_cache'
 alias sudo='sudo '
 alias sudoe='sudo -E '
 
@@ -53,9 +53,9 @@ if command -v apt > /dev/null 2>&1; then
 fi
 
 if command -v colordiff > /dev/null 2>&1; then
-    alias diff='\colordiff -u --ignore-space-change --tabsize=4 --exclude=.git --exclude=.tox'
+    alias diff='\colordiff -u --ignore-space-change --tabsize=4 --exclude=.git --exclude=.tox --exclude=.mypy_cache'
 else
-    alias diff='\diff -u --ignore-space-change --tabsize=4 --exclude=.git --exclude=.tox'
+    alias diff='\diff -u --ignore-space-change --tabsize=4 --exclude=.git --exclude=.tox --exclude=.mypy_cache'
 fi
 
 if command -v errno > /dev/null 2>&1; then
