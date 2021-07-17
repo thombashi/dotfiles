@@ -62,9 +62,6 @@
 [blame]
   date = relative
 
-[push]
-  default = current
-
 [core]
   precomposeunicode = true
   excludesfile = ~/.gitignore_global
@@ -78,3 +75,9 @@
 
 [mailmap]
   file = ~/.mailmap
+
+[pull]
+  rebase = true
+
+[push]
+  default = simple
