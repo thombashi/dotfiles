@@ -23,7 +23,9 @@ code --force --install-extension ms-vscode.vscode-typescript-tslint-plugin
 ## etc
 code --force --install-extension asciidoctor.asciidoctor-vscode
 code --force --install-extension bungcip.better-toml
-code --force --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --force --install-extension heptio.jsonnet
+cschleiden.vscode-github-actions
+code --force --install-extension github.vscode-pull-request-github
 code --force --install-extension yzhang.markdown-all-in-one
 code --force --install-extension lextudio.restructuredtext
 code --force --install-extension redhat.vscode-yaml
@@ -41,3 +43,6 @@ code --force --install-extension ms-toolsai.jupyter
 
 ## PlantUML
 code --force --install-extension jebbs.plantuml
+
+## VScode
+code --force --install-extension ms-vscode-remote.vscode-remote-extensionpack
