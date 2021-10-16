@@ -256,6 +256,7 @@
     "git.inputValidationSubjectLength": null,
     "search.exclude": {
         "**/__pycache__": true,
-        "**/.coverage": true
-    },
+        "**/.coverage": true,
+        "**/.git": true
+    }
 }
