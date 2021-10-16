@@ -17,6 +17,7 @@ alias less='less --tabs=4'
 alias mkdir='mkdir -pv'
 alias rmcomment='\grep -vE "^\s*#|^\s*$"'
 alias rsync='rsync -va --exclude=.git --exclude=.tox --exclude=.mypy_cache --exclude=.pytest_cache --exclude=.egg-info'
+alias sort-version='\sort -n -t . -k 1,1 -k 2,2 -k 3,3'
 alias sudo='sudo '
 alias sudoe='sudo -E '
 
