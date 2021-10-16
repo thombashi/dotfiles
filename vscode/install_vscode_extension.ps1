@@ -17,8 +17,8 @@ code --force --install-extension ms-vscode.cpptools
 code --force --install-extension timonwong.shellcheck
 code --force --install-extension jetmartin.bats
 
-## TypeScript
-code --force --install-extension ms-vscode.vscode-typescript-tslint-plugin
+## JavaScript
+code --force --install-extension dbaeumer.vscode-eslint
 
 ## etc
 code --force --install-extension asciidoctor.asciidoctor-vscode

@@ -16,8 +16,8 @@ code-server --force --install-extension ms-vscode.cpptools
 code-server --force --install-extension timonwong.shellcheck
 code-server --force --install-extension jetmartin.bats
 
-## TypeScript
-code-server --force --install-extension ms-vscode.vscode-typescript-tslint-plugin
+## JavaScript
+code --force --install-extension dbaeumer.vscode-eslint
 
 ## etc
 code-server --force --install-extension bungcip.better-toml
