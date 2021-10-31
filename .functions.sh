@@ -20,7 +20,7 @@ whichbin() {
         return 22
     fi
 
-    local result=$?
+    local -r result=$?
     if [ "$result" -ne 0 ]; then
         echo "no ${1} in (${PATH})" 1>&2
         return $result
@@ -62,8 +62,8 @@ epoch2date() {
 
 # find files in a directory with exclude hidden files/directories
 ff() {
-    local path=$1
-    local name_pattern=$2
+    local -r path=$1
+    local -r name_pattern=$2
 
     if [ "$path" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
@@ -79,8 +79,8 @@ ff() {
 
 # find directories in a directory with exclude hidden directories
 fd() {
-    local path=$1
-    local name_pattern=$2
+    local -r path=$1
+    local -r name_pattern=$2
 
     if [ "$path" = "" ]; then
         echo "Usage: ${FUNCNAME[0]} DIR_PATH" 1>&2
@@ -105,7 +105,7 @@ ffg() {
 }
 
 psgrep() {
-    local pattern=$1
+    local -r pattern=$1
     local psaux
 
     psaux=$(\ps aux)
@@ -120,7 +120,7 @@ psgrep() {
 }
 
 pssort() {
-    local sort_key=$1
+    local -r sort_key=$1
 
     if \ps aux --sort "${sort_key}" > /dev/null 2>&1; then
         local stdout
@@ -135,7 +135,7 @@ pssort() {
 }
 
 extract() {
-    local archive_file=$1
+    local -r archive_file=$1
 
     if [ ! -f "${archive_file}" ]; then
         echo "'${archive_file}' is not a valid file to extract" 1>&2
@@ -213,7 +213,7 @@ listpkg() {
 
 # find a package which includes a specified command
 whichpkg() {
-    local command=$1
+    local -r command=$1
     local command_path
     local result
     local package
