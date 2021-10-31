@@ -350,11 +350,12 @@ retry() {
     local -r -i MAX_ATTEMPT=10
     local -r BASE_SLEEP=0.25
     local -r cmd="$@"
+    local SLEEP
 
     $cmd && return
 
     for attempt_num in $(seq $MAX_ATTEMPT); do
-        local SLEEP=$(echo "$BASE_SLEEP * $attempt_num" | bc)
+        SLEEP=$(echo "$BASE_SLEEP * $attempt_num" | bc)
         echo "'$cmd' failed. retrying in $SLEEP seconds..."
         sleep $SLEEP
 
