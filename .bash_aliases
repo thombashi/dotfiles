@@ -153,6 +153,7 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenv38='pyenv local $(pyver38)'
     alias pyenv39='pyenv local $(pyver39)'
     alias pyenv310='pyenv local $(pyver310)'
+    alias pyenv311='pyenv local $(pyver311)'
     alias pyenv3='pyenv local $(pyenv versions | \grep -oE "3\.[0-9]+\.[0-9]+" | sort -r | head -n 1)'
     alias pyenvpypy='pyenv local $(pyverpypy)'
     alias pyenvconda='pyenv local $(pyverconda)'
