@@ -345,3 +345,19 @@ fetch_gh_tarball_sha256() {
     echo "https://github.com/$REPO_ID/archive/${TAG_NAME}.tar.gz"
     curl -sL https://github.com/$REPO_ID/archive/${TAG_NAME}.tar.gz | openssl sha256 -r
 }
+
+retry() {
+    local -r -i MAX_ATTEMPT=10
+    local -r BASE_SLEEP=0.25
+    local -r cmd="$@"
+
+    $cmd && return
+
+    for attempt_num in $(seq $MAX_ATTEMPT); do
+        local SLEEP=$(echo "$BASE_SLEEP * $attempt_num" | bc)
+        echo "'$cmd' failed. retrying in $SLEEP seconds..."
+        sleep $SLEEP
+
+        $cmd && break
+    done
+}
