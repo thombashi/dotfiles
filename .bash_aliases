@@ -92,8 +92,8 @@ if command -v python > /dev/null 2>&1; then
     ## language aliases: Python - pip
     if command -v pip > /dev/null 2>&1; then
         alias pip-local-upgrade='pip install --upgrade --no-index .'
-        alias pip-outdated='pip list --outdated'
-        alias pip-upgrade='pip install --upgrade --upgrade-strategy eager'
+        alias pip-outdated='pip list --outdated --retries 10'
+        alias pip-upgrade='pip install --upgrade --upgrade-strategy eager --retries 10'
     fi
 
     ## language aliases: Python - mypy
