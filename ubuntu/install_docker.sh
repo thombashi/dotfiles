@@ -11,33 +11,29 @@ if [ $UID -ne 0 ]; then
 fi
 
 # Uninstall older versions of Docker
-apt remove -qq docker docker-engine docker.io containerd runc
+apt-get remove -qq docker docker-engine docker.io containerd runc
 
 # Install packages to allow apt to use a repository over HTTPS:
-https_packages=(
-    apt-transport-https
-    ca-certificates
-    curl
-    gnupg-agent
-    software-properties-common
-)
-
-apt -qq update
-apt -qq -y install "${https_packages[@]}"
+apt-get -qq update
+apt-get -qq install --no-install-recommends \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release \
 
 # Add Docker’s official GPG key:
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --yes --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 # Set up the stable Docker repository
-add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) \
-    stable"
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-apt -qq update
+apt-get -qq update
 
 # Install Docker CE
-apt -qq -y install docker-ce docker-ce-cli containerd.io
+apt-get -qq install --no-install-recommends docker-ce docker-ce-cli containerd.io
 
 # Reference:
 #   Post-installation steps for Linux | Docker Documentation
