@@ -17,13 +17,14 @@ code-server --force --install-extension timonwong.shellcheck
 code-server --force --install-extension jetmartin.bats
 
 ## JavaScript
-code --force --install-extension dbaeumer.vscode-eslint
+code-server --force --install-extension dbaeumer.vscode-eslint
 
 ## etc
 code-server --force --install-extension bungcip.better-toml
 code-server --force --install-extension yzhang.markdown-all-in-one
 code-server --force --install-extension lextudio.restructuredtext
 code-server --force --install-extension redhat.vscode-yaml
+code-server --force vscode-icons-team.vscode-icons
 
 # Install Application Specific Extensions
 ## docker

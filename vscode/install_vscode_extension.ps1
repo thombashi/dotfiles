@@ -23,12 +23,14 @@ code --force --install-extension dbaeumer.vscode-eslint
 ## etc
 code --force --install-extension asciidoctor.asciidoctor-vscode
 code --force --install-extension bungcip.better-toml
-code --force --install-extension heptio.jsonnet
-cschleiden.vscode-github-actions
 code --force --install-extension github.vscode-pull-request-github
-code --force --install-extension yzhang.markdown-all-in-one
+code --force --install-extension Grafana.vscode-jsonnet
+code --force --install-extension hashicorp.terraform
 code --force --install-extension lextudio.restructuredtext
+code --force --install-extension mosapride.zenkaku
+code --force --install-extension yzhang.markdown-all-in-one
 code --force --install-extension redhat.vscode-yaml
+code --force --install-extension vscode-icons-team.vscode-icons
 
 
 # Install Application Specific Extensions
