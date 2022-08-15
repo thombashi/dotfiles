@@ -16,7 +16,7 @@ packages=(
     libreadline-dev
     libsqlite3-dev
     libssl-dev
-    python-dev
+    python3-dev
     tcl-dev
     tk-dev
     xz-utils
