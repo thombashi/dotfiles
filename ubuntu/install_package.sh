@@ -5,11 +5,7 @@ if [ $UID -ne 0 ]; then
     exit 13
 fi
 
-# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-
 apt_repositories=(
-    https://cli.github.com/packages  # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 )
 ppa_repositories=(
     ppa:byobu/ppa  # https://launchpad.net/~byobu/+archive/ubuntu/ppa
@@ -29,11 +25,8 @@ fi
 
 packages=(
     p7zip-full
-    bats
     build-essential
     byobu
-    clang-format
-    cmake
     colordiff
     curl
     fontconfig
@@ -74,7 +67,7 @@ apt -qq -y install --no-install-recommends "${packages[@]}"
 if ! uname -r | \grep -q Microsoft; then
     snap install micro --classic
     snap install snapcraft --classic
-    snap install circleci shellcheck travis yq
+    snap install shellcheck yq
 else
     apt -y install --no-install-recommends shellcheck
 fi
