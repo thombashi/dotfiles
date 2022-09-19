@@ -79,6 +79,6 @@ if ! n lts --version > /dev/null 2>&1; then
     apt purge nodejs npm -y --autoremove
 fi
 
-GO111MODULE=on go get -u github.com/jesseduffield/lazygit
-GO111MODULE=on go get -u github.com/justjanne/powerline-go
-GO111MODULE=on go get -u mvdan.cc/sh/v3/cmd/shfmt
+go install github.com/jesseduffield/lazygit@latest
+go install github.com/justjanne/powerline-go@latest
+go install mvdan.cc/sh/v3/cmd/shfmt@latest
