@@ -51,6 +51,7 @@ fi
 
 if command -v apt > /dev/null 2>&1; then
     alias apt-update='apt update && apt list --upgradable'
+    alias apt-get-install='apt-get install --no-install-recommends'
 fi
 
 if command -v colordiff > /dev/null 2>&1; then
