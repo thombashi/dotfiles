@@ -41,7 +41,6 @@ packages=(
     httping
     jq
     moreutils
-    nmap
     openjdk-11-jdk-headless
     pandoc
     peco
