@@ -75,6 +75,11 @@ if command -v git > /dev/null 2>&1; then
     alias glog-summary='git log --pretty=format:"[%cd %H] %s" --date=short --stat'
 fi
 
+# terraform aliases
+if command -v terraform > /dev/null 2>&1; then
+    alias tf='terraform'
+    alias tf-apply='terraform apply -auto-approve'
+fi
 
 # language aliases: Python
 if command -v python > /dev/null 2>&1; then
