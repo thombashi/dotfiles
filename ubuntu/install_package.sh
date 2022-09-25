@@ -54,6 +54,7 @@ packages=(
     tree
     unzip
     wget
+    xdg-utils
 )
 optional_packages=(
     cscope
