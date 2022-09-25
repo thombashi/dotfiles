@@ -8,7 +8,7 @@ fi
 apt_repositories=(
 )
 ppa_repositories=(
-    ppa:byobu/ppa  # https://launchpad.net/~byobu/+archive/ubuntu/ppa
+    # ppa:byobu/ppa  # https://launchpad.net/~byobu/+archive/ubuntu/ppa
     ppa:git-core/ppa  # https://launchpad.net/~git-core/+archive/ubuntu/ppa
     ppa:longsleep/golang-backports  # https://github.com/golang/go/wiki/Ubuntu
 )
