@@ -11,7 +11,7 @@ code --force --install-extension ms-python.vscode-pylance
 code --force --install-extension njpwerner.autodocstring
 
 ## C++
-code --force --install-extension ms-vscode.cpptools
+# code --force --install-extension ms-vscode.cpptools
 
 ## Shell Script
 code --force --install-extension timonwong.shellcheck
@@ -23,7 +23,7 @@ code --force --install-extension dbaeumer.vscode-eslint
 ## etc
 code --force --install-extension asciidoctor.asciidoctor-vscode
 code --force --install-extension bungcip.better-toml
-code --force --install-extension github.vscode-pull-request-github
+# code --force --install-extension github.vscode-pull-request-github
 code --force --install-extension Grafana.vscode-jsonnet
 code --force --install-extension hashicorp.terraform
 code --force --install-extension lextudio.restructuredtext
@@ -34,6 +34,9 @@ code --force --install-extension vscode-icons-team.vscode-icons
 
 
 # Install Application Specific Extensions
+## Google Cloud
+code --force --install-extension GoogleCloudTools.cloudcode
+
 ## docker
 code --force --install-extension ms-azuretools.vscode-docker
 
