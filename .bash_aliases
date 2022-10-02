@@ -76,6 +76,11 @@ if command -v git > /dev/null 2>&1; then
     alias glog-summary='git log --pretty=format:"[%cd %H] %s" --date=short --stat'
 fi
 
+# kubectl aliases
+if command -v kubectl > /dev/null 2>&1; then
+    alias k='kubectl'
+fi
+
 # terraform aliases
 if command -v terraform > /dev/null 2>&1; then
     alias tf='terraform'
