@@ -2,10 +2,10 @@
 
 cp_option=""
 
-if [ "$1" = "--force" ]; then
-    cp_option="--force"
-else
+if [ "$1" = "--interactive" ]; then
     cp_option="--interactive"
+else
+    cp_option="--force"
 fi
 
 TMP_DIR=$(mktemp -d)
