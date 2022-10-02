@@ -30,10 +30,12 @@ code --force --install-extension lextudio.restructuredtext
 code --force --install-extension mosapride.zenkaku
 code --force --install-extension yzhang.markdown-all-in-one
 code --force --install-extension redhat.vscode-yaml
-code --force --install-extension vscode-icons-team.vscode-icons
 
 
 # Install Application Specific Extensions
+## GitHub
+code --force --install-extension GitHub.codespaces
+
 ## Google Cloud
 code --force --install-extension GoogleCloudTools.cloudcode
 
@@ -47,7 +49,8 @@ code --force --install-extension eamodio.gitlens
 code --force --install-extension ms-toolsai.jupyter
 
 ## PlantUML
-code --force --install-extension jebbs.plantuml
+# code --force --install-extension jebbs.plantuml
 
 ## VScode
 code --force --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --force --install-extension vscode-icons-team.vscode-icons
