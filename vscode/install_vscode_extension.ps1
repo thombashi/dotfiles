@@ -15,13 +15,13 @@ code --force --install-extension njpwerner.autodocstring
 
 ## Shell Script
 code --force --install-extension timonwong.shellcheck
-code --force --install-extension jetmartin.bats
+# code --force --install-extension jetmartin.bats
 
 ## JavaScript
 code --force --install-extension dbaeumer.vscode-eslint
 
 ## etc
-code --force --install-extension asciidoctor.asciidoctor-vscode
+# code --force --install-extension asciidoctor.asciidoctor-vscode
 code --force --install-extension bungcip.better-toml
 # code --force --install-extension github.vscode-pull-request-github
 code --force --install-extension Grafana.vscode-jsonnet

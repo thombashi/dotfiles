@@ -14,7 +14,7 @@ code-server --force --install-extension ms-vscode.cpptools
 
 ## Shell Script
 code-server --force --install-extension timonwong.shellcheck
-code-server --force --install-extension jetmartin.bats
+# code-server --force --install-extension jetmartin.bats
 
 ## JavaScript
 code-server --force --install-extension dbaeumer.vscode-eslint
