@@ -70,10 +70,12 @@ ff() {
         return 22
     fi
 
+    IGNORE="-type d -name node_modules -prune"
+
     if [ "$name_pattern" = "" ]; then
-        \find "$path" -not -path '*/\.*' -type f
+        \find "$path" $IGNORE -o -not -path '*/\.*' -type f
     else
-        \find "$path" -not -path '*/\.*' -type f -name "$name_pattern"
+        \find "$path" $IGNORE -o -not -path '*/\.*' -type f -name "$name_pattern"
     fi
 }
 
