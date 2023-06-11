@@ -150,6 +150,19 @@ if command -v go > /dev/null 2>&1 ; then
 fi
 
 
+# environment variables: gcloud
+GCLOUD_DIR="${HOME}/gcloud/google-cloud-sdk"
+if [ -e "${GCLOUD_DIR}" ]; then
+    GCLOUD_BIN="${GCLOUD_DIR}/bin"
+
+    if ! echo "${PATH}" | \grep -qF "${GCLOUD_BIN}" ; then
+        export PATH=${GCLOUD_BIN}:${PATH}
+    fi
+
+    unset GCLOUD_BIN
+fi
+
+
 # share history across multiple consoles
 HISTORY_PROMPT_COMMAND='history -a; history -c; history -r'
 if ! echo "${PROMPT_COMMAND}" | \grep -qF "${HISTORY_PROMPT_COMMAND}" ; then
