@@ -21,6 +21,7 @@
   track = branch --set-upstream-to
 
   tags = tag
+  prune-tags = git fetch origin --prune --prune-tags
   push-tags = push origin --tags
   signed-tag = tag --sign -m 'GPG signed tag'
 
