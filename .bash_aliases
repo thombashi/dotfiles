@@ -81,6 +81,11 @@ if command -v kubectl > /dev/null 2>&1; then
     alias k='kubectl'
 fi
 
+# gcloud aliases
+if command -v gcloud > /dev/null 2>&1; then
+    alias gcloud-get-project='gcloud config get-value project'
+fi
+
 # terraform aliases
 if command -v terraform > /dev/null 2>&1; then
     alias tf='terraform'
@@ -127,6 +132,7 @@ if command -v python > /dev/null 2>&1; then
         alias pyupgrade-py3plus='ffg . "\.py$" | xargs pyupgrade --py3-plus'
         alias pyupgrade-py36='ffg . "\.py$" | xargs pyupgrade --py36'
         alias pyupgrade-py37='ffg . "\.py$" | xargs pyupgrade --py37'
+        alias pyupgrade-py38='ffg . "\.py$" | xargs pyupgrade --py38'
     fi
 
     ## language aliases: Python - pytest-watch
