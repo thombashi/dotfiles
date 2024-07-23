@@ -163,7 +163,8 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyver39="echo $($PYENV_CMD | \grep -oE "^3\.9\.[0-9]+" | sort-version | tail -n 1)"
     alias pyver310="echo $($PYENV_CMD | \grep -oE "^3\.10\.[0-9]+" | sort-version | tail -n 1)"
     alias pyver311="echo $($PYENV_CMD | \grep -oE "^3\.11\.[0-9]+" | sort-version | tail -n 1)"
-    alias pyver312="echo $($PYENV_CMD | \grep -oE "^3\.12\.[0-9]+([ab][1-9]+|rc[1-9]+)?|3\.12-dev" | sort-version | tail -n 1)"
+    alias pyver312="echo $($PYENV_CMD | \grep -oE "^3\.12\.[0-9]" | sort-version | tail -n 1)"
+    alias pyver313="echo $($PYENV_CMD | \grep -oE "^3\.13\.[0-9]+([ab][1-9]+|rc[1-9]+)?|3\.13-dev" | sort-version | tail -n 1)"
     alias pyverstable="echo $($PYENV_CMD | \grep -oE "^[3-9]\.[0-9]+\.[0-9]+$" | sort-version | tail -n 1)"
     alias pyverlatest="echo $($PYENV_CMD | \grep -oE "^[3-9]\.[0-9]+\.[0-9]+([ab][1-9]+|rc[1-9]+)?|3\.[0-9]+-dev" | sort-version | tail -n 1)"
     alias pyverpypy="echo $($PYENV_CMD | \grep -oE "pypy[3-9]\.[0-9]+-[0-9]+\.[0-9]+\.[0-9]+" | sort-version | tail -n 1)"
@@ -177,6 +178,7 @@ if [ -e "${HOME}/.pyenv" ]; then
     alias pyenv310='pyenv local $(pyver310)'
     alias pyenv311='pyenv local $(pyver311)'
     alias pyenv312='pyenv local $(pyver312)'
+    alias pyenv313='pyenv local $(pyver313)'
     alias pyenv3='pyenv local $(pyverstable)'
     alias pyenvpypy='pyenv local $(pyverpypy)'
     alias pyenvconda='pyenv local $(pyverconda)'
