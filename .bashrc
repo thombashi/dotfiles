@@ -162,6 +162,12 @@ if [ -e "${GCLOUD_DIR}" ]; then
     unset GCLOUD_BIN
 fi
 
+## The next line updates PATH for the Google Cloud SDK.
+if [ -f "${GCLOUD_DIR}/path.bash.inc" ]; then . "${GCLOUD_DIR}/path.bash.inc"; fi
+
+## The next line enables shell command completion for gcloud.
+if [ -f "${GCLOUD_DIR}/completion.bash.inc" ]; then . "${GCLOUD_DIR}/completion.bash.inc"; fi
+
 
 # share history across multiple consoles
 HISTORY_PROMPT_COMMAND='history -a; history -c; history -r'
