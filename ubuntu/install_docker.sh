@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-# Reference:
-#   Install Docker Engine on Ubuntu | Docker Documentation
+# References:
+#   Install Docker Engine on Ubuntu | Docker Docs
 #   https://docs.docker.com/engine/install/ubuntu/
-#   (x86_64 / amd64)
 
 if [ $UID -ne 0 ]; then
     echo 'requires superuser privilege' 1>&2
@@ -11,7 +10,14 @@ if [ $UID -ne 0 ]; then
 fi
 
 # Uninstall older versions of Docker
-apt-get remove -qq docker docker-engine docker.io containerd runc
+apt-get remove -qq \
+    docker.io \
+    docker-doc \
+    docker-compose \
+    docker-compose-v2 \
+    podman-docker \
+    containerd \
+    runc
 
 # Install packages to allow apt to use a repository over HTTPS:
 apt-get -qq update
@@ -23,17 +29,21 @@ apt-get -qq install --no-install-recommends \
     lsb-release \
 
 # Add Docker’s official GPG key:
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --yes --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+apt-get -qq update
+apt-get install ca-certificates curl
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+chmod a+r /etc/apt/keyrings/docker.asc
 
-# Set up the stable Docker repository
+# Add the repository to Apt sources:
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt-get -qq update
 
-# Install Docker CE
-apt-get -qq install --no-install-recommends docker-ce docker-ce-cli containerd.io
+# Install Docker Engine
+apt-get install --no-install-recommends docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Reference:
 #   Post-installation steps for Linux | Docker Documentation
@@ -46,3 +56,5 @@ echo
 echo "complete installation"
 echo "execute docker commands w/ not a super-user, you need to execute:"
 echo "  gpasswd -a $USER docker"
+echo "  usermod -aG docker $USER"
+echo "  newgrp docker"
