@@ -2,7 +2,7 @@
 
 set -eux
 
-INSTALL_DIR=${HOME}/gcloud/google-cloud-sdk
+INSTALL_DIR=${HOME}/gcloud
 TMP_DIR=$(mktemp -d)
 INSTALL_SCRIPT=${TMP_DIR}/install.sh
 
