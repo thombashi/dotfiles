@@ -5,6 +5,8 @@ if [ $UID -ne 0 ]; then
     exit 13
 fi
 
+set -eux
+
 apt_repositories=(
 )
 ppa_repositories=(
