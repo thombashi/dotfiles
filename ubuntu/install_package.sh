@@ -81,7 +81,3 @@ if ! n lts --version > /dev/null 2>&1; then
     n lts
     apt purge nodejs npm -y --autoremove
 fi
-
-go install github.com/jesseduffield/lazygit@latest
-go install github.com/justjanne/powerline-go@latest
-go install mvdan.cc/sh/v3/cmd/shfmt@latest
