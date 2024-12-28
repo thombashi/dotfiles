@@ -64,13 +64,13 @@ apt update -qq
 apt -qq -y install --no-install-recommends "${packages[@]}"
 #apt -qq -y install "${optional_packages[@]}"
 
-if ! uname -r | \grep -q Microsoft; then
-    snap install micro --classic
-    snap install snapcraft --classic
-    snap install shellcheck yq
-else
-    apt -y install --no-install-recommends shellcheck
-fi
+# if ! uname -r | \grep -q Microsoft; then
+#     snap install micro --classic
+#     snap install snapcraft --classic
+#     snap install shellcheck yq
+# else
+#     apt -y install --no-install-recommends shellcheck
+# fi
 
 # install the latest lts npm
 if ! n lts --version > /dev/null 2>&1; then
