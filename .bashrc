@@ -144,6 +144,8 @@ if command -v go > /dev/null 2>&1 ; then
     export GOPATH=${HOME}/go
     export GO111MODULE=on
 
+    mkdir -p ${GOPATH}
+
     if ! echo "${PATH}" | \grep -qF "$GOPATH" ; then
         export PATH=${PATH}:${GOPATH}/bin
     fi
