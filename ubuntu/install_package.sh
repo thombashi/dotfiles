@@ -74,6 +74,14 @@ apt -qq -y install --no-install-recommends "${packages[@]}"
 #     apt -y install --no-install-recommends shellcheck
 # fi
 
+purge_packages=(
+    vim
+    vim-common
+    vim-runtime
+    vim-tiny
+)
+apt -y purge "${purge_packages[@]}"
+
 # install the latest lts npm
 if ! n lts --version > /dev/null 2>&1; then
     apt -y install --no-install-recommends npm
