@@ -35,7 +35,7 @@ packages=(
     gdb
     gh
     git
-    gpgv2
+    gpgv
     golang-go
     fping
     httping
