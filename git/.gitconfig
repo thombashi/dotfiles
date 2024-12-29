@@ -23,6 +23,7 @@
   tags = tag
   prune-tags = fetch origin --prune --prune-tags
   push-tags = push origin --tags
+  push-f = push --force-with-lease
   signed-tag = tag --sign -m 'GPG signed tag'
 
   remotes = remote -v
