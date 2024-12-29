@@ -11,4 +11,5 @@ set -eux
 
 go install github.com/jesseduffield/lazygit@latest
 go install github.com/justjanne/powerline-go@latest
+go install github.com/sigstore/gitsign@latest
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
