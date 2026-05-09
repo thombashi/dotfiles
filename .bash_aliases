@@ -130,10 +130,8 @@ if command -v python > /dev/null 2>&1; then
     ## language aliases: Python - pyupgrade
     if command -v pyupgrade > /dev/null 2>&1; then
         alias pyupgrade-py3plus='ffg . "\.py$" | xargs pyupgrade --py3-plus'
-        alias pyupgrade-py36='ffg . "\.py$" | xargs pyupgrade --py36'
-        alias pyupgrade-py37='ffg . "\.py$" | xargs pyupgrade --py37'
-        alias pyupgrade-py38='ffg . "\.py$" | xargs pyupgrade --py38'
         alias pyupgrade-py39='ffg . "\.py$" | xargs pyupgrade --py39'
+        alias pyupgrade-py310='ffg . "\.py$" | xargs pyupgrade --py310'
     fi
 
     ## language aliases: Python - pytest-watch
